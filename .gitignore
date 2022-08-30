@@ -5,5 +5,6 @@
 how-to/
 *.rds
 in_development/
+ideas_files/
 
 /.quarto/
