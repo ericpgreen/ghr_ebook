@@ -13,7 +13,6 @@ book:
       chapters:
         - ghr.qmd
         - collaborations.qmd
-        - ideas.qmd
     - references.qmd
 
 bibliography: ghr.bib
