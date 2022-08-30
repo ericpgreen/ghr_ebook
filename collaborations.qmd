@@ -1,0 +1,201 @@
+# Build Collaborations {#collaborations}
+
+Global health research is a team effort. Solo-authored research papers are rare in our field, even for secondary analyses of existing data. The issues that we choose to study—and hopefully influence—are complex, making collaboration essential. Teams often span time zones, disciplinary backgrounds, levels of training and seniority, nationalities, cultures, and perspectives. This makes collaboration rewarding, and our science is better for it, but being a good collaborator takes effort and practice.
+
+## Decolonizing Global Health
+
+Today's global health emphasizes equity in healthcare access and health outcomes, but we can trace some of its lineage back through international health and tropical medicine to European colonization and 'colonial medicine'—back to a time when the motivation was protecting colonial rulers and promoting national interests, not equity [@holst:2020]. Global health has come a long way since then—as has the health and wellbeing of people everywhere—but some argue that our approach to collaboration in global health has not fully parted ways with its colonial influences [@abimbola:2020]. 
+
+This is because many collaborations in global health have been, and continue to be, an unequal venture, not a true partnership. In the previous chapter, I noted that the global health research agenda is, in large part, set and carried out by the wealthy. Less than 1% of funding for biomedical research goes *directly* to scientists in low-income countries [@whoob], and consequently, authors from the Global North are overrepresented in scientific publications [@kyobutungi:2021].
+
+Calls to 'decolonize' global health are not new [@costello:2000], but we've witnessed a new urgency in recent years, with students and trainees often leading the way. There is a compelling argument that says the only path to decolonization is radical transformation of institutions [@hirsch:2021]; efforts to improve diversity and inclusion are welcome, but they are not a substitute for dismantling a system that was designed to benefit those with power [@pai:2021]. Abimbola and Pai frame the aims of the decolonize global health movement as follows:
+
+> To decolonise global health is to remove all forms of supremacy within all spaces of global health practice, within countries, between countries, and at the global level. Supremacy is not restricted to White supremacy or male domination. It concerns what happens not only between people from HICs and LMICs but also what happens between groups and individuals within HICs and within LMICs. Supremacy is there, glaringly, in how global health organisations operate, who runs them, where they are located, who holds the purse strings, who sets the agenda, and whose views, histories, and knowledge are taken seriously.
+
+The ground is shifting beneath global health. Time will tell whether this moment will lead to institutional reforms, but as individuals we don't need to wait to reform how we approach collaborations. I suspect student readers wouldn't have it any other way.
+
+## Team Science
+
+Most modern science, and global health research in particular, is a never-ending series of group projects. This might be a chilling prospect if you haven't had good experiences with group work, but I'm here to tell you that team science can be very rewarding and productive given the right environment. As it's very likely that you'll join many teams in your global health career, we should discuss what makes a team effective and how to prepare yourself to be a good teammate.
+
+The National Cancer Institute of the NIH (U.S.) defines **team science** as:
+
+> a collaborative effort to address a scientific challenge that leverages the strengths and expertise of professionals, oftentimes trained in different fields
+
+Teams span the continuum from small investigator-led 'labs' to large, highly integrated groups of professionals sharing leadership responsibilities [@bennett:2018]. Increasingly, given the complexity of today's research problems and a trend toward specialization in research expertise and methods, teams bring together people from different disciplines and locations. While the payoff of creating more diverse and skilled teams can be substantial, so are the challenges.
+
+Recognizing the growing importance of team science, researchers established a new field of inquiry in 2006 called the Science-of-Team-Science to study what makes scientific teams click. Many of the findings have made their way into *Collaboration and Team Science: A Field Guide*, a handbook published by the NIH in 2010 and updated in 2018. In the following sections, I'll walk you through each of the *Field Guide's* top ten takeaways for getting the most out of team science.
+
+### VISION {.unnumbered}
+
+> A strong and captivating vision attracts people to the team and provides a foundation for achieving team goals. Shared vision provides a focal point around which a highly functioning team can coalesce.
+
+Some science collaborations are like the 2001 American heist comedy film, *Ocean's Eleven*. In the movie, Danny Ocean, played by George Clooney, is released from prison and immediately begins recruiting a hand-selected, nine-member crew to rob three of the biggest casinos in Las Vegas. One-by-one, Ocean pitches them on the idea and secures their cooperation. Ocean's vision was simple: steal $150 million in cash without getting caught. Once the team was in place, they worked together to hatch a plan. 
+
+Others collaborations are more like the 1995 film, *Apollo 13*, about America's third crewed mission to the moon. Fifty-five minutes into the mission, when the spacecraft was about 330,000 km from Earth, there was an explosion in the service module that caused oxygen to leak into space. The lunar landing was aborted, and the three-man crew moved into the lunar module for a dramatic rescue attempt. The team on the ground at mission control and the astronauts in space had to work together to find a way return the spacecraft to Earth before the astronauts ran out of water and oxygen.
+
+In both movies, the teams had a clearly defined and shared vision. As well, team members understood their roles and how they were to contribute to the vision. Research on teams suggests that these factors are key to creating group cohesion. When team members can't articulate the vision or don't understand how their contributions fit into the bigger picture, the team's work often suffers. 
+
+The stories portrayed in these films differed in an important way with respect to teams, however: how the vision was created. In *Ocean's Eleven*, the vision belonged to Danny Ocean and he made a compelling case to prospective team members. But in *Apollo 13*, the team co-created the vision in the context of an ongoing collaboration.
+
+:::{.column-margin}
+We'll talk more about how to write a compelling Specific Aims document later in the book. It's a great format for articulating a vision.
+:::
+
+In this respect, the *Ocean's Eleven* model is more prevalent in global health research. A lead scientist—the principal investigator—finds a funding opportunity, writes a short concept note, often called a Specific Aims document, and invites collaborators to join the proposal. There is nothing inherently wrong with this model, but the opening of this chapter should lead us to reflect on this privilege. **Namely, whose vision becomes reality in global health is driven by whose vision is funded.** Funding decisions tend to favor scholars from the Global North, so visions of the Global South are underrepresented in global health research. One way we can promote change is to build lasting collaborations. When collaborators continue to work together over time, visions can come from anyone on the mission. 
+
+### TEAM EVOLUTION AND DYNAMICS {.unnumbered}
+
+> Research teams form and develop through critical stages to achieve their highest potential (Forming, Storming, Norming, Performing). A positive team dynamic sustains and further strengthens a research team, enabling it to achieve successful outcomes.
+
+The most famous framework for understanding how teams evolve is Tuckman's 1965 *Model of Group Development*, as described in *Field Guide*:
+
+1. **Forming**—The team is established using either a top-down (*Ocean's Eleven*) or bottom-up (*Apollo 13*) approach.
+2. **Storming**—Team members establish roles and responsibilities. This process may trigger disagreements or “turf battles” and reveal a reluctance to appreciate the perspectives and contributions of people from different disciplines or training. However, if collegial disagreement is supported and premature pressure to consensus is resisted, people will begin to open up to one another.
+3. **Norming**—Team members begin to work together effectively and efficiently, start to develop trust and comfort with one another, and learn they can rely on each other.
+4. **Performing**—The team works together seamlessly, focuses on a shared goal, and efficiently resolves issues or problems that emerge.
+5. **Adjourning or Transforming**—Once the team accomplishes its goal, it can celebrate the accomplishment and disband or take on a new problem.
+
+A proven way to strengthen team dynamics is to maintain a collegial environment where members are recognized for their contributions and given opportunities to grow. 
+
+### TRUST {.unnumbered}
+
+> It is almost impossible to imagine a successful collaboration without trust. Trust provides the foundation for a team. Without trust it is nearly impossible to sustain a collaboration.
+
+New teams can establish trust by establishing rules and norms. It's common for teams to co-create a written charter or collaboration agreement that details how their members will work together, resolve disputes, share the workload, and share the credit. This practice is particularly important when teams bring together people from different backgrounds, disciplinary and otherwise, where the existing norms can differ. 
+
+:::{.column-margin}
+This is calculus-based trust. You trust that other people will follow the rules because not doing so has consequences. Another form of trust is competency-based trust: when your reputation or expertise precedes you and folks know that you can be trusted to perform.
+:::
+
+With time and experience, teams can build deeper forms of identity-based trust based on personal connections and a recognition of shared values. This type of trust is often earned through actions and should not be assumed. Creating and maintaining trust takes substantial effort.
+
+### COMMUNICATION {.unnumbered}
+
+> Effective communication within and outside a research team contributes to effective group functioning. It depends on a safe environment where team members can openly share and discuss new scientific ideas and take research into new, previously unconsidered directions as well as ensure that difficult conversations can take place.
+
+Trust and communication are reciprocal. Teams that trust each other communicate openly, and open communication builds trust. However, effective communication can be challenging for new inter-disciplinary teams where members may not share a vocabulary for the science. A recurring theme in this chapter is that successful teams make space for and devote time to establishing common frameworks, including a shared vocabulary. 
+
+This extends to creating expectations around communication and participation. How often will you meet as a team? What will the format be, and how will you give opportunities for members to be heard? What type of communication is suitable for email vs business messaging apps? When should an email or message thread become a quick phone call or meet-up?
+
+### CONFLICT AND DISAGREEMENT {.unnumbered}
+
+> Conflict can be both a resource and a challenge—a resource because disagreement can expand thinking, add new knowledge to a complex scientific problem, and stimulate new directions for research. A challenge because if it is not handled skillfully, conflict impedes effective team functioning and stifles scientific advancement.
+
+Whenever teams are communicating, conflict and disagreement are possible. In fact, effective teams often encourage the type of critical reflection and constructive criticism that can make conflict and disagreement more likely. This is because they know that conflict is a normal part of collaboration and that, when properly managed, conflict can lead to progress and cohesion. Of course, it's also true that scientific conflict and disagreement can lead to interpersonal conflict and tension that impairs the team's ability to achieve its vision.
+
+Team leaders play a large role in keeping debate and disagreement productive and in mediating conflicts, but each of us is responsible for our own contributions to the collective dynamic. The *Field Guide* recommends that we consider the following steps for managing and resolving conflict:
+
+* **Understand the culture and the context of conflict**—seek out the meaning of the conflict for yourself and/or the other parties.
+* **Actively listen**—assure others you have heard what they said and ask questions to confirm your understanding.
+* **Acknowledge emotions**—they will likely be part of the conflict, but expressing them and hearing them can help lift barriers to resolution.
+* **Look beneath the surface for hidden meaning**—hidden fears, needs, histories, or goals may be the underlying source of the problem.
+* **Separate what matters from what is in the way**—get away from discussing who is right or wrong and focus more on how to satisfy mutual needs.
+* **Learn from difficult behaviors**—let those experiences help you develop your skills in managing difficult situations and having empathy for and patience with others.
+* **Solve problems creatively and negotiate collaboratively**—this also means committing to action.
+* **Understand why others might be resistant to change**—the problem could be an unmet need. 
+
+### SELF-AWARENESS AND EMOTIONAL INTELLIGENCE {.unnumbered}
+
+> Emotional Intelligence among team members contributes to the effective functioning of research teams. Self awareness gives people greater control over their own emotional reactions to others, improves the quality of their interactions, and helps build other-awareness.
+
+Research and science textbooks do not typically emphasize the importance of self-reflection, but the ability to reflect and become self-aware is a core skill required of today's team science. Someone who lacks self-awareness has limited options for responding to challenging colleagues. People who can take someone else's perspective and embrace what makes them different have a superpower in team science.
+
+Reflection is also key in collaborations that bring together people from different backgrounds. Whether your work takes you to a new neighborhood or halfway around the world, it's critical to have the humility to listen and learn.  
+
+### LEADERSHIP {.unnumbered}
+
+> Strong collaborative leadership elicits and capitalizes on the team members’ strengths and is a critical component of team success. Leadership can be demonstrated by every team member, not just the formal leader(s).
+
+I've worked with many effective leaders throughout my career. Although they took different approaches to leadership, each person possessed an ability to encourage and motivate individual team members, articulate and maintain a shared vision, and have difficult conversations. The ineffective leaders I've encountered were variously disengaged, timid, defensive, or hostile.
+
+Every scientific collaboration you join as a trainee is an opportunity to observe and practice leadership. Take notes on what you appreciate in your leaders, and reflect on how poor leadership stifles progress. Spend time developing self-awareness and other-awareness, and approach difficult conversations with openness.
+
+### MENTORING {.unnumbered}
+
+> Mentoring is an indispensable aspect of successful collaboration. A mentor recognizes the strengths of each team member, identifies areas in which newer scientists have the greatest potential to grow, and can help coach people to attain their aspirations. With good mentoring, the development of scientists is synchronous with strengthening team dynamics.
+
+One of the best investments you can make as a trainee is in finding a good mentor. The return should go far beyond leaving with a good letter of recommendation. A good mentor-mentee relationship can set a strong foundation for a scientific career. If you look at the curriculum vitae—or scholarly record—of successful scientists, you'll likely see the fingerprints of one or more helpful mentors. Mentors can expose you to new collaborations and resources, help to nurture your ideas, steer you around traps, and teach you the 'hidden curriculum' of your scientific discipline that you won't learn in the classroom.
+
+Finding a mentor can be a daunting task, especially if you are introverted. Even when you get up the courage to reach out to a potential mentor, your email might go unreturned or come back without an offer to meet. Keep trying, but consider this advice:
+
+* Attend scientific talks and department events when possible and introduce yourself
+* Reach out to the mentor's other students to learn more about potential opportunities
+* Keep your correspondence short with a clear request
+* Do you homework—general requests to learn about a person's work are less effective than a specific statement of how your interests align
+
+### RECOGNITION AND SHARING SUCCESS {.unnumbered}
+
+> Individual contributions should be recognized, reviewed, and rewarded in the context of a collaboration. Recognition and reward of all team members should be done thoughtfully and fairly in the context of the team and the institution.
+
+Most years on December 10, going back to 1901, the King of Sweden awards several prizes in fields such as medicine, chemistry, and physics, in honor of Swedish inventor Alfred Nobel. Each prize can be given to a single laureate or shared by no more than three laureates.
+
+In 2015, the Nobel Prize in Physiology or Medicine was divided between three scientists in recognition of two discoveries that shaped treatments in global health. William Campbell and Satoshi Ōmura shared half of the prize "for their discoveries concerning a novel therapy against infections caused by roundworm parasites", and Tu Youyou received the other half “for her discoveries concerning a novel therapy against Malaria”.
+
+The importance of these discoveries cannot be overstated. Ivermectin (Ōmura and Campbell) and artemisinin (Tu) have helped hundreds of millions of people. These accomplishments deserved to be recognized, and these scientists played significant roles. Tu Youyou even volunteered to be the first human to test her team's new drug! 
+
+That said, these individual awards don't recognize the teams behind this work. Campbell noted as much in his Nobel Lecture, taking a moment to graciously acknowledge his collaborators [@campbell:2015]: 
+
+> There is a question that warrants a slight digression here. In the past few weeks I have often been asked how I felt when I heard that I had won the Nobel Prize. I can say without hesitation that my mind was instantly flooded with two emotions. One was a sense of joy and gratitude. The other was a feeling of sadness—sadness that so many of the people who made this discovery a success could not be named individually. But I represent the research team at Merck \& Co., Inc., and in that role I feel honored and grateful beyond imagining.
+
+Despite the growing prevalence of team science, professional recognition and career advancement still depend in large part on individual achievement. This is one reason that it is critical for teams to plan ahead to share recognition and credit.
+
+:::{.column-margin}
+Depending on your line of research, credit might also come in the form of patents.
+:::
+
+One of the clearest records of achievement in science is academic publication. Decisions about who receives recognition as an author of a scientific paper can help to make or break careers. On some research teams, the leader decides who deserves to be an author with little to no input from more junior members. This has the potential to lead to resentment and create competition rather than collaboration. Team science advocates encourage a different approach: creating a transparent plan as soon as possible to identify how members will contribute, be recognized, and share the credit. 
+Sometimes this credit will come in the form of authorship. The International Committee of Medical Journal Editors, or ICMJE, recommends four criteria that should determine who should be offered the opportunity [@ICMJE]:
+
+:::{.column-margin}
+A person who meets some but not all of the criteria should be acknowledged in the paper for their contributions.
+:::
+
+* Makes substantial contributions to the conception or design of the work; or the acquisition, analysis, or interpretation of data for the work; AND
+* Drafts the work or revises it critically for important intellectual content; AND
+* Gives final approval of the version to be published; AND
+* Agrees to be accountable for all aspects of the work in ensuring that questions related to the accuracy or integrity of any part of the work are appropriately investigated and resolved.
+
+:::{.column-margin}
+In recent years it has become more common for authors to include a footnote on the title page of an article indicating that two or more authors should be considered to be co-first authors in recognition of equal contributions.
+:::
+
+It's often not enough to decide *who* gets to be an author. Many teams also have to think through *order* of authorship. In some fields, including public health and medicine, author order is interpreted to be a reflection of the magnitude of each person's contributions. For instance, the first author is the *lead author* and receives the most credit in the eyes of some hiring and promotion committees—"look, they are establishing their 'independence'". The principal investigator might take this position or choose instead to go last in the order, taking what is known as the *senior author* slot.  Everyone in between is a *middle author*. On some teams, the closer to the front you fall, the more work might be expected of you.
+
+:::{.column-margin}
+Large teams spanning multiple organizations sometimes form study groups and publish under the name of the group. For instance, I've published several papers with the Depression Screening Data PHQ Collaboration, or DEPRESSD.
+:::
+
+Think this is too complicated? Then become an economist! Economists often default to alphabetical order. (But if your name is Zarby you might as well stick to medicine.)
+
+### NAVIGATING AND LEVERAGING NETWORKS AND SYSTEMS {.unnumbered}
+
+> Highly collaborative teams can transcend different organizational structures, extending their reach across and beyond the organization. They often function within the context of multiple and sometimes interconnected systems, and they can help establish strong networks of researchers who together can accomplish more than they could as individuals.
+
+Every new job requires you to learn the lay of the land, and jobs in global health and academia are no exception. But as team science and interdisciplinary research become more common, this task gets increasingly difficult. It's part of your team leader's responsibility to help you understand and navigate the system in which your team operates, but I want to leave you with a few common networks that you'll find in global health:
+
+**Academic Institutions**: University > School > Department > Center
+
+**Institutes**: Often sit outside of schools and drawing faculty from across the University. Can have one or more centers. 
+
+**Working/Study Groups**: A formal or informal group of investigators from one or more institutions that share a common interest or purpose.
+
+**Consortiums**: A collection of organizations that are partnering on a specific project or initiative. Consortiums are often led by one organization (the prime) that makes subawards or subcontracts to several partner organizations (subs). 
+
+**Commissions/Expert Panels**: A temporary group established by a body such as a journal that brings together experts to study an issue and create a report or recommendations.
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **BONUS PRINCIPLE: Fairness**
+
+A challenge for many collaborators is a lack of time and attention. This is particularly true for senior collaborators who might be juggling several projects, as well as for collaborators of all ranks who are not adequately funded by the project. This routinely happens in global health projects where researchers and practitioners from under-resourced settings are asked to join a team but are not compensated and do not have protected research time from their institutions. It's common in these situations to spend a portion of every meeting reminding team members of the project goals—the vision.
+
+When your team has busy, but well-funded senior colleagues, creating a vision statement and always orienting the team to this North Star can be a helpful strategy. But even the best crafted documents are no substitute for offering funded time when you are asking resource-constrained colleagues to lend their time and attention to your vision.
+:::
+::::
+
+## Community-Based Participatory Research
+
+The ultimate form of team science might be **community-based participatory research**, or CBPR [@israel:1998]. In CBPR, research teams join with community members to define the vision, generate knowledge, and create positive change. CBPR requires researchers to share power and credit with people who are most often 'subjects', not partners. 
+
+Let's look at an example from the HIV prevention literature [@puffer:2013]. A US-based team with links to a local non-profit organization in rural Kenya recruited 20 community members—church leaders, healthcare staff, teachers, village chiefs—to join a community advisory committee. This academic-community partnership collaborated on all aspects of the research, starting with workshops designed to share expertise and establish a common vision. The team then planned an assessment of community needs and resources and jointly analyzed and interpreted the data. This was followed by a series of intervention development workshops to create a model of HIV prevention that was informed by science and local priorities. The partnership continued through the design and implementation of a randomized controlled pilot trial to test the intervention.

@@ -1,0 +1,67 @@
+# Introduction {.unnumbered}
+
+*Commencement address, Global Health undergraduate ceremony, Duke University, May 6, 2022*
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch me deliver this speech to the Global Health Class of 2022, at \href{http://ghr.link/uni}{\footnotesize\texttt{ghr.link/uni}}.
+\newline
+\newline
+![](images/QR_uni.png){width="75px"}
+:::
+::::
+
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+:::{#fig-commencement}
+"<iframe width='300' src='https://www.youtube.com/embed/491LFqvofxo?start=492' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+
+Watch me deliver this speech to the Global Health Class of 2022
+:::
+::::
+:::::
+
+Moms and dads, friends and family, colleagues and guests, I would like to add my warm welcome and thank you for gathering with us to celebrate this fantastic group of students. I know your loved ones through a course I teach on how to conduct research. 
+
+As a core requirement for the major, my research course is like court-appointed therapy for some students. Not everyone joins willingly, but everyone participates. Some even tell me they enjoyed it. On a recent evaluation, one student went so far as to write, "It was not as bad as I expected". As a father of two kids, I accept this for the high praise that it is, and I'm sincerely honored that they asked me to share the message today.
+
+Graduates, you are the reason that I will conclude my remarks with optimism, but before I get there, I want to outline some of the challenges facing science and how you are called to help.
+
+Science, and scientists, are under attack. That was the warning that Dr. Peter Hotez shared with me and a small group of junior professors when he visited Duke in 2018 to give an invited lecture. Peter is the Dean of the National School of Tropical Medicine at the Baylor College of Medicine and an expert on neglected tropical diseases. Many of you would recognize him from TV. He's right out of central casting for the role of 'scientist' with his white coat and his frazzled hair. But he's no talking head. His group developed CORBEVAX, a patent-free COVID-19 vaccine that just might help to vaccinate the world.
+
+Huddled around that small conference table in 2018, Peter told us that scientists need to recognize their role—our role—in fighting against the troubling rise of vaccine skeptics and science denialism. This was about two years before COVID, so Peter was largely speaking about the return of measles in the US and the damage done by a famously retracted paper about 8 children in the UK that falsely linked the MMR vaccine to autism.
+
+I found his talk engaging, but I didn't recognize the urgency of his message at the time. COVID changed that. 
+
+Fast-forward to March of 2020, and we all found ourselves at home, watching a horrific scene unfold in Italy, many of us still in denial that our lives would be impacted beyond a temporary inconvenience. Any hope of being spared vanished as the virus took hold in the United States; 700 people were dying every day in New York City alone come April.
+
+It was around this time that scientists like Peter began making regular appearances on TV, trying to explain the science of viral transmission and vaccines. While our leaders in Washington tried to distract us from the severity of the moment—calling it the flu and hyping bogus treatments like hydroxychloroquine—scientists like Peter, one of the few coronavirus researchers in the country at the time, tried to set the record straight.
+
+Initially we welcomed these voices into our homes, but a vocal opposition to science, vaccines, and masks was getting louder. I recently asked Peter when public sentiment changed, and he said it was when the Delta variant swept through the southern US, killing thousands, predominantly the unvaccinated. Vaccines had just become widely available and a new threat was emerging: the political polarization of science.
+
+Since the early 1970's, the General Social Survey, a nationally representative survey of adults in the US, has monitored trends in public opinion. For most of the last 50 years, about 4 in 10 adults said they had a "great deal" of confidence in the scientific community. That's not great, but there was never much daylight on this issue between Democrats and Republicans.
+
+Before 2019, the biggest gap between Democrats and Republicans was 11 percentage points, back in the Reagan era when Republican support for science trumped Democrats'. Today the gap is 35 percentage points, with two-thirds of Democrats expressing strong confidence in the scientific community.
+
+Do you know what other gap is about 35 percentage points? The prevalence of COVID vaccination by political affiliation. In some parts of the country this past year, horse dewormers, not vaccines, were flying off the shelf. 
+
+Where did we go wrong? Our biomedical colleagues developed a highly efficacious and safe vaccine in record time. This should have been a victory lap for science. Ticker tape parades, scientists on cereal boxes.
+
+Instead, scientists and science advocates have been harassed and bullied, even called Nazis. Many people died or wound up in the hospital who could have been spared. Insufficient vaccination coverage pushed our health system to the brink and extended disruptions for schools and businesses.
+
+The political polarization of science has cost us dearly over the past year, but COVID will not be the end of it. The effects of climate change could be much more devastating, and the extent to which people believe in the need to act can largely be predicted by political affiliation. 
+
+This is depressing stuff, I know, I'm a hit at parties, but I will leave you with some good news: You're ready to confront these challenges.
+
+You might recall from class that I had two goals for your learning: to make you better consumers of research and to prepare you to contribute to research teams. 
+
+We need your critical thinking skills and your understanding of science to break through the noise polluting today's discourse. I know that many of you will not decide to pursue research careers, but you will all be lifelong consumers of research and you will impact those around you. You'll influence what your friends and families think about vaccines. You'll lead companies, manage people, and set policies. You'll represent your communities in Congress, practice medicine, and argue before the highest courts in the land. You'll communicate science to a polarized public. I believe you would call this "becoming an influencer", just without the brand deals. People will listen, you just have to speak up. We need you to help build trust in science from the outside.
+
+Others in this room will help build trust in science from the inside, as researchers. You're the most transparent generation—believe me, I've seen TikTok—and you'll use your values to make science more open. You're inheriting an uncertain world, and you know that science, like society, is not black and white, but gray and full of uncertainty. You'll help us move beyond our obsession with novel, counter-intuitive results and journal prestige to focus on what matters—good science. The reformers of the past decade have largely been early career scientists. You are ready to follow in their footsteps.
+
+Listen, I'm a pessimist most weeks of the year, but days like today remind me that help is coming. 
+
+I want to conclude by speaking to our guests today. Let me tell you, I am so proud of your kids. The past few years tested them. They left for spring break as sophomores did not come back. Those who returned in the fall found a campus that was hard to recognize. But they adapted. I asked them to join me for class in the baseball stadium, and they said, "OK". I asked them to join me for Zoom office hours, and they said, "OK". I said, "please do this assignment on time", and they said, "no thank you". Let's just say we all had a bit of adapting to do.
+
+I'm proud of them, and I know you are too. So please join me in giving them a round of applause.

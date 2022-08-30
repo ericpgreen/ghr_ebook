@@ -1,0 +1,51 @@
+\usepackage{hyperref}
+\usepackage{natbib}
+
+% fonts
+
+\usepackage{fontspec}
+\setmainfont{LibreBaskerville-Regular}[Scale=0.8]
+\setsansfont{SourceSansPro-Regular}[Scale=0.8]
+\setmonofont{Inconsolata}
+
+\usepackage{sidenotes}
+\usepackage{marginnote}
+
+% https://tex.stackexchange.com/a/532251/30017
+\makeatletter
+\ExplSyntaxOn
+\RenewDocumentCommand \@sidenotes@placemarginal { m m }
+{
+  \IfNoValueOrEmptyTF{#1}
+    % substitue \marginnote from marginnote pkg for \marginpar
+    % from latex2e format
+    {\marginnote{#2}}
+    {\marginnote{#2}[#1]}
+}
+\ExplSyntaxOff
+\makeatother
+
+\renewcommand*{\marginfont}{\fontspec{SourceSansPro-ExtraLight}[Scale=0.9]}
+
+% colors
+
+\definecolor{ghr-blue}{cmyk}{0.846, 0.234, 0.00, 0.212}
+\definecolor{ghr-orange}{cmyk}{0.0, 0.37, 0.757, 0.098}
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=ghr-orange}
+
+% citations
+
+\PassOptionsToPackage{round}{natbib}
+\setcitestyle{super}
+\renewcommand*{\citep}[1]{{\cite{#1}}}
+\renewcommand*{\citet}[1]{{\cite{#1}}}
+
+\usepackage[nottoc]{tocbibind}
+
+%\renewcommand{\bibsection}{\chapter{References}}
+
+% icons
+
+\usepackage{fontawesome5}
+

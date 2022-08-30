@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+how-to/
+*.rds
+in_development/
+
+/.quarto/

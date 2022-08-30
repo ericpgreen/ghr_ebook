@@ -1,0 +1,308 @@
+# Develop Research Ideas and Questions {#ideas}
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe src='https://giphy.com/embed/p9bj7nrUPAypq' width='200' height='200' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>
+
+Actual footage of my first research meeting in grad school, [via GIPHY](https://giphy.com/gifs/muppets-p9bj7nrUPAypq).
+:::
+::::
+
+In my experience as a mentor and former student, one of the most anxiety-producing moments in student life is when a new mentor says, "tell me about your ideas". Why is this innocent prompt so terrifying? It might be because we have the wrong understanding of the origin of good ideas.  
+
+In his book *Where Do Good Ideas Come From?*, Steven Johnson argues that good ideas are usually not eureka moments as we tend to imagine. Instead, good ideas are often the product of fertile environments where ideas are allowed to "connect, fuse, and recombine" over time.
+
+Two of Johnson's insights are particularly relevant for us: the notion of the *slow hunch* and the *adjacent possible*. These concepts help to explain why generating research ideas can be so hard, especially for students.
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch Steven Johnson talk about \textit{Where Good Ideas Come From}, at \href{http://ghr.link/ide}{\footnotesize\texttt{ghr.link/ide}}.
+\newline
+\newline
+![](images/QR_ide.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe width='300' src='https://www.youtube.com/embed/NugRZGDbPFU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+Watch Steven Johnson talk about [*Where Good Ideas Come From*](http://ghr.link/shy).
+:::
+::::
+
+First, the student timeline is often hostile to innovation. Learning and assignments are compressed into semesters, but many ideas need more time to take shape. As Johnson writes:
+
+> **Most great ideas first take shape in a partial, incomplete form.** They have the seeds of something profound, but they lack a key element that can turn the hunch into something truly powerful...They start with a vague, hard-to-describe sense that there’s an interesting solution to a problem that hasn’t yet been proposed, and they linger in the shadows of the mind, sometimes for decades, assembling new connections and gaining strength.   
+
+Ideas take time to develop. This is the **slow hunch** concept. "But I have a research meeting with my mentor next Tuesday and she wants a list of ideas!!", you say. Breathe, don't panic. When you recognize that good ideas come from the accumulation of slow hunches, you will learn to enjoy the process. Your first idea will be the start of your journey, not the end. Your best ideas might not conform to this semester's schedule, and that is OK. 
+
+The second insight is that we're always sitting on the edge of a breakthrough, but we need access to certain raw materials to unlock this discovery. This is the **adjacent possible** concept, which Johnson describes as follows:
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe src='https://giphy.com/embed/Tb2i75AlI926I' width='200' height='174' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>
+
+Searching for the adjacent possible the night before your paper is due, [via GIPHY](https://giphy.com/gifs/cheezburger-cartoons-doors-Tb2i75AlI926I).
+:::
+::::
+
+> Think of [the adjacent possible] as a house that magically expands with each door you open. You begin in a room with four doors, each leading to a new room that you haven’t visited yet. Those four rooms are the adjacent possible. But once you open one of those doors and stroll into that room, three new doors appear, each leading to a brand-new room that you couldn’t have reached from your original starting point. Keep opening new doors and eventually you’ll have built a palace.
+
+:::{.column-margin}
+Johnson borrows the metaphor of the adjacent possible from theoretical biologist Stuart Kauffman to illustrate the importance of connecting ideas.
+:::
+
+The first room is a metaphor for your initial understanding of a new topic. It's pretty empty because you are new, but your room has many potential doors to open—many lines of research to explore. When you open one door by searching the literature—and by connecting with other colleagues at talks, conferences, meet-ups—more doors appear. Figuring out which doors to walk through (and which ones to close) is a skill that comes with practice. Many literature searches can lead to apparent dead ends, but with each door you open, new hunches form. And when you have opened enough doors:  
+
+> ...one day [your hunches] are transformed into something more substantial: sometimes jolted out by some newly discovered trove of information, or by another hunch lingering in another mind, or by an internal association that finally completes the thought. 
+
+## Find a Research Problem
+
+Every study begins with a motivating **research problem**. A research problem is your study's *ikigai*, its "reason for being", to borrow a Japanese concept. A research problem should convey a clear reason for being, a clear sense of purpose. Typically, a research problem gets framed as the gap in our knowledge—a gap in the literature.
+
+:::{.column-margin}
+What's a bad example of a research problem? How about studying what happens to mosquitos when they die? Maybe they go to mosquito heaven, but we cannot use systematic, public methods to gather data. Therefore, this is not a research problem we can solve. This will just have to remain a gap in the literature.
+:::
+
+A defining characteristic of all research problems is that they are potentially solvable [@leary:2012]. To qualify as a *research* problem, we must be able to use systematic, public methods to gather and analyze data on the problem. For instance, research has shown that insecticide treated bed nets can prevent malaria infections in kids, but in many places kids are not sleeping underneath bed nets every night. Therefore, a research problem to solve is that we don't know how to encourage families to adopt and use this effective method of prevention.
+
+:::{.column-margin}
+It's also easier to find ideas when you lean into your interests, passions, and personal history. Dr. Salim Abdulla, the distinguished malaria researcher profiled in [TODO INSERT], grew up in Tanzania and witnessed the damaging effects of the disease up close. This experience influenced his decision to make vector control his life's work and inspired many research questions.
+:::
+
+Finding research problems worth studying becomes easier with experience. Once you've studied a field for a few years, you'll have cultivated a list of journals, conferences, funders, and colleagues whom you follow to keep up with the latest developments and priorities. As you read and learn, it'll become easier to spot important gaps that you can help to fill. Likewise, if you're a practitioner or a policy-maker, your accumulated daily observations will generate ideas.   
+
+But let's assume that this does not describe you today. So where do YOU start?
+
+Students often come to me with a general awareness about a health challenge, not a specific problem or research idea. "I'm interested in mental health", they'll say. For students at this early stage of training, I usually encourage them to adopt someone else's research problem and jump into an ongoing project to gain experience, rather than developing an independent project. 
+
+Aside from soaking in experience, there are also steps you can take to expose yourself to new ideas: 
+
+* Read the health and science sections of major news publications and set alerts for topics you find interesting
+* Look up the national and international professional associations for your research area and subscribe to their mailing lists
+* Attend research talks in-person or via online webinars hosted by universities, global health research organizations, or professional associations
+* Follow experts active on social media
+* Network with local practitioners and policy-makers who have a front row seat to applied challenges and gaps in our knowledge
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Not sure which journals to search? Scan the QR code to open Google Scholar's \textit{Top Publications} feature, at \href{http://ghr.link/top}{\footnotesize\texttt{ghr.link/top}}.
+\newline
+\newline
+![](images/QR_top.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+Not sure what journals to search? Check out Google Scholar's [*Top Publications*](http://ghr.link/top) feature.
+:::
+::::
+
+Above all else, start reading the scientific literature. A useful strategy for finding reading material is to visit the websites of the most popular journals in your discipline and browse recent issues. Once you find a few articles of interest, try the following strategy for expanding your search and identifying gaps in the literature worth studying:
+
+:::{.column-margin}
+A great starting point in the literature is a special type of review called a systematic review. Systematic reviews critically appraise the best available evidence on a topic and synthesize what we know and don't know. When you start with a systematic review, you let the experts do some of the hard work for you. I'll teach you about these reviews in a later chapter.
+:::
+
+* **Find the keywords**: An article's keywords often make great search terms. Look near the abstract.
+* **Read the Introduction**: A good Introduction will frame gaps in our knowledge of a topic, so pull out a highlighter and get to work. 
+* **Review the Discussion**: The Discussion section may also hold new leads. Authors typically use the Discussion to link their study results to the existing literature to demonstrate how the results add to what is already known. A good Discussion section will also include limitations of the current study and might offer ideas for future research. 
+* **Take note of the cited authors and journals**: The Reference section holds clues to your next great find. Tools like *Google Scholar* let you search for these references and discover where else these citations appear.
+
+Once you start looking, you'll find research problems everywhere. Your next challenge will be deciding where to direct your attention and energy. I encourage you to favor problems that meet the following criteria:
+
+1. Important to you
+2. Contribute to your field
+3. Meaningful to society
+
+First, the quality of your work will likely be better if you believe you are working on something interesting and important. Research projects in global health can have a long life-cycle with ups and downs. A genuine interest in solving the problem can help you get through the low points.
+
+Second, when selecting a research problem for study, you should seek to understand from the outset how the answers will contribute to your field. Will your study provide an initial answer to a known problem? Clarify an issue marked by contradictory findings? Support an evolving consensus or provide an important counterpoint to a previously held view? Bring attention to an overlooked issue or apply cross-disciplinary learning to help scholars in your field think differently about a problem? Knowing your study's purpose will help you to frame your contribution.
+
+Not everyone will agree on the the third criterion, importance to society. There are many areas in research, especially in the basic sciences, where you can engage in scientifically important work without knowing if or how that work might benefit society one day. I believe that global health is different. There are almost endless applied problems to solve, and you can't work on all of them. Therefore, in asking to you find problems that are meaningful to society, I'm really saying this: be intentional. You'll make many decisions over your career—training programs, mentors, grant opportunities, collaborators—and each decision has an opportunity cost. I can tell you from experience that some research problems won't be a good use of your time and talent, and we need both to solve big problems. When deciding to pursue new work, stop and ask yourself, "How are we better off if we solve this problem?" 
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **CONSIDER THIS: Whose research problem are you solving?**
+
+The decolonizing global health movement encourages us to reflect on who gets to define the research agenda. If you're drawn to research problems that require fieldwork with a community that is not your own, start by soliciting local perspectives and building a team to conceptualize the problem and design the research. See the note about community-based participatory research in the previous chapter for ideas. 
+:::
+::::
+
+## Identify Your Scientific Goal 
+
+There are three main goals of science:
+
+1. to describe;
+2. to explain; and
+3. to predict.
+
+It's important to understand which goal you are pursuing with your work before you can ask a focused research question and design a study.
+
+### DESCRIBE {.unnumbered}
+
+Every study uses an element of description. Let's say you recruit a sample of 100 people who suffer from the same disorder and conduct a trial to estimate the effect of a new drug on some clinical outcome. When you summarize what you know about these 100 people at the time they were recruited, for instance the average age of the group, you're describing your sample. Descriptive summaries appear in nearly every research article, usually as 'Table 1'. But we must distinguish between the use of *descriptive statistics*—e.g., what is the mean age of these 100 people, the sample—and *descriptive research questions*. 
+
+Description is important in every discipline, but no more so than in epidemiology. Epidemiologists ask descriptive research questions about people, place, and time. Fox and colleagues define **descriptive epidemiology** as follows [@fox:2022]:
+
+:::{.column-margin}
+Who is affected (People)? Where are cases rising and falling (Place)? How are rates changing over time (Time)?
+:::
+
+> Descriptive epidemiology seeks to characterize the distributions of health, disease, and harmful or beneficial exposures in a well-defined population as they exist, including any meaningful differences in distribution, and whether that distribution is changing over time
+
+Let's break down this definition.
+  
+> Descriptive epidemiology seeks **to characterize the distributions of health, disease, and harmful or beneficial exposures...** 
+
+To "characterize the distribution" of something means to describe how often it occurs. The focus of descriptive studies is frequently a health *status* (often referred to as an *outcome*), like cancer, or potential *exposures*, such as environmental carcinogens. But description extends to knowledge, attitudes, practices—what people know, think, and do. For instance, a study might ask, "what percentage of women of reproductive age in Nepal use a modern method of contraception?"
+
+> Descriptive epidemiology seeks to characterize the distributions of health, disease, and harmful or beneficial exposures **in a well-defined population as they exist**
+
+:::{.column-margin}
+'as they exist' alludes to the notion that if your goal is description, statistical adjustment for confounding might be unnecessary or worse. You likely just want to quantify what you know about a particular group.
+:::
+
+:::{.column-margin}
+Your ability to make valid descriptive inferences will rest in large part on how you recruit your sample. We'll return to this topic soon.
+:::
+
+To ask a good descriptive research question, you must be clear about who makes up your group of interest, or your target population. I expand on this idea in a later chapter on sampling, so for now I'll simply say that your target population is often a specific group, such as women of reproductive age in Nepal. Typically you'll recruit  a sample of individuals from this group and use the data you collect to make an inference from this limited sample to the larger group—your target population. 
+
+> Descriptive epidemiology seeks to characterize the distributions of health, disease, and harmful or beneficial exposures in a well-defined population as they exist, **including any meaningful differences in distribution, and whether that distribution is changing over time**
+
+:::{.column-margin}
+Demography is another field that leans hard into description, often focusing on describing trends in births, deaths, marriage, employment, education, and migration.
+:::
+
+There are often theoretical or programmatic reasons to quantify variation, or differences, in an outcome or exposure across subgroups (people), geographies (place), and time. For instance, you might want to stratify an analysis by ethnicity and race to quantify disparities in outcomes or in access to services. Doing this over time tells you whether conditions are improving, worsening, or staying the same. 
+
+Here's an example to tie it all together. The descriptive research question is, "What percentage of women of reproductive age in Nepal use a modern method of contraception?"
+
+:::{.column-margin}
+'Modern' methods, such as condoms, implants, pills, are distinguished from (and are more effective than) 'traditional' methods, such as withdrawal and the rhythm method.
+:::
+
+The Demographic and Health Surveys (DHS) Program has answered this question—and many others!—in more than 90 countries by designing, conducting, and analyzing large, nationally representative surveys on population, health, HIV, and nutrition. For instance, in 2011 DHS researchers surveyed a random sample of 10,826 households across Nepal and interviewed 12,674 women between the ages of 15 and 49 about their health behaviors and preferences [@dhsnepal2011]. They estimated that 43% of married women reported using some modern method of contraception. Stratified by age, modern method use was twice as common among married women ages 35 to 49 compared to married women ages 15 to 24 (see @fig-dhsnepal). 
+
+:::{.column-body}
+![Descriptive summary of modern method use in Nepal](images/tables/dhsnepal.png){#fig-dhsnepal}
+:::
+
+### EXPLAIN {.unnumbered}
+
+Description is essential to science and decision-making related to needs and resources. The result from Nepal suggests that more than half of married women of reproductive age were not using a modern method of contraception in 2010. This is a very useful thing to know if you work for the Ministry of Health and are concerned about promoting reproductive health. 
+
+But you probably also want to go the next step and ask, "*Why* is uptake relatively low among younger women?", and "*What happens if* we introduce a new policy or program intended to promote contraceptive use?". Can we explain patterns of modern method use?
+
+#### Qualitative Inquiry {.unnumbered}
+
+One way to explore a "why" question is simply to ask people. That's what Navin Bhatt and colleagues did in Nepal to better understand the reasons for low use of modern methods of contraception among young people [@bhatt:2021]. The research team organized six group discussions and conducted 25 interviews with a diverse mix of informants from one village, including teachers, youths, health workers, religious leaders, and government officials. One woman explained her non-use this way:
+
+> My husband works abroad. Last year, when he came home during Dashain (festival), we had (intercourse). Later, he returned to his workplace. Meanwhile, I came to know that I was pregnant, after 3 months. I was shocked to hear that. We already had 3 children; 2 of them were unplanned. I did not have enough information about contraceptive measures in this situation. Had I known about them; I would have used them. **—Female, 24 years old**
+
+The authors analyzed transcripts like these and reported that young people face numerous barriers to initiating family planning, including a lack of awareness as described by this woman. They concluded the article with several ideas for designing new interventions (programs) to promote modern method use among this group. We'll return to qualitative methods of data collection and analysis in a future chapter.
+
+#### Causal Inference {.unnumbered}
+
+Another common method for exploring "why" and "what if" questions is explanatory modeling, or the use of statistical models for testing causal explanations [@shmueli:2010]. This work also falls under the label of **causal inference**, or what @gelman:2020 define as follows: 
+
+> what *would happen* to an outcome *y* as a result of a treatment, intervention, or exposure *z*, given pre-treatment information *x*. 
+
+Sometimes researchers ask these questions in the context of an experiment that features random assignment to conditions and some active introduction of the treatment,  intervention, or exposure. But as Shmueli explains, most often research in the social sciences tests or quantifies associations between variables in non-experimental data. 
+
+Let's consider two examples of the type of causal inference that we'll examine in later chapters. Both examples come from Nepal and feature the issue of modern method use.
+
+:::{.callout-note icon=false}
+## **GLOBAL HEALTH IN PRACTICE: Postpartum family planning**
+
+Research in low-income countries has estimated that nearly all women want to prevent or space their next pregnancy after they have just given birth, but 6 in 10 women do not start a method of family planning after delivering a baby. Precisely when women become fertile after childbirth varies and is influenced by factors like breastfeeding, but in most cases ovulation returns before family planning is started. This puts women at risk of getting pregnant again before they want to. One option is to have an intrauterine device, or IUD, inserted immediately after delivery of the placenta or within the first month postpartum.
+:::
+
+In our first example, @wu:2020 looked at the prevalence of modern contraceptive use in a rural municipality in one of Nepal's poorest districts before and after a pilot program called *Nyaya Health Nepal* was implemented. In this program, community health workers conducted home visits with pregnant women and new mothers and offered them contraceptive counseling. The authors reported that modern method use increased from 29% pre-intervention to 46% post-intervention (see @fig-wu2020). But as we'll discuss, this non-experimental design requires some strong assumptions for attributing the observed change to this program.
+
+:::{.column-body}
+![Modern contraceptive use by time since delivery. Image source: Wu et al., 2020, CC BY-NC 4.0.](images/wu-2020.jpeg){#fig-wu2020}
+:::
+
+In our second example, @pradhan2019 used a stepped-wedge design to estimate the causal effect of offering postpartum family planning counseling on the proportion of new moms who opt to have an IUD inserted following childbirth. In this design, which you'll meet more formally in a later chapter, the counseling intervention was turned on in six hospitals in a stepwise fashion. The three hospitals randomly assigned to Group 1 received the intervention first in a staggered start. Approximately six months later, the remaining hospitals began offering the counseling intervention, one after the other. @fig-pradhan2019 demonstrates that rates of uptake appeared to jump in each group after the intervention was introduced. The authors estimated that the intervention increased IUD uptake by 4.4 percentage points [95%CI: 2.8–6.4 pp].
+
+:::{.column-body}
+![Trends in PPIUD Uptake. Note: Approximate intervention start-dates in group 1 and 2 hospitals shown by black and red vertical lines respectively. Image source: Pradhan et al., 2019, CC BY 4.0.](images/pradhan2019.png){#fig-pradhan2019}
+:::
+
+
+### PREDICT {.unnumbered}
+
+
+summary table
+
+
+
+stopped here
+
+
+## Specifying Your Research Question
+
+```{marginfigure}
+<iframe width="300" height="169" src="https://www.youtube.com/embed/_0HxMpJsm0I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> Need to develop a good qualitative research question? See this short video by Yale University (2015). Fundamentals of Qualitative Research Methods: Developing a Qualitative Research Question (Module 2). Source: [https://tinyurl.com/y5sexqwg](https://tinyurl.com/y5sexqwg).
+```
+
+A good research question is a specific research question. I'll share two mneumonics to help you get specific: FINER and PICO. 
+
+Imagine that we wanted to study the uptake or use of bed nets. We could ask a descriptive research question like, "How many children sleep under bed nets?" It's a good start, but this question is too general. Children of what age? Living where? We also need to define what we mean by sleeping under a bed net. In this line of research, it is common to ask about the previous night, as in the night before the survey. 
+
+A better way to phrase the question is, "What percentage of children under 5 years of age in Kenya slept under an insecticide treated net the previous night?" An example of a predictive research question on the same topic is, "What are the predictors of the use of insecticide treated net among children under 5 years of age in Kenya?"
+
+Both of these examples are FINER than the first one: Feasible, Interesting, Novel, Ethical, and Relevant [@hully:2007].
+
+<br>
+
+```{r finer, echo=FALSE}
+  fine <- data.frame(letter=c("**Feasible**", "**Interesting**", 
+                              "**Novel**", "**Ethical**", 
+                              "**Relevant**"),
+                     label=c("Some resarch questions will take a long time to answer, cost too much, require too many participants, require skills or equipment that you do not have, or will be too complex to implement.",
+                             "Research requires funding and effort. If you do not ask a sufficiently interesting question, you will not get funding. If you manage to get funding but lose interest in the question, you might not finish. Unlike other domains, global health research tends to have long timelines, and it's important to work on things you will find interesting over the long term.",
+                             "Replication is an important part of science, but the majority of funding goes to research that asks new and interesting questions.",
+                             "It would be very interesting to create a prison simulation to determine whether charactristics of the people or situation cause abusive behavior, but this would not be ethical because it could lead to the harmful treatment of research subjects. [Right?](https://en.wikipedia.org/wiki/Stanford_prison_experiment)",
+                             "In addition to being interesting, a research question should also be relevant. The answer should move the field forward in some way. Making this determination requires a thorough review of the literature and conversations with senior colleagues."))
+  names(fine) <- NULL
+  knitr::kable(fine, col.names=NA, format = "html", 
+caption = 'FINER research questions.'
+) %>%
+  html_table_width(c(100,500)) %>%
+  kable_styling(bootstrap_options = c("striped"), full_width = FALSE, position = "left")
+```
+
+<br>
+
+The second pneumonic is PICO, which I introduced in **[Chapter 3](filtered)**. In clinical research, good clinical questions always include [PICO](http://guides.mclibrary.duke.edu/c.php?g=158178&p=1035882): Patient/Population/Problem, Intervention/Prognostic factor/Exposure, Comparison, and Outcome.
+
+<br>
+
+```{r picotbl, echo=FALSE}
+  picotbl <- data.frame(letter=c("**P**", "**I**", "**C**", "**O**"),
+                     label=c("Patient, Population, or Problem",
+                             "Intervention, Prognostic Factor, or Exposure",
+                             "Comparison",
+                             "Outcome"))
+  names(picotbl) <- NULL
+  knitr::kable(picotbl, col.names=NA, format = "html", 
+caption = 'PICO research questions.'
+) %>%
+  html_table_width(c(100,500)) %>%
+  kable_styling(bootstrap_options = c("striped"), full_width = FALSE, position = "left")
+```
+
+<br>
+
+Let's use PICO to develop a research question about the efficacy of mosquito bed nets in preventing malaria. The **problem** is malaria infections. The **population** is children under 5 years of age. Because intervention studies tend to be smaller in reach than nationally representative surveys, we might add "living around the Lake Victoria basin in Kenya". The **intervention** is the application of an insecticide-treated net. The comparison group might be children living in families who are provided an untreated bed net.[^prog] One **outcome** measure could be the rate of parasitaemia after the intervention.
+
+[^prog]: Prognostic factor refers to covariates that could influence the prognosis of the patient. An exposure would be something that we think might increase the risk of an outcome.
+
+We combine all of these elements into a single research question: 
+
+> Among children under 5 years of age living around the Lake Victoria basin in Kenya, are insecticide-treated mosquito nets more effective than untreated nets at preventing parasitaemia?

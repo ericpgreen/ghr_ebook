@@ -1,0 +1,43 @@
+project:
+  type: book
+
+book:
+  title: "Global Health Research Methods"
+  author: "Eric P. Green"
+  date: last-modified
+  date-format: D MMMM, YYYY
+  chapters:
+    - index.qmd
+    - introduction.qmd
+    - part: part_1.qmd
+      chapters:
+        - ghr.qmd
+        - collaborations.qmd
+        - ideas.qmd
+    - references.qmd
+
+bibliography: ghr.bib
+csl: apa.csl
+reference-location: margin
+citation-location: margin
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    linkcolor: "#1f9ac9"
+  pdf:
+    include-in-header: preamble.tex
+    keep-tex: true
+    fig-pos: 'h'
+
+editor: source
+
+execute:
+  echo: false
+  warning: false
+  error: false
+
+filters:
+  - ./www/conditional-content.lua
+  - quarto
