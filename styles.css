@@ -62,6 +62,7 @@ a:hover {
 /* selected link */
 a:active {
   color: #1f9ac9;
+}
 
 .plot-padding, figure {
   padding: 6em 0 6em 0;
