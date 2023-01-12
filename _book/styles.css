@@ -63,6 +63,6 @@ a:hover {
 a:active {
   color: #1f9ac9;
 
-.plot-padding, figure.figure {
+.plot-padding, figure {
   padding: 6em 0 6em 0;
 }

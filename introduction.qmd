@@ -1,5 +1,7 @@
 # Introduction {.unnumbered}
 
+**Placeholder for book's introduction**
+
 *Commencement address, Global Health undergraduate ceremony, Duke University, May 6, 2022*
 
 ::::{.content-hidden unless-format="pdf"}
