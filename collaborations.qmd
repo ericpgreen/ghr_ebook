@@ -36,7 +36,7 @@ Others collaborations are more like the 1995 film, *Apollo 13*, about America's 
 
 In both movies, the teams had a clearly defined and shared vision. As well, team members understood their roles and how they were to contribute to the vision. Research on teams suggests that these factors are key to creating group cohesion. When team members can't articulate the vision or don't understand how their contributions fit into the bigger picture, the team's work often suffers. 
 
-The stories portrayed in these films differed in an important way with respect to teams, however: how the vision was created. In *Ocean's Eleven*, the vision belonged to Danny Ocean and he made a compelling case to prospective team members. But in *Apollo 13*, the team co-created the vision in the context of an ongoing collaboration.
+The stories portrayed in these films differed in an important way with respect to teams, however: in how the vision was created. In *Ocean's Eleven*, the vision belonged to Danny Ocean and he made a compelling case to prospective team members. But in *Apollo 13*, the team co-created the vision in the context of an ongoing collaboration.
 
 :::{.column-margin}
 We'll talk more about how to write a compelling Specific Aims document later in the book. It's a great format for articulating a vision.

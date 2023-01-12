@@ -1,0 +1,222 @@
+# Read the Literature {#read}
+
+On December 13, 1799, retired general and former U.S. president George Washington fell ill at his Mt. Vernon estate with a cough, runny nose, and a sore throat [@markel:2014]. He developed a fever overnight and his condition deteriorated the next morning. In response, his attendants and physicians removed nearly 2.4 liters of blood—40 percent of his total blood volume—over a 12 hour period. They did this to reduce inflammation by drawing out 'deadly humors' from the blood. It did not work, and Washington died at 10:20pm on December 14.
+
+With very few exceptions, we know today that blood letting does not work and that blood loss often leads to worse outcomes. But we don't need to go back 200 years to find examples of widely used medical procedures that are no longer practiced (or are less common) because we have better data. Take routine episiotomy during childbirth. 
+
+In a normal vaginal birth, it's possible for the baby's head to tear a woman's vagina and adjacent tissue. In some cases these tears extend to the rectum and require surgical repairs. Between the 1920s and early 2000s, many obstetricians would decide (sometimes without asking) to make a small incision in a woman's perineum to prevent a large natural tear and make delivery easier. This procedure is known as an episiotomy. In 1999, a systematic review showed that routine use was not justified [carroli:1999]; selective use of the procedure (vs routine use) results in less trauma and does not appear to cause other harms to mothers or babies. New evidence continued to support this conclusion, and in 2006 the American College of Obstetricians and Gynecologists recommended against routine use of the procedure [@acog:2006]. It is still practiced in select cases, but routine use has since declined substantially. This is **evidence-based medicine** in practice.
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Watch an oral history of EBM at \href{http://ghr.link/ebm}{\footnotesize\texttt{ghr.link/ebm}}.
+\newline
+\newline
+![](images/QR_ebm.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+Visit [ebm.jamanetwork.com](http://ghr.link/ebm) to watch an oral history of EBM.
+:::
+::::
+
+The term *evidence-based medicine* first came into use in the 1990s, nearly two decades after Archie Cochrane, the namesake of the Cochrane Collaboration, first called upon the medical field to learn from the highest quality studies. Today, evidence-based medicine, or EBM, is the dominant paradigm for medical training and practice. @sackett:1996 define EBM as:
+
+> The conscientious, explicit and judicious use of current best evidence in making decisions about the care of the individual patient. It means integrating individual clinical expertise with the best available external clinical evidence from systematic research.
+
+Since taking hold in the field, evidence-based medicine has expanded to evidence-based *practice*, or EBP, more generally, as well as to population-level approaches such as evidence-based public health [@brownson:2009] and evidence-based global health policy [@yamey:2011]. While not without its critics [@mykhalovskiy:2004], this focus on evidence has saved countless lives and improved health around the globe. 
+
+But how does data become evidence? Each year a few million new articles enter the scientific literature. Who determines what should be published and which studies should be designated as "high quality" evidence?
+
+In short, we do. You, me, and our scientific colleagues. We review unpublished manuscripts, comment on articles once they appear in print, prepare systematic reviews and meta-analyses of published work, and (sometimes) attempt to replicate published findings in new studies. Broadly speaking, this process is known as **critical appraisal**, and it's the focus of this chapter.
+
+## Getting Started with Critical Appraisal
+
+It can feel daunting to critically appraise someone else's work when you're starting out in research. I find that students default to providing the type of feedback that feels most comfortable: spelling and grammar. Your colleague might appreciate this type of feedback, but copyediting is not critical appraisal, nor is it the core function of peer review. Yes, we need to help each other become better communicators of our ideas, but not at the expense of providing a critical review of the *science*.
+
+So how do you approach the task of critical appraisal when you're still building your foundation in research? Checklists! 
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} You can find many reporting guidelines on the website of the Equator Network (Enhancing the QUAlity and Transparency Of health Research) at \href{http://ghr.link/equ}{\footnotesize\texttt{ghr.link/equ}}.
+\newline
+\newline
+![](images/QR_equ.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+You can find many reporting guidelines on the website of the [Equator Network](http://ghr.link/ebm) (Enhancing the QUAlity and Transparency Of health Research).
+:::
+::::
+
+One type of checklist is the reporting guideline. There are guidelines for just about every research design you will encounter, from randomized controlled trials to diagnostic validity studies. Reporting guidelines are important because they represent the consensus of the scientific community regarding the essential details that a reader needs to evaluate a manuscript, organize a replication attempt, and include the study in a systematic review or meta-analysis. When you're writing a manuscript, use the guidelines to make an outline that includes each piece of information (and include it as an appendix). When you're reviewing a manuscript, use reporting guidelines to confirm that the authors provided a full accounting of their study and to organize your critique. 
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Duke University maintains a set of critical appraisal worksheets at \href{http://ghr.link/app}{\footnotesize\texttt{ghr.link/app}}.
+\newline
+\newline
+![](images/QR_app.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+Duke University maintains a set of critical appraisal worksheets [here](http://ghr.link/app).
+:::
+::::
+
+```{marginfigure}
+Systematic reviews are a great source for examples of critical appraisal because a systematic review is a critical appraisal.
+```
+
+## The Anatomy of a Scientific Paper
+
+```{marginfigure}
+<iframe width="300" height="169" src="https://www.youtube.com/embed/eSEP2T-xz8g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>How I read a paper! Sketchy EBM (2015). [https://tinyurl.com/y3n7vc7m](https://tinyurl.com/y3n7vc7m)
+```
+
+A scientific paper typically consists of four parts (IMRAD):
+
+1. an **I**ntroduction that frames the research question
+2. a set of **M**ethodologies and a description of data
+3. a set of **R**esults; **A**nd
+4. a set of claims in the **D**iscussion
+
+Let's consider what to think about when you read each section.
+
+### INTRODUCTION SECTION {-}
+
+A good *Introduction* explains the aim of the paper and puts the research question in context. In public health and medicine, this section is typically very short compared to the introductions in other disciplines like economics.
+
+* Does the *Introduction* identify a gap in the literature that this paper will fill?
+* Do the authors cite relevant literature? Does it appear that the authors have accounted for recent developments in the field?
+* Is the research question clearly stated? 
+* Do the authors specify the aims of the paper?   
+
+We'll consider research questions and aims in **[Chapter 5](aims)**.
+
+### METHOD SECTION
+
+A good *Method* section provides enough information to enable a reader to replicate the findings in a new study. Journal space constraints make this challenging, so authors often post supplemental materials online that provide additional details. 
+
+```{marginfigure}
+Review recent issues of the journal and consult the appropriate reporting guidelines to create an outline with subheadings that can guide your writing and reviewing.
+```
+
+The organization of the *Method* section varies by discipline and journal, but generally it includes some information about the research design, intervention (if appropriate), sample, materials or measures, data sources and procedures, and analysis strategy.  
+
+#### Can the study design answer the research question?{-}
+
+There are many different designs that can potentially answer most research questions, but not all designs are created equal. A graphic like Figure \@ref(fig:loe) is commonly used in the evidence-based medicine literature to convey this point. Meta-analyses and systematic reviews are 'studies of studies', and they sit atop the evidence hierarchy. They enjoy this status because they synthesize the best available evidence. No one study is the final word on a research question, so it makes sense that a meta-analysis that pools results and accounts for variable study quality could potentially provide a better answer than any one study alone.  
+
+```{r loe, fig.cap="Levels of evidence", echo=F}
+knitr::include_graphics("images/levels.png")
+```
+
+However, the *Cochrane Handbook for Systematic Reviews* [-@cochrane] cautions researchers to pay attention to design features (e.g., how participants were selected) rather than labels (e.g., cohort study) because labels are broad categories. Therefore, this hierarchy is not absolute; these rankings reflect ideals. For example, RCTs can be poorly designed or poorly implemented, and the evidence from such a flawed study is not necessarily better than the evidence from a nonrandomized study just because it carries the label "randomized." I'll describe the logic and assumptions of common designs in Chapters 9 through 11.
+
+#### How were participants selected and recruited? {-}
+
+```{marginfigure}
+I focus on '[human subjects research](https://grants.nih.gov/policy/humansubjects/research.htm)' in this book, but sampling is also an important topic in research not involving people. 
+<br>
+<br>
+Sidebar: How should you refer to the humans who participate in your studies? Is it ok to call these humans "people" or "participants"? Sure. They are people. I use "participants" most of the time. Others prefer "volunteers". Few insist on "subjects", with the notable exception of US federal regulations governing research.
+```
+
+We can't collect data from every person in our population of interest (unless we define our population very narrowly, e.g., "authors of textbooks named Eric Green"), so we have to sample a subset of people from the population. For instance, let's say that we want to know what eligible voters in the US think of a certain presidential candidate. There were roughly 160 million people registered to vote in the 2018 US presidential election. We can't contact all 160 million, so imagine we survey 1000 registered voters, or 0.000006% of the population. The details around who these people are and how they got into our study matter for our inferences. Can these 1,000 people represent all US voters? To answer this question for the reader, we have to describe sample selection and recruitment in the *Method* section.
+
+* What made someone eligible or ineligible to participate? Who was excluded, intentionally or not?  
+* How were participants selected and invited to participate?
+* Was this selection process random, or did the researchers invite participants based on availability? 
+* How many were invited, and how many accepted the invitation?
+* Who refused the invitation to participate, and how are they different from the people who accepted?
+
+We'll revisit sampling and sample size in Chapters **[12](sampling)** and **[13](power)**.
+
+#### What materials and/or measures were used?{-}
+
+Almost every study uses some type of materials or measures. Diagnostic studies, for instance, evaluate a diagnostic test or a piece of hardware that analyzes the test samples. Environmental studies often use sophisticated instruments to take atmospheric measurements. Studies like these always provide specific details in the *Method* section about the materials and equipment used.
+
+Study variables also need to be precisely defined in the *Method* section. For instance, hyperparasitemia describes a condition of many malaria parasites in the blood. But what constitutes "many"? The World Health Organization (WHO) defines it as "a parasite density > 4% (~200,000/µL)" [@whomalaria:2015]. A manuscript should be precise with respect to how measurement is operationalized.
+
+This holds for studies measuring social or psychological constructs. For instance, in a study of anxiety, a definition of the concept of "anxiety" should be provided. Is an anxiety disorder diagnosed by a psychiatrist? If so, what is the basis for this diagnosis? Or is anxiety inferred from a participant's self-reported symptoms on a checklist or screening instrument? If so, what are the questions and how is the instrument scored?
+
+We'll tackle issues of measurement, including study outcomes and indicators, in **[Chapter 7](measurement)**.
+
+#### How was the study conducted and how were the data collected?{-}
+
+The *Method* section should also describe what happened after participants were recruited and enrolled. 
+
+* What happened first, second, third? 
+* Who collected the data, and how were they trained? 
+* For intervention studies, the data collection procedures should describe how participants were randomized to study arms and what happened (or did not happen) in each arm. 
+* Were the participants, data collectors, and/or patients **blind** to the treatment assignment?
+
+We'll discuss data collection methods in Chapters **[14](quant)** and **[15](qual)**.
+
+#### How were the data analyzed?{-}
+
+In this section authors typically describe the approach and logic of the core analysis. In an economics paper, this might be called the empirical strategy. 
+
+* If analyzing qualitative data, what is the analysis method? Common methods include content analysis, narrative analysis, discourse analysis, and grounded theory.
+* If analyzing quantitative data, is the statistical/econometric model described clearly?
+* What are the assumptions of the analysis?
+
+#### Was the study approved by an ethics board?{-}
+
+The [US Federal Policy for the Protection of Human Subjects](http://www.hhs.gov/ohrp/regulations-and-policy/regulations/common-rule/index.html) (i.e., the “Common Rule”) defines research as “a systematic investigation, including research development, testing and evaluation, designed to develop or contribute to generalizable knowledge...” If the research involves human subjects, it must be reviewed and approved by an institutional review board (IRB) before any subjects can be enrolled. Most studies fall under IRB oversight, but some, such as retrospective studies or quality control interventions, may qualify as exempt.
+
+Increasingly, researchers are taking the additional step of registering their study protocol prior to the study launch in a study clearinghouse like [https://clinicaltrials.gov/](https://clinicaltrials.gov/). This registration is a requirement for drug investigations regulated by the FDA, and it's expected by many journals. Preregistration does not ensure trustworthy results, but the practice fosters a [welcome increase in research transparency](http://www.vox.com/2016/3/14/11219446/psychology-replication-crisis). If the analysis described in an article deviates from the planned analysis, the authors are expected to provide a compelling justification. We will return to pre-registration and open science more generally in **[Chapter 18](#openscience)**.
+
+### RESULTS SECTION
+
+#### Can each finding be linked to data and procedures presented in the Method section?{-}
+
+Every finding in the *Results* section should be linked to a methodology and source of data documented in the *Method* section. Articles in medical journals are some of the shortest, so supplemental materials posted online may be needed to obtain a clearer sense of what the authors did and found. 
+
+#### Is the analysis correct?{-}
+
+This is a hard question to answer during critical appraisal. Most of the time (at least in public health and medicine) you do not have access to the data and analysis code, so you cannot verify that the analysis is correct. You have to base your assessment on the authors' written description of the data and analysis.
+
+Even if you did have access to materials to reproduce the analysis, some analyses are so complex that only people with extensive training feel qualified to question the accuracy of the results. When reviewing a study with complex analyses, it may be necessary to consult with colleagues.
+
+### DISCUSSION SECTION 
+
+#### Is each claim linked to a finding presented in the Results?{-}
+
+Each claim should be supported by results that are reported in the paper. If there is no link between a claim in the *Discussion* section and a finding in the *Results* section, the authors may be "going beyond the data." For example, if a manuscript presents data on the efficacy of a new treatment for malaria but does not include any data on cost, then it would be inappropriate to claim that the treatment is *cost*-effective. Although it's legitimate to speculate a bit in the *Discussion* section based on documented findings, authors should be careful to label all speculation as such—and these hypothetical forays should never be included the article's *Abstract*.
+
+#### Is each claim justified?{-}
+
+Consider each claim in relation to the results presented to evaluate whether the authors' arrived at the correct interpretation of the data presented. Did the authors come to a reasonable conclusion, or did they make conclusions that are not supported by the analysis? For instance, if the analysis provided only weak or mixed evidence that a new program is efficacious, it would be inappropriate to recommend scaling-up the program.
+
+#### Are the claims generalizable?{-}
+
+```{marginfigure}
+One approach to promoting generalizability is to randomly sample participants from the population of interest. For example, Wanzira et al. [-@wanzira:2016] analyzed data from the 2014 Uganda Malaria Indicator Survey, a large national survey, and found that women who knew that sulfadoxine/pyrimethamine is a medication used to prevent malaria during pregnancy had greater odds of taking at least two doses than women who did not have this knowledge. Because the UMIS is nationally representative, the results could apply to Ugandan women who did not participate in the study. Would the results be generalizable to women in Tanzania? An argument could be made that they would. Would the results be generalizable to women in France? No, probably not; among other things, malaria is not an issue there.
+```
+
+Just about every study is conducted on a narrowly constructed sample. Have you read a psychology paper recently? Chances are the sample was [WEIRD](https://rationalwiki.org/wiki/WEIRD): White, Educated, Industrialized, Rich, and Democratic. Most likely the participants came from the "undergraduate pool"—psychology majors willing to take part in the study for extra credit.
+
+In global health, it's common to read qualitative studies involving 20 patients who receive services from one rural primary healthcare facility—a handful of people from one small town in one small corner of a country of millions.
+
+When we read these studies, we are not interested in the hyper-local story, per se [@scc]. Instead, we want to know if the results can generalize to the broader target population. When a study is so highly localized that the results are unlikely to generalize to new people and places, we say that the study has low **external validity**.
+
+I'll tell you more about generalizability and external validity in Chapter **[12](sampling)**.
+
+#### Are the claims put in context?{-}
+
+A good *Discussion* section puts the study findings in context by telling the reader how the study adds to the existing literature. 
+
+* Do the results replicate or support other work? 
+* Or do the findings run contrary to other published studies? What are some ideas about why this might be?
+* How does the study advance our knowledge or fill gaps in the literature?
+
+#### What are the limitations?{-}
+
+No study is perfect, so it's customary to include a paragraph or two outlining the shortcomings. Such limitations span all aspects of the study design and methods, from sample size to generalizability of results, to data validity and approaches to statistical analysis. Communicating shortcomings can provide a valuable resource for future researchers in terms of caveats and research directions.

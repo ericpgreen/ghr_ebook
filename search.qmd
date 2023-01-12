@@ -1,0 +1,249 @@
+# Search the Literature {#search}
+
+Throughout the process of identifying research problems, framing research questions, and designing your study, you'll return over and over to the literature to ensure that your study is informed by prior work and is poised to contribute to your field. In this chapter I'll share some tips for searching that literature effectively and managing what you find.
+
+## Identify Your Search Goal
+
+Searching the literature is often an iterative process. For most projects, I typically start with something simple and build more elaborate search queries as I go. An exception is when I've decided to work with colleagues on a systematic review, where the goal is to conduct a comprehensive search of all published and unpublished work on a particular research question. In this case, my team will be very intentional about selecting databases, generating search terms, and devising search strategies—and in documenting our choices.
+
+Most often, however, my initial goal is to quickly get up to speed on what we (the scientific community) know about a particular topic. In these situations, I start by looking for published literature reviews. 
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+[*Google Scholar*](https://scholar.google.com/) is a free tool from *Google* that searches across the internet for articles, theses, books, abstracts, and court opinions. Hopefully it does not suffer the same fate as *Google Reader* and make this note obsolete.
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} \textit{Google Scholar} is a free tool from \textit{Google} that searches across the internet for articles, theses, books, abstracts, and court opinions. Hopefully it does not suffer the same fate as \textit{Google Reader} and make this note obsolete. Scan the QR code to learn more at \href{http://ghr.link/goo}{\footnotesize\texttt{ghr.link/goo}}.
+\newline
+\newline
+![](images/QR_goo.png){width="75px"}
+:::
+::::
+
+For instance, if I wanted to know more about health behavior change, I might open *Google Scholar* and search for "health behavior change review", limiting the results to the past few years. I typically select a review paper that sounds promising and take the following steps:
+
+1. find and read the key papers cited by the review authors; 
+2. take note of keywords that can be used as future search terms; and
+3. use the "cited by" feature in *Google Scholar* to see if any newer work has cited the review.
+
+In my experience, a few rounds of searching/reading/following leads will often yield good results. But sometimes it pays to conduct a more thorough search. Here are some steps you should consider when you need to be more systematic.
+
+## Select a Database (or Multiple Databases)
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+Research librarians are an excellent resource for helping you determine which databases are suitable for your topic. See [here](http://ghr.link/pub) for a comprehensive list of databases.
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Research librarians are an excellent resource for helping you determine which databases are suitable for your topic. Scan the QR code for a comprehensive list of databases at \href{http://ghr.link/pub}{\footnotesize\texttt{ghr.link/pub}}.
+\newline
+\newline
+![](images/QR_pub.png){width="75px"}
+:::
+::::
+
+Your research question will influence where you should start your advanced search. For biomedical and clinical research, start with *PubMed*, a fantastic free resource from the US National Library of Medicine that searches the MEDLINE database. For interdisciplinary science and social science research, the *Web of Science* and *Scopus* databases are good choices, but both require paid subscriptions; check your local library for access. 
+
+:::{.callout-note icon=false}
+## **DID YOU KNOW?**
+
+One of the reasons *PubMed* is a great (free!) resource is that all articles indexed in the database are tagged by a team of indexers with at least a bachelor's degree in a biomedical science. So unlike *Google Scholar* that only searches the text of articles, *PubMed* also searches human-tagged meta-data.
+:::
+
+## Generate Search Terms
+
+I don't know a lot about home repair. When I go to the hardware store and ask for help on a project, it can be a struggle to explain what I'm searching for because I don't know the right terms. On a recent visit, I used my finger to draw a picture in the air of a piece of hardware I wanted. After numerous attempts, the the store associate finally said, "Oh, you mean a turnbuckle. Aisle 12."
+
+Searching the literature can be the same when you don't know the right terms. One solution is to follow my earlier advice to build your vocabulary by finding a good review paper. Another idea is to seek help from the experts.
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+Search the MeSH database [here](https://www.ncbi.nlm.nih.gov/mesh).
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Search the MeSH database at \href{http://ghr.link/mes}{\footnotesize\texttt{ghr.link/mes}}.
+\newline
+\newline
+![](images/QR_mes.png){width="75px"}
+:::
+::::
+
+When searching *PubMed*, it's helpful to identify relevant **MeSH** terms for your topic. MeSH, which stands for "Medical Subject Headings," is a controlled vocabulary thesaurus created by a team of specialists at the National Library of Medicine for indexing articles in *PubMed*. This thesaurus is helpful because there are many ways to refer to the same phenomenon. For instance, the MeSH term for "breast cancer" is "breast neoplasm." A search for "breast neoplasm" in *PubMed* actually searches more than 30 entry terms, such as "Tumors, Breast", "Mammary Neoplasms, Human", and "Carcinoma, Human Mammary". MeSH is also a hierarchically-organized ontology that maintains connections between terms.  As shown in @fig-mesh, breast neoplasm is a sub-category of two higher-order categories of diseases: (i) neoplasms and (ii) skin and connective tissue diseases.
+
+:::{.column-page}
+![MesH ontology for breast neoplasm.](images/mesh.png){#fig-mesh}
+:::
+
+## Develop a Search Strategy
+
+For an advanced search, the next step is to decide how to combine the terms. When you have a clinical or an interventional research question, PICO can help you structure your approach. Let's use the following research question about malaria and pregnancy as an example: 
+
+> Among pregnant women living in malaria-endemic areas, is chemoprevention more effective than a placebo at preventing parasitemia?
+
+The **problem** (P) is malaria infection, and our **population** of interest is pregnant women living in malaria-endemic areas. 'MALARIA' and 'PREGNANT WOMEN' are MeSH terms.
+
+The **intervention** ("I") is malaria chemoprevention—the use of an antimalarial medicine to prevent malaria infection.
+
+The "C" in PICO, **comparison**, answers the question, "compared to what?" Chemoprevention compared to what? Here we are interested in comparing the preventive effects of an antimalarial medicine compared to a placebo. 
+
+The **outcome** ("O") is the target of change. In this example, we are interested in whether chemoprevention prevents malaria infection. We can define this more specifically as parasitemia, the presence of malaria parasites in the blood.
+
+Combining all of this information yields the above research question.
+
+  
+
+
+
+
+Once the proper database(s) is identified, specific search terms are needed. These usually coincide with the keywords published in related articles.
+
+
+A simple search for "breast neoplasm" will return a few hundred thousand results, so as you refine your research interests, you can add search terms and refine your strategy. The mnemonic [PICO](http://guides.mclibrary.duke.edu/c.php?g=158178&p=1035882) might help, especially if you are interested in clinical research.
+
+```{r pico, echo=FALSE}
+  pico <- data.frame(letter=c("**P**", "**I**", "**C**", "**O**"),
+                     label=c("Patient, Population, or Problem",
+                             "Intervention, Prognostic Factor, or Exposure",
+                             "Comparison",
+                             "Outcome"))
+  names(pico) <- NULL
+  knitr::kable(pico, col.names=NA)
+```
+
+```{marginfigure}
+Prognostic factor refers to covariates that could influence the prognosis of the patient. An exposure would be something that we think might increase the risk of an outcome.
+```
+
+PICO stands for **P**opulation/Problem, **I**ntervention, **C**omparison, and **O**utcome. Let's use PICO to develop a focused, searchable research question on preventing malaria during pregnancy. 
+
+The **problem** is malaria infections, and our **population** of interest is pregnant women living in malaria-endemic areas. 
+
+Not every clinical question involves testing of a treatment or **intervention** ("I"), but we will focus on these types of questions in this book. Let's say we are interested in malaria chemoprevention, the use of an antimalarial medicine to prevent malaria infection.
+
+The "C" in PICO, **comparison**, answers the question, "compared to what?" Chemoprevention compared to what? Maybe we are interested in comparing the preventive effects of an antimalarial medicine compared to a placebo. 
+
+The **outcome** ("O") is our target. In this example, we are interested in whether chemoprevention prevents malaria infection. We can define this more specifically as parasitemia, the presence of malaria parasites in the blood.
+
+Combining all of this information yields a research question like this one:
+
+> Among pregnant women living in malaria-endemic areas, is chemoprevention more effective than a placebo at preventing parasitemia?
+
+## Develop a Search Strategy
+
+:::{.column-margin}
+Most databases offer the option to create an account and save search strategies and results. This makes it easy to retrace and improve your search over time.
+:::
+
+Once you have identified initial search terms, it is time to build a query. Query construction is an iterative process, full of trial and error. 
+
+
+When searching PubMed/MEDLINE, it is often helpful to look up the correct **MeSH** terms for your topic. [MeSH](http://www.ncbi.nlm.nih.gov/mesh), which stands for "Medical Subject Headings," is a controlled vocabulary thesaurus that is used by a team of specialists at the National Library of Medicine to index articles in PubMed/MEDLINE. This thesaurus is helpful because there are many ways to refer to the same phenomenon. For instance, the MeSH term for "breast cancer" is "breast neoplasm." A search for "breast neoplasm" in PubMed actually searches more than 30 entry terms, such as "Tumors, Breast", "Mammary Neoplasms, Human", and "Carcinoma, Human Mammary". 
+
+
+```{r boo, fig.cap="Boolean operators: AND, OR, NOT", echo=F}
+knitr::include_graphics("images/boolean.jpg", dpi = NA)
+```
+
+Some basic Boolean operators are needed to conduct effective searches: AND, OR, NOT. For instance, consider the search PubMed runs when the terms "malaria OR pregnancy" are entered:
+
+`("malaria"[MeSH Terms] OR "malaria"[All Fields]) OR ("pregnancy"[MeSH Terms] OR "pregnancy"[All Fields])`
+
+These four terms are combined with `OR`, meaning we keep results that match *any* of these terms. PubMed returns more than 1 million results. 
+
+Of course, it would make more sense to search for "malaria AND pregnancy," instead of "malaria OR pregnancy", as we are interested in malaria *among* pregnant women:
+
+`("malaria"[MeSH Terms] OR "malaria"[All Fields]) AND ("pregnancy"[MeSH Terms] OR "pregnancy"[All Fields])`
+
+```{marginfigure}
+To further limit the results to humans, we could add `AND "humans"[MeSH Terms]` to the end. 
+<br>
+<br>
+`("malaria"[MeSH Terms] OR "malaria"[All Fields]) AND ("pregnancy"[MeSH Terms] OR "pregnancy"[All Fields]) AND "humans"[MeSH Terms]`
+```
+
+The first two terms and last two terms are combined separately with `OR`. These combinations are then combined with `AND` (notice the use of parentheses to segment the operations), shrinking the pool of results by 99%. The `AND` operator will always maintain or decrease the number of results.   
+
+Combining the components of the PICO questions and Boolean operators can be very useful. Consider our research question once more: 
+
+> Among pregnant women living in malaria-endemic areas, is chemoprevention more effective than a placebo at preventing parasitaemia?
+
+```{marginfigure}
+<iframe width="300" height="169" src="https://www.youtube.com/embed/6wWeeCBBlk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>5 Tips for Searching PubMed. Duke University Medical Center Library & Archives (2012). [https://tinyurl.com/y66y7uvx](https://tinyurl.com/y66y7uvx)
+```
+
+Here is a reasonable search strategy in plain English:
+
+* **P:** (pregnancy `OR` pregnant women) `AND` malaria endemic
+* **I:** `AND` chemoprevention (to search for specific drugs, string them together with `OR`s)
+* **C:** `AND` placebo
+* **O:** `AND` parasitaemia
+
+## Access Journal Articles
+
+This is often much harder than you would imagine, in part because scientific publishing is a big business. And boy do publishers have it good. Consider this lifecycle of an academic article:
+
+1. Private and public donors fund research
+2. Researchers conduct studies, write up the results, and send their work to a journal for free, [often signing over the copyright](https://en.wikipedia.org/wiki/Copyright_policies_of_academic_publishers)
+3. Other scientists accept invitations from the journal to review the work pro bono
+4. Libraries pay the journal [large sums of money](https://www.latimes.com/business/hiltzik/la-fi-hiltzik-uc-elsevier-20181207-story.html) to give members access the article 
+5. Everyone else without library access is left to pay out of pocket 
+
+```{marginfigure}
+[Plan S](https://www.coalition-s.org/) (the "S" stands for "shock") might change the game. Developed in 2018, Plan S is an initiative to make all research funded with public funds to be published in open repositories or journals by 2020.
+```
+
+No wonder [publisher profit margins have exceeded some of our most innovative companies, such as Apple, Facebook, and Amazon](https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science)! Thankfully there has been a move toward [open access publishing](https://en.wikipedia.org/wiki/Open_access) in recent years that has increased the number of freely available articles, but too much knowledge still remains trapped behind paywalls. 
+
+```{r oa, fig.cap="The number and proportion of open access articles split between Gold, Green, Hybrid, Bronze and closed access [from 1950 - 2016; @piwowar2018]. To learn about the open access classification system, see [here](https://en.wikipedia.org/wiki/Open_access).", echo=F, fig.fullwidth = TRUE}
+knitr::include_graphics("images/OA_by_year.png", dpi = NA)
+```
+
+```{marginfigure}
+If you are affiliated with a university and struggle to find free access to an article, ask a librarian for help. Sometimes when you are browsing for articles off-campus from a non-university IP address, it will appear as if you do not have access. Ask for help connecting. If authentication is not the issue and you still cannot access an article, your institution might not subscribe to the journal. In this case, see if your library offers an [inter-library loan program](https://en.wikipedia.org/wiki/Interlibrary_loan).
+```
+
+If you are affiliated with a university, you (probably) have access to a wide range of journals. Here is what you can do if find yourself on the other side of a paywall looking in:
+
+* Search for the article in Google or Google Scholar and include the search term "pdf". This might help you locate a copy outside the paywall.
+* Search free cloud services like [ResearchGate](https://www.researchgate.net/) to see if the authors have posted a pre-publication copy as many journals permit.
+* Try a browser extension like [unpaywall](http://unpaywall.org/) to see if there is an open access version of the paper you seek.
+* Try emailing the author directly or contacting them through a service like ResearchGate. You'll find that most authors are willing to share their work with you. Usually searching for the author's name and university will bring up a profile with contact information.
+* You can also try your luck with the hashtag ["icanhazpdf" on Twitter](https://twitter.com/search?q=%23icanhazpdf&src=tyah) and see if a friend on the internet will help you out.
+* Don't pay for access until you have exhausted every other option.
+
+## Watch out for Junk Science
+
+```{r whoisafraid, fig.cap="@bohannon2013 submitted a fake paper to 304 journals on a naughty list of probable predatory journals or a [nice list of open access publishers](https://doaj.org/). 82% of the naughty list journals that responded published the bogus paper, mostly without any process that had a whiff of peer review. Surprisingly, 45% of the supposed real journals also published the fake results. One takeaway is that it can be hard to know if you are reading or submitting your work to a legitimate journal or a scam.", echo=F, fig.margin = TRUE}
+knitr::include_graphics("images/whoisafraid.png", dpi = NA)
+```
+
+If you search for studies on the open web (vs a database like PubMed), you are bound to come across articles published by a [predatory publisher](https://en.wikipedia.org/wiki/Predatory_publishing). These "journals" are happy to take your money and publish your work quickly with no peer review. Once you publish your first paper, you will become acquainted with them through the spam they send to your inbox daily. Here is a possible example. The *Global Journal of Intellectual & Developmental Disabilities* (sounds real, right?) will publish anything I send AND let me join their editorial board despite having no expertise or publishing record on the topic. As of this writing, the GJIDD does not appear to be indexed with PubMed (you can [check the NCBI databases](https://www.ncbi.nlm.nih.gov/nlmcatalog/journals)).
+
+```{r pred, fig.cap="", echo=F, fig.fullwidth = TRUE}
+knitr::include_graphics("images/pred.png", dpi = NA)
+```
+
+## Use a Reference Manager
+
+The importance of using a software program for managing search results and references cannot be overstated. The manual collation and assembly of a bibliography is, simply put, a colossal waste of time.
+
+You can choose from several reference managers. [Zotero](https://www.zotero.org/) is free and open source, which makes it a good choice for collaborations. Most programs share these core features:
+
+* Easily imports references from databases like PubMed; moves from the search results to the reference manager instantly
+* Automatically retrieves full-text PDFs
+* Syncs PDFs to tablets and phones
+* Connects to word processing software; inserting references in papers is easy
+* Automatically creates bibliographies based on works cited
+* Instantly reformats in-text citations and references to different styles, such as APA, AMA, or Harvard
+* Shares collections by automatically sync-ing via the Cloud to facilitate collaboration.
+* Easily exports references to other reference managers
+

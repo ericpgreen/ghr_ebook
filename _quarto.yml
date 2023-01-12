@@ -8,16 +8,21 @@ book:
   date-format: D MMMM, YYYY
   chapters:
     - index.qmd
-    - introduction.qmd
-    - part: part_1.qmd
-      chapters:
-        - ghr.qmd
-        - collaborations.qmd
+#    - introduction.qmd
+    - ghr.qmd
+    - collaborations.qmd
+#       - ideas.qmd
+#       - search.qmd
+#       - read.qmd
+#       - reviews.qmd
+#       - statinference.qmd
+    - causalinference.qmd
     - references.qmd
 
 bibliography: ghr.bib
 csl: apa.csl
-reference-location: margin
+footnotes-hover: true
+reference-location: document
 citation-location: margin
 
 format:
@@ -25,6 +30,7 @@ format:
     theme: cosmo
     css: styles.css
     linkcolor: "#1f9ac9"
+
   pdf:
     include-in-header: preamble.tex
     keep-tex: true
@@ -40,3 +46,4 @@ execute:
 filters:
   - ./www/conditional-content.lua
   - quarto
+  - ./www/color-text.lua
