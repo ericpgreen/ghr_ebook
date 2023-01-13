@@ -227,10 +227,10 @@ But as I stated previously, many research questions in global health are not ame
 ::: {.callout-note icon=false}
 ## **Additional causal inference frameworks**
 
-**Bradford Hill's Considerations**
+**Bradford Hill's Considerations.**
 In 1965, Epidemiologist and statistician Sir Austin Bradford Hill proposed a set of nine domains to consider when evaluating the evidence for a causal relationship: (1) strength, (2) consistency, (3) specificity, (4) temporality, (5) biological gradient, (6) plausibility, (7) coherence, (8) experiment, and (9) analogy. It does not feature prominently in current debates about causal inference, and it's commonly misapplied. *Modern Epidemiology* has a good summary and critique: [ghr.link/mod](https://ghr.link/mod).
 
-**Sufficient Cause Framework and Causal Pies**
+**Sufficient Cause Framework and Causal Pies.**
 The sufficient-component cause model is an approach for conceptualizing cause and effect used largely for pedagogical purposes. Dr. Kenneth Rothman defined sufficient causes as the minimal set of conditions that produce a given outcome. This set of causes is often represented by pie charts.
 :::
 ::::
@@ -262,7 +262,7 @@ For this reason, a graphical approach based on **causal diagrams** has emerged a
 
 [^moregenerally]: Causal diagrams are not just for confounder-control studies, but this is where you see them used most often. 
 
-:::{.column-body-outset}
+:::{.column-body}
 ![Causal directed acyclic graph (DAG) of the effect of taking the road less traveled on happiness.](images/dag example.svg){#fig-dag}
 :::
 
