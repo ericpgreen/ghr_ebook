@@ -38,20 +38,18 @@ It's almost always the latter.[^youmight] And to answer this question, we need c
 
 ## What is Causal Inference?
 
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+*Casual Inference Podcast*, Season 3, Episode 6, [A Casual Look at Causal Inference History](http://ghr.link/his).
+::::
+:::::
+
 ::::{.content-hidden unless-format="pdf"}
 :::{.column-margin}
-\faIcon{youtube} Scan the QR code to watch Dr. Richard McElreath's excellent talk, *Science Before Statistics: Causal Inference*, at \href{http://ghr.link/sbs}{\footnotesize\texttt{ghr.link/sbs}}.
+\faIcon{podcast} \textit{Casual Inference Podcast}, Season 3, Episode 6, A Casual Look at Causal Inference History, at \href{http://ghr.link/his}{\footnotesize\texttt{ghr.link/his}}.
 \newline
 \newline
-![](images/QR_sbs.png){width="75px"}
-:::
-::::
-
-::::{.content-hidden unless-format="html"}
-:::{.column-margin}
-<iframe width='300' height='169' src='https://www.youtube.com/embed/KNPYUVmY3NM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-
-Watch Dr. Richard McElreath's excellent talk, *Science Before Statistics: Causal Inference*.
+![](images/QR_his.png){width="75px"}
 :::
 ::::
 
@@ -505,6 +503,12 @@ library(ghr)
 library(patchwork)
 library(ggnewscale)
 
+library(showtext)
+library(sysfonts)
+font_add_google("Source Sans Pro")
+font_add_google("Libre Franklin", regular.wt = 200)
+showtext_auto()
+  
 set.seed(25)
 
 # main 
@@ -598,11 +602,11 @@ df_road_A %>%
 
 #### The Problem: Confounding {.unnumbered}
 
-@fig-roadconfounding should remind you that our core problem in this DAG is that the exposure (`road_traveled`) and the outcome (`happiness`) share a common cause: `cognition`. This is to say that `cognition` confounds the relationship between 𝑋 and 𝑌.  
-
 :::{.column-margin}
 ![`cognition` confounds the 𝑋𝑌 relationship.](images/road_confounding.png){#fig-roadconfounding}
 :::
+
+@fig-roadconfounding should remind you that our core problem in this DAG is that the exposure (`road_traveled`) and the outcome (`happiness`) share a common cause: `cognition`. This is to say that `cognition` confounds the relationship between 𝑋 and 𝑌.  
 
 You can see this visually in @fig-confounding. In the left panel, people who scored high on optimism are represented in red (vs low in black). Notice that red appears more frequently among the road less traveled group AND red looks to be associated with higher happiness scores. If we just compare happiness scores by road traveled, we get the wrong answer (difference of 2.07). This is because `cognition` biases the 𝑋𝑌 relationship.  
 
@@ -610,11 +614,9 @@ You can see this visually in @fig-confounding. In the left panel, people who sco
 Remember, we know the correct answer is 1.5 because that's how I simulated the data generating process.
 :::
 
-To get to the right answer, we need to hold `cognition` constant. In the right panel I show this by looking just at people with a low optimism score. Now if we compare happiness scores by road traveled, we get close to the correct answer (difference of 1.47).
+To get to the right answer, we need to hold `cognition` constant. In the right panel I show this by looking just at people with a low optimism score. Now if we compare happiness scores by road traveled, we get close to the correct answer (difference of 1.47).[^simulationsinvolve]
 
-:::{.column-margin}
-Simulations involve a bit of noise.
-:::
+[^simulationsinvolve]: Simulations involve a bit of noise.
 
 ```{r}
 #| echo: false
@@ -729,7 +731,7 @@ confound1 + confound2
 
 #### A Solution: Multiple Regression {.unnumbered}
 
-In practice we'd estimate the effect via a technique like multiple regression, which I'll show you here.[^inreality] You'll see that I modified the variable names to make @fig-roada easier to read. Most notably, the exposure road traveled is represented as `x` and the outcome happiness is represented as `y`. Cognition and active are simply `c` and `a`, respectively.
+In practice we might estimate the effect via a technique like multiple regression, which I'll show you here.[^inreality] You'll see that I modified the variable names to make @fig-roada easier to read. Most notably, the exposure road traveled is represented as `x` and the outcome happiness is represented as `y`. Cognition and active are simply `c` and `a`, respectively.
 
 [^inreality]: Actually you'd probably use something like matching or inverse probability weighting, but those methods make the example too complex. See Heiss (2020) for examples.
 
@@ -794,6 +796,23 @@ The [blue model `y ~ x + c + a`]{color="#619CFF"} gets us into trouble. In the d
 
 It might come as a surprise that something can go wrong by adding covariates to your model. Many of us are taught that it's probably good or at least neutral to add all seemingly relevant variables to a regression. This is just bad advice. Some covariates will make your estimates worse, not better.
 
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch Dr. Richard McElreath's excellent talk, *Science Before Statistics: Causal Inference*, at \href{http://ghr.link/sbs}{\footnotesize\texttt{ghr.link/sbs}}.
+\newline
+\newline
+![](images/QR_sbs.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe width='300' height='169' src='https://www.youtube.com/embed/KNPYUVmY3NM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+Watch Dr. Richard McElreath's excellent talk, *Science Before Statistics: Causal Inference*.
+:::
+::::
+
 @mcelreath:2020 uses the term **causal salad** to describe this very common practice of tossing lots of "control" variables into a statistical model and telling a causal story. This approach can work when the goal is prediction, but it can go very very wrong when the goal is causal inference. One of his core points in *Statistical Rethinking* is that causal inference requires causal models that are separate from statistical models. Statistics alone can get us to the wrong answers. But if we follow the DAG, our causal model, we know to leave `active` alone.
 
 ### THE BIG FINE PRINT {.unnumbered}
@@ -810,26 +829,114 @@ But let's be clear: there is no approach to causal inference that sidesteps the 
 
 ## Instrument-Based Approaches and Quasi-Experimental Designs
 
-Talk about c-c closing back doors and how experiments do this so well. Then talk about quasi.
+If confounder-control is about closing backdoors through statistical adjustment, instrument-based approaches are about isolating front doors [@huntington:2021]. These approaches are sometimes called quasi-experimental designs because they attempt to mimic the beauty and logic of a perfectly conducted randomized controlled trial (RCT).
+
+### EXPERIMENTS DESTROY CONFOUNDING {.unnumbered}
+
+As shown in @fig-obsexpdag, RCTs (experiments), are effective because they close all backdoors that run from the proposed cause to the outcome. For instance, if we were somehow able to randomly assign people to the road *less* traveled or the road *more* traveled—and if people complied with these assignments—then the only arrow into `road_traveled` would be randomization. Randomization would be the only cause of `road_traveled`.
 
 :::{.column-body-outset}
 ![Observational DAG vs experimental DAG.](images/obsexpdag.svg){#fig-obsexpdag}
+::: 
+
+Randomization destroys confounding. This includes confounding from variables you think to measure, like `cognition` in this example, as well as variables that you can't or don't measure for whatever reason. This idea is so powerful that many people refer to experiments as the gold-standard when it comes to causal inference.[^wrong]
+
+[^wrong]: A lot can go wrong with experiments that can dull their shine (we'll get to examples later), but it's hard to deny their claim in theory to strong causal inference.
+
+### EXOGENOUS VARIATION WITHOUT RANDOMIZATION {.unnumbered} 
+
+When randomization is not possible, confounding is likely. You can try to account for this confounding statistically (confounder control), or you can search for partial causes of the exposure/treatment that are unrelated to the outcome. Sometimes you can get lucky and find an exogenous source of variation in the exposure/treatment and use it to identify the causal effect.
+
+For instance, imagine that we couldn't randomize who travels which road, but we could restrict access to the road less traveled to people born on or after January 1, 1980. By this arbitrary rule, someone born on January 1, 1980 would be allowed to pass, but someone born on December 31, 1979 would have to take the road more traveled. This is the basic setup for a **regression discontinuity** design that fits in the instrument-based or quasi-experimental bucket (@fig-rddag). 
+
+:::{.column-body-outset}
+![Regression discontinuity DAG.](images/regression discontinuity road.svg){#fig-rddag}
 :::
 
-:::::{.content-hidden unless-format="html"}
-::::{.column-margin}
-*Casual Inference Podcast*, Season 3, Episode 6, [A Casual Look at Causal Inference History](http://ghr.link/his).
-::::
-:::::
+In this design, `birthdate ≥ 1980-01-01` is an **instrument** that causes exogenous variation in who is exposed to the road less traveled (see the left panel of @fig-roadrd). This variation is almost as good as randomization because the cutoff is arbitrary. Furthermore, when we limit our investigation to people born right around this arbitrary cutoff, any potential link between birthdate and the outcome is broken. We'd argue that people born just before and just after the cutoff are similar in many observable and unobservable ways. The only difference is that people born before the cutoff weren't allowed to take the road less traveled. This isolates the front door from `road_traveled` to `happiness`.
 
-::::{.content-hidden unless-format="pdf"}
-:::{.column-margin}
-\faIcon{podcast} \textit{Casual Inference Podcast}, Season 3, Episode 6, A Casual Look at Causal Inference History, at \href{http://ghr.link/his}{\footnotesize\texttt{ghr.link/his}}.
-\newline
-\newline
-![](images/QR_his.png){width="75px"}
-:::
-::::
+```{r}
+#| echo: false
+#| fig-cap: "A regression discontinuity example."
+#| fig-height: 5.5
+#| fig-width: 17
+#| label: fig-roadrd
+#| column: page
+
+set.seed(2366)
+
+df_road_A_rd <- df_road_A %>%
+  group_by(road_traveled, cognition) %>%
+  sample_n(30) %>%
+  ungroup() %>%
+  mutate(start = case_when(
+    road_traveled==1 ~ "1980-01-01",
+    TRUE ~ "1979-10-01"
+  )) %>%
+  mutate(end = case_when(
+    road_traveled==1 ~ "1980-03-31",
+    TRUE ~ "1979-12-31"
+  )) %>%
+  group_by(road_traveled) %>%
+  mutate(dob = sample(seq(unique(as.Date(start)), 
+                          unique(as.Date(end)), by="day"), n())) %>%
+  ungroup() %>%
+  select(road_traveled, happiness_obs, dob, cognition) %>%
+  mutate(road_traveled = factor(road_traveled,
+                                levels = c(0, 1),
+                                labels = c("Road more traveled", 
+                                           "Road less traveled"))) %>%
+  mutate(days = as.numeric(dob - as.Date("1980-01-01")))
+
+# https://evalf20.classes.andrewheiss.com/example/rdd/
+df_road_A_rd_1 <- df_road_A_rd %>%
+  ggplot(aes(x = dob, y = road_traveled, color = road_traveled)) +
+    # Make points small and semi-transparent since there are lots of them
+    geom_point(size = 2, alpha = 0.5, 
+               position = position_jitter(width = 0, height = 0.25, seed = 1234)) +
+    scale_color_manual(values = c("#e69138", "#1f9ac9")) +
+    # Add vertical line
+    geom_vline(xintercept = as.Date("1980-01-01")) + 
+    # Add labels
+    labs(x = "Date of Birth", y = NULL,
+         subtitle = str_wrap("Sharp regression discontinuity: Only people born on or after Jan 1, 1980 were eligible and this rule was strictly followed", 80)) + 
+    guides(color = FALSE) +
+    theme_ghr()
+
+df_road_A_rd_2 <- df_road_A_rd %>%
+  ggplot(aes(x = days, y = happiness_obs, color = road_traveled)) +
+    geom_point(size = 2, alpha = 0.5, position = position_jitter(seed = 42)) + 
+    scale_color_manual(values = c("#e69138", "#1f9ac9")) +
+    # Add a line based on a linear model for the people born before jan 1 
+    geom_smooth(data = filter(df_road_A_rd, days < 0), 
+                method = "lm") +
+    # Add a line based on a linear model for the people scoring more than 70
+    geom_smooth(data = filter(df_road_A_rd, days >= 0), 
+                method = "lm") +
+    geom_vline(xintercept = 0) + 
+    labs(x = "Days from birth to cutoff (Jan 1, 1980)", y = "Happiness", 
+         color = "Road traveled",
+         subtitle = str_wrap("Taking the road less traveled increased happiness by an estimated 1.5 points", 70)) + 
+    guides(color = FALSE) +
+    theme_ghr() +
+    annotate("text", x = -50, y = 6, 
+             label = "Road more traveled",
+             size = 4,
+             color = "#e69138") +
+    annotate("text", x = 50, y = 3, 
+             label = "Road less traveled",
+             size = 4,
+             color = "#1f9ac9") 
+
+df_road_A_rd_1 + df_road_A_rd_2 + 
+  plot_annotation(
+    title = "Imagine that access to the road less traveled was based on one's birthday",
+    caption = "Points are jittered to improve visability.",
+    theme = theme_ghr()) + 
+    plot_layout(widths = c(1.5, 2))
+```
+
+The key to this design, and others in this category, is that the instrument changes the probability of exposure (treatment) WITHOUT having any other mechanism of impacting the outcome [@matthay:2020b]. In a later chapter we'll see examples of regression discontinuity in practice, along with other designs like instrumental variables, difference-in-differences, and interrupted time series.
 
 ## Threats to Internal Validity
 
