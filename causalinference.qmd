@@ -140,7 +140,7 @@ In some ways it might be easier to refer to Robert's decision as the variable `r
 
 Often we refer to potential causes as 𝑋 and to response variables as 𝑌. And typically, when the treatment (or exposure) 𝑋 can take two levels, such as treated/not treated, we label treated 1, and not treated 0.
 
-In this example, I imagine Robert looking left and then looking right. Observing that the second path was "grassy and wanted wear", he decided to go right, taking the "one less traveled by". Frost claims that his decision to make the uncommon path "made all the difference", so I'm labeling this path (less traveled) as the treatment, 𝑋 = 1.
+In this example, I imagine Robert looking left and then looking right. Observing that the second path was "grassy and wanted wear", he decided to go right, taking the "one less traveled by". Frost claims that his decision to take the uncommon path "made all the difference", so I'm labeling this path (less traveled) as the treatment, 𝑋 = 1.
 :::
 ::::
 
@@ -219,7 +219,7 @@ There are different causal inference methods for addressing selection bias, and 
 
 [^formally]: Formally the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel.
 
-But as I stated previously, many research questions in global health are not amenable to experimentation, and the approach to causal inference must be rooted in non-experimental (or observational) data. @matthay:2020b divides these non-experimental approaches into two main buckets: confounder-control and instrument-based. **Confounder-control** is characterized by the use of statistical adjustment to make groups more comparable. You'll find many examples of confounder-control in epidemiology and public health journals. **Instrument-based** studies, sometimes called **quasi-experimental** designs, estimate treatment effects by finding and leveraging arbitrary reasons why some people are more likely to be treated or exposed. Instrument-based studies are quite common in economics and psychology. I'll introduce each approach in turn.
+But as I stated previously, many research questions in global health are not amenable to experimentation, and the approach to causal inference must be rooted in non-experimental (or observational) data. @matthay:2020b divide these non-experimental approaches into two main buckets: confounder-control and instrument-based. **Confounder-control** is characterized by the use of statistical adjustment to make groups more comparable. You'll find many examples of confounder-control in epidemiology and public health journals. **Instrument-based** studies, sometimes called **quasi-experimental** designs, estimate treatment effects by finding and leveraging arbitrary reasons why some people are more likely to be treated or exposed. Instrument-based studies are quite common in economics and psychology. I'll introduce each approach in turn.
 
 ::::{.content-hidden unless-format="html"}
 ::: {.callout-note icon=false}
@@ -813,7 +813,7 @@ Watch Dr. Richard McElreath's excellent talk, *Science Before Statistics: Causal
 :::
 ::::
 
-@mcelreath:2020 uses the term **causal salad** to describe this very common practice of tossing lots of "control" variables into a statistical model and telling a causal story. This approach can work when the goal is prediction, but it can go very very wrong when the goal is causal inference. One of his core points in *Statistical Rethinking* is that causal inference requires causal models that are separate from statistical models. Statistics alone can get us to the wrong answers. But if we follow the DAG, our causal model, we know to leave `active` alone.
+@mcelreath:2020 uses the term **causal salad** to describe this very common practice of tossing lots of "control" variables into a statistical model and telling a causal story. This approach can work when the goal is prediction, but it can go very very wrong when the goal is causal inference. One of his core points in *Statistical Rethinking* is that causal inference requires causal models that are separate from statistical models. Statistics alone can get us to the wrong answers. But if we follow the DAG—our causal model—we know to leave `active` alone.
 
 ### THE BIG FINE PRINT {.unnumbered}
 
@@ -966,7 +966,7 @@ Another assumption is **consistency** (or treatment variance irrelevance). This 
 
 ### THREATS TO INTERNAL VALIDITY {.unnumbered}
 
-These causal inference assumptions will be likely familiar to anyone who uses the potential outcomes framework or Pearl's graphical causal models approach, but folks with a psychology or education background might be more accustomed to identifying and avoiding threats to internal validity in the Campbell tradition [@scc]. You'll recall from earlier in this chapter that **internal validity** pertains to the robustness of a causal claim that the observed variation in 𝑌 is caused by 𝑋. A study with a weak causal claim would be said to have low internal validity. @matthay:2020 offers a helpful crosswalk between potential outcomes, DAGs, and the Campbell Tradition, and @west:2010 compares Campbell's approach with the potential outcomes approach (sometimes called the Rubin Causal Model).
+These causal inference assumptions will be likely familiar to anyone who uses the potential outcomes framework or Pearl's graphical causal models approach, but folks with a psychology or education background might be more accustomed to identifying and avoiding threats to internal validity in the Campbell tradition [@scc]. You'll recall from earlier in this chapter that **internal validity** pertains to the robustness of a causal claim that the observed variation in 𝑌 is caused by 𝑋. A study with a weak causal claim would be said to have low internal validity. @matthay:2020 offer a helpful crosswalk between potential outcomes, DAGs, and the Campbell tradition, and @west:2010 compare Campbell's approach with the potential outcomes approach (sometimes called the Rubin Causal Model).
 
 :::::{.content-hidden unless-format="html"}
 ::::{.column-margin}
@@ -983,7 +983,7 @@ These causal inference assumptions will be likely familiar to anyone who uses th
 :::
 ::::
 
-In the Campbell Tradition, researchers are taught to identify the possible threats to internal validity, practice "control by design", and strive for "coherent pattern matching". In short, this means to think about the alternative plausible explanations for causal effects (threats), add design elements such as additional comparison groups to remove or reduce these threats (control by design), and make more complex hypotheses to raise the inferential bar and strengthen one's causal claim (coherent pattern matching).
+In the Campbell tradition, researchers are taught to identify the possible threats to internal validity, practice "control by design", and strive for "coherent pattern matching". In short, this means to think about the alternative plausible explanations for causal effects (threats), add design elements such as additional comparison groups to remove or reduce these threats (control by design), and make more complex hypotheses to raise the inferential bar and strengthen one's causal claim (coherent pattern matching).
 
 Plausible alternative explanations for the causal effect are threats to internal validity. @scc enumerate eight specific threats and warn that threats can accumulate (see @tbl-threats). The core threat is confounding, which @scc frame as a selection threat.
 
@@ -1023,7 +1023,7 @@ kable(threats, format = format, booktabs = T,
 Internal validity is not a property of your research design per se; it's a characteristic of your claim. While it's true that some designs, like randomized controlled trials, face fewer threats to internal validity in theory, it's also true that study implementation matters. The RCT label does not insulate a poorly conducted RCT from criticism. It's best to think consider the internal validity of claims on a study-by-study basis. Also, there is not a statistical test that will tell you if your claim has high internal validity. You can use the results of various statistical tests to probe the support for your causal claim, but no test will tell you that a claim has high or low internal validity. P-values, for instance, are silent on the issue.
 
 :::{.column-margin}
-Violations of assumptions like exchangability, positivity, and consistency threaten the internal validity of a claim, but the Campbell Tradition does not use these terms.
+Violations of assumptions like exchangability, positivity, and consistency threaten the internal validity of a claim, but the Campbell tradition does not use these terms.
 ::: 
 
 ## Coda: Coffee Saves Lives?
