@@ -966,6 +966,8 @@ Another assumption is **consistency** (or treatment variance irrelevance). This 
 
 ### THREATS TO INTERNAL VALIDITY {.unnumbered}
 
+These causal inference assumptions will be likely familiar to anyone who uses the potential outcomes framework or Pearl's graphical causal models approach, but folks with a psychology or education background might be more accustomed to identifying and avoiding threats to internal validity in the Campbell tradition [@scc]. You'll recall from earlier in this chapter that **internal validity** pertains to the robustness of a causal claim that the observed variation in 𝑌 is caused by 𝑋. A study with a weak causal claim would be said to have low internal validity. @matthay:2020 offers a helpful crosswalk between potential outcomes, DAGs, and the Campbell Tradition, and @west:2010 compares Campbell's approach with the potential outcomes approach (sometimes called the Rubin Causal Model).
+
 :::::{.content-hidden unless-format="html"}
 ::::{.column-margin}
 *Quantitude Podcast*, Episode 26, [The Internal Validity Pre-Flight Checklist](http://ghr.link/int).
@@ -980,8 +982,6 @@ Another assumption is **consistency** (or treatment variance irrelevance). This 
 ![](images/QR_int.png){width="75px"}
 :::
 ::::
-
-These causal inference assumptions will be likely familiar to anyone who uses the potential outcomes framework or Pearl's graphical causal models approach, but folks with a psychology or education background might be more accustomed to identifying and avoiding threats to internal validity in the Campbell tradition [@scc]. You'll recall from earlier in this chapter that **internal validity** pertains to the robustness of a causal claim that the observed variation in 𝑌 is caused by 𝑋. A study with a weak causal claim would be said to have low internal validity. @matthay:2020 offers a helpful crosswalk between potential outcomes, DAGs, and the Campbell Tradition, and @west:2010 compares Campbell's approach with the potential outcomes approach (sometimes called the Rubin Causal Model).
 
 In the Campbell Tradition, researchers are taught to identify the possible threats to internal validity, practice "control by design", and strive for "coherent pattern matching". In short, this means to think about the alternative plausible explanations for causal effects (threats), add design elements such as additional comparison groups to remove or reduce these threats (control by design), and make more complex hypotheses to raise the inferential bar and strengthen one's causal claim (coherent pattern matching).
 
