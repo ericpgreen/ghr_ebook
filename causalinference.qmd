@@ -903,6 +903,11 @@ df_road_A_rd_1 <- df_road_A_rd %>%
     guides(color = FALSE) +
     theme_ghr()
 
+y1 = predict(lm(happiness_obs ~ days, 
+                filter(df_road_A_rd, days < 0)), list(days=0))
+y2 = predict(lm(happiness_obs ~ days, 
+                filter(df_road_A_rd, days >= 0)), list(days=0))
+
 df_road_A_rd_2 <- df_road_A_rd %>%
   ggplot(aes(x = days, y = happiness_obs, color = road_traveled)) +
     geom_point(size = 2, alpha = 0.5, position = position_jitter(seed = 42)) + 
@@ -916,7 +921,7 @@ df_road_A_rd_2 <- df_road_A_rd %>%
     geom_vline(xintercept = 0) + 
     labs(x = "Days from birth to cutoff (Jan 1, 1980)", y = "Happiness", 
          color = "Road traveled",
-         subtitle = str_wrap("Taking the road less traveled increased happiness by an estimated 1.5 points", 70)) + 
+         subtitle = str_wrap("Taking the road less traveled increased happiness by estimated 1.5 points", 70)) + 
     guides(color = FALSE) +
     theme_ghr() +
     annotate("text", x = -50, y = 6, 
@@ -926,7 +931,8 @@ df_road_A_rd_2 <- df_road_A_rd %>%
     annotate("text", x = 50, y = 3, 
              label = "Road less traveled",
              size = 4,
-             color = "#1f9ac9") 
+             color = "#1f9ac9") +
+    annotate("segment", x=0, xend=0, y=y1, yend=y2, color = "#69A84F", size = 4) 
 
 df_road_A_rd_1 + df_road_A_rd_2 + 
   plot_annotation(
@@ -936,21 +942,29 @@ df_road_A_rd_1 + df_road_A_rd_2 +
     plot_layout(widths = c(1.5, 2))
 ```
 
-The key to this design, and others in this category, is that the instrument changes the probability of exposure (treatment) WITHOUT having any other mechanism of impacting the outcome [@matthay:2020b]. In a later chapter we'll see examples of regression discontinuity in practice, along with other designs like instrumental variables, difference-in-differences, and interrupted time series.
+The key to this design, and others in this category, is that the instrument changes the probability of exposure (treatment) WITHOUT having any other mechanism of impacting the outcome [@matthay:2020b]. In a later chapter we'll see examples of regression discontinuity in practice, along with other quasi-experimental designs like instrumental variables, difference-in-differences, and interrupted time series.
 
-## Threats to Internal Validity
+## Key Assumptions and Threats to Internal Validity
 
-Campbell here
-Glamour
+I listed three requirements for causal relationships when I defined causes:
 
-::::{.content-hidden unless-format="html"}
-::: {.callout-note icon=false}
-## **Two important notes about internal validity**
+1. causes must come before effects;    
+2. causes and effects are associated, meaning they go together or covary; and
+3. there are no other plausible alternative explanations for the effect other than the proposed cause.
 
-First, internal validity is not a property of your research design per se; it's a characteristic of your claim. While it's true that some designs, like randomized controlled trials, face fewer threats to internal validity in theory, it's also true that study implementation matters. The RCT label does not insulate a poorly conducted RCT from criticism. It's best to think consider the internal validity of claims on a study-by-study basis. Second, there is not a statistical test that will tell you if your claim has high internal validity. You can use the results of various statistical tests to probe the support for your causal claim, but no test will tell you that a claim has high or low internal validity. P-values, for instance, are silent on the issue.
+The third requirement—no other plausible alternative explanations—is the hardest of them all to meet. Every approach to causal inference relies on mostly untestable assumptions related to this requirement.
+
+A key assumption, *no confounding*, is known by different names across disciplines: **ignorability** of the treatment assignment (statistics), conditional independence (economics), and (conditional) **exchangability** (epidemiology) [@gelman:2020]. This assumption says that there is no relationship between the treatment (or exposure) someone receives and their potential outcomes. In observational studies, this assumption needs to hold after adjusting for any covariates. @matthay:2020b gives the example of a violation of this assumption where people who are more likely to succeed across the board, regardless of treatment, are more likely to be treated. It would be like stacking the deck in favor of the treatment. Randomization destroys this confounding, but it's a concern for observational studies. With confounder-control approaches in particular, you always have to worry about omitted variable bias—failing to adjust for the sufficient set of confounding variables.
+
+:::{.column-margin}
+No measurement error is another assumption, but I'll save that for the chapter on content validity.
 :::
-:::: 
 
+Once you adjust for a set of covariates, you must think about the assumption of **positivity**. It says that all possible covariate subgroups in your study must have a non-zero chance of being exposed to the treatment. For instance, if your adjustment set includes biological sex, it would be a positivity violation if males could not receive the treatment. If you are not adjusting for sex, this is not a concern. @westreich:2019 gives the example of adjusting for biological sex in a study about the effects of hysterectomy when it's only possible for people with a uterus to undergo a hysterectomy. The solution is simple: biological sex should not be a covariate in your adjustment set.
+
+Another assumption is **consistency** (or treatment variance irrelevance). This is the idea that any variations in a treatment or exposure are irrelevant to the causal effect [@westreich:2019]. For instance, if the intervention under investigation is text message reminders to promote medication adherence, consistency is the assumption that variations in timing of message delivery (e.g., morning or night) are not important for the effect of reminders.
+
+### THREATS TO INTERNAL VALIDITY {.unnumbered}
 
 :::::{.content-hidden unless-format="html"}
 ::::{.column-margin}
@@ -967,13 +981,62 @@ First, internal validity is not a property of your research design per se; it's 
 :::
 ::::
 
+These causal inference assumptions will be likely familiar to anyone who uses the potential outcomes framework or Pearl's graphical causal models approach, but folks with a psychology or education background might be more accustomed to identifying and avoiding threats to internal validity in the Campbell tradition [@scc]. You'll recall from earlier in this chapter that **internal validity** pertains to the robustness of a causal claim that the observed variation in 𝑌 is caused by 𝑋. A study with a weak causal claim would be said to have low internal validity. @matthay:2020 offers a helpful crosswalk between potential outcomes, DAGs, and the Campbell Tradition, and @west:2010 compares Campbell's approach with the potential outcomes approach (sometimes called the Rubin Causal Model).
 
+In the Campbell Tradition, researchers are taught to identify the possible threats to internal validity, practice "control by design", and strive for "coherent pattern matching". In short, this means to think about the alternative plausible explanations for causal effects (threats), add design elements such as additional comparison groups to remove or reduce these threats (control by design), and make more complex hypotheses to raise the inferential bar and strengthen one's causal claim (coherent pattern matching).
+
+Plausible alternative explanations for the causal effect are threats to internal validity. @scc enumerate eight specific threats and warn that threats can accumulate (see @tbl-threats). The core threat is confounding, which @scc frame as a selection threat.
+
+\vspace{2em}
+```{r threats}
+#| label: tbl-threats
+#| tbl-cap: "Threats to internal validity from Shadish et al. (2002)."
+
+library(knitr)
+library(kableExtra)
+
+  threats <- tribble(
+    ~Threat, ~Description,
+    "Ambiguous temporal precedence", "Lack of clarity about which variable occurred first may yield confusion about which variable is the cause and which is the effect.",
+    "Selection", "Systematic differences over conditions in respondent characteristics that could also cause the observed effect.",
+    "History", "Events occurring concurrently with treatment could cause the observed effect.", 
+    "Maturation", "Naturally occurring changes over time could be confused with a treatment effect.",
+    "Regression artifact", "When units are selected for their extreme scores, they will often have less extreme scores on other variables, an occurrence that can be confused with a treatment effect.",
+    "Attrition", "Loss of respondents to treatment or to measurement can produce artifactual effects if that loss is systematically correlated with conditions.",
+    "Testing", "Exposure to a test can affect test scores on subsequent exposures to that test, an occurrence that can be confused with a treatment effect.",
+    "Instrumentation", "The nature of a measure may change over time or conditions in a way that could be confused with a treatment effect."
+  )
+  
+format <- ifelse(knitr::is_html_output(), "html", "latex")
+
+kable(threats, format = format, booktabs = T,
+      caption="Threats to internal validity from @scc"
+      #table.envir = 'table*'
+      ) %>%
+  row_spec(0, bold=TRUE) %>%
+  column_spec(1, bold=TRUE, width="5cm") %>%
+  column_spec(2, width="10.5cm") %>%
+	kable_styling(full_width = F, position = "left")
+```
+\vspace{2em}
+
+Internal validity is not a property of your research design per se; it's a characteristic of your claim. While it's true that some designs, like randomized controlled trials, face fewer threats to internal validity in theory, it's also true that study implementation matters. The RCT label does not insulate a poorly conducted RCT from criticism. It's best to think consider the internal validity of claims on a study-by-study basis. Also, there is not a statistical test that will tell you if your claim has high internal validity. You can use the results of various statistical tests to probe the support for your causal claim, but no test will tell you that a claim has high or low internal validity. P-values, for instance, are silent on the issue.
+
+:::{.column-margin}
+Violations of assumptions like exchangability, positivity, and consistency threaten the internal validity of a claim, but the Campbell Tradition does not use these terms.
+::: 
 
 ## Coda: Coffee Saves Lives?
+
+Before we wrap-up this chapter, let's return to the opening question: Does drinking a cup of coffee daily lower the risk of dying? @ding:2015 suggested that the answer is yes. What do you think?
+
+The authors took a confounder-control approach to the analysis, but they did not share a DAG. All of the variables in @fig-whatthedag are covariates they mentioned adjusting for in their analysis. Is this the complete set of relevant variables? What are the backdoors that need closing? Are there any colliders? 
 
 :::{.column-body-outset}
 ![What's in the DAG?](images/whatthedag.svg){#fig-whatthedag}
 :::
+
+Causal inference is hard, especially when dealing with observational data. We can't rely on data or statistics alone to answer causal questions. In short, we need causal models.
 
 ## Keep Learning
 
@@ -981,4 +1044,5 @@ First, internal validity is not a property of your research design per se; it's 
 * Nick Huntington-Klein's "The Effect: An Introduction to Research Design and Causality", [ghr.link/eff](https://ghr.link/eff)
 * Richard McElreath's "Statistical Rethinking", [ghr.link/sre](https://ghr.link/sre)
 * Morgan and Winship's "Counterfactuals and Causal Inference: Methods and Principles for Social Research", [ghr.link/mor](https://ghr.link/mor)
-* Hernán and Robins, "Causal Inference: What If", [ghr.link/wha](https://ghr.link/wha)
+* Hernán and Robins', "Causal Inference: What If", [ghr.link/wha](https://ghr.link/wha)
+* Daniel Westreich's, "Epidemiology by Design", [ghr.link/wes](https://ghr.link/wes)
