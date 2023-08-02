@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.383">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Global Health Research Methods - 3&nbsp; Causal Inference</title>
+<title>Global Health Research Methods - 4&nbsp; Causal Inference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -99,24 +104,25 @@ div.csl-indent {
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./references.html" rel="next">
-<link href="./collaborations.html" rel="prev">
+<meta name="quarto:offset" content="./">
+<link href="./construct.html" rel="next">
+<link href="./ideas.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -150,7 +156,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Causal Inference</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Inference</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -190,7 +196,17 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./causalinference.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Causal Inference</span></a>
+  <a href="./ideas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Develop Research Ideas and Questions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./causalinference.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Inference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./construct.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement and Construct Validation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,17 +219,17 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-causal-inference" id="toc-what-is-causal-inference" class="nav-link active" data-scroll-target="#what-is-causal-inference"> <span class="header-section-number">3.1</span> What is Causal Inference?</a>
+  <li><a href="#what-is-causal-inference" id="toc-what-is-causal-inference" class="nav-link active" data-scroll-target="#what-is-causal-inference"><span class="toc-section-number">4.1</span>  What is Causal Inference?</a>
   <ul class="collapse">
   <li><a href="#causes" id="toc-causes" class="nav-link" data-scroll-target="#causes">CAUSES</a></li>
   <li><a href="#effects" id="toc-effects" class="nav-link" data-scroll-target="#effects">EFFECTS</a></li>
   <li><a href="#causal-inference-methods" id="toc-causal-inference-methods" class="nav-link" data-scroll-target="#causal-inference-methods">CAUSAL INFERENCE METHODS</a></li>
   </ul></li>
-  <li><a href="#causal-diagrams-and-confounder-control" id="toc-causal-diagrams-and-confounder-control" class="nav-link" data-scroll-target="#causal-diagrams-and-confounder-control"> <span class="header-section-number">3.2</span> Causal Diagrams and Confounder-Control</a>
+  <li><a href="#causal-diagrams-and-confounder-control" id="toc-causal-diagrams-and-confounder-control" class="nav-link" data-scroll-target="#causal-diagrams-and-confounder-control"><span class="toc-section-number">4.2</span>  Causal Diagrams and Confounder-Control</a>
   <ul class="collapse">
   <li><a href="#causal-stories" id="toc-causal-stories" class="nav-link" data-scroll-target="#causal-stories">CAUSAL STORIES</a></li>
   <li><a href="#components-of-a-dag" id="toc-components-of-a-dag" class="nav-link" data-scroll-target="#components-of-a-dag">COMPONENTS OF A DAG</a></li>
@@ -223,17 +239,17 @@ div.csl-indent {
   <li><a href="#effect-estimation" id="toc-effect-estimation" class="nav-link" data-scroll-target="#effect-estimation">EFFECT ESTIMATION</a></li>
   <li><a href="#the-big-fine-print" id="toc-the-big-fine-print" class="nav-link" data-scroll-target="#the-big-fine-print">THE BIG FINE PRINT</a></li>
   </ul></li>
-  <li><a href="#instrument-based-approaches-and-quasi-experimental-designs" id="toc-instrument-based-approaches-and-quasi-experimental-designs" class="nav-link" data-scroll-target="#instrument-based-approaches-and-quasi-experimental-designs"> <span class="header-section-number">3.3</span> Instrument-Based Approaches and Quasi-Experimental Designs</a>
+  <li><a href="#instrument-based-approaches-and-quasi-experimental-designs" id="toc-instrument-based-approaches-and-quasi-experimental-designs" class="nav-link" data-scroll-target="#instrument-based-approaches-and-quasi-experimental-designs"><span class="toc-section-number">4.3</span>  Instrument-Based Approaches and Quasi-Experimental Designs</a>
   <ul class="collapse">
   <li><a href="#experiments-destroy-confounding" id="toc-experiments-destroy-confounding" class="nav-link" data-scroll-target="#experiments-destroy-confounding">EXPERIMENTS DESTROY CONFOUNDING</a></li>
   <li><a href="#exogenous-variation-without-randomization" id="toc-exogenous-variation-without-randomization" class="nav-link" data-scroll-target="#exogenous-variation-without-randomization">EXOGENOUS VARIATION WITHOUT RANDOMIZATION</a></li>
   </ul></li>
-  <li><a href="#key-assumptions-and-threats-to-internal-validity" id="toc-key-assumptions-and-threats-to-internal-validity" class="nav-link" data-scroll-target="#key-assumptions-and-threats-to-internal-validity"> <span class="header-section-number">3.4</span> Key Assumptions and Threats to Internal Validity</a>
+  <li><a href="#key-assumptions-and-threats-to-internal-validity" id="toc-key-assumptions-and-threats-to-internal-validity" class="nav-link" data-scroll-target="#key-assumptions-and-threats-to-internal-validity"><span class="toc-section-number">4.4</span>  Key Assumptions and Threats to Internal Validity</a>
   <ul class="collapse">
   <li><a href="#threats-to-internal-validity" id="toc-threats-to-internal-validity" class="nav-link" data-scroll-target="#threats-to-internal-validity">THREATS TO INTERNAL VALIDITY</a></li>
   </ul></li>
-  <li><a href="#coda-coffee-saves-lives" id="toc-coda-coffee-saves-lives" class="nav-link" data-scroll-target="#coda-coffee-saves-lives"> <span class="header-section-number">3.5</span> Coda: Coffee Saves Lives?</a></li>
-  <li><a href="#keep-learning" id="toc-keep-learning" class="nav-link" data-scroll-target="#keep-learning"> <span class="header-section-number">3.6</span> Keep Learning</a></li>
+  <li><a href="#coda-coffee-saves-lives" id="toc-coda-coffee-saves-lives" class="nav-link" data-scroll-target="#coda-coffee-saves-lives"><span class="toc-section-number">4.5</span>  Coda: Coffee Saves Lives?</a></li>
+  <li><a href="#keep-learning" id="toc-keep-learning" class="nav-link" data-scroll-target="#keep-learning"><span class="toc-section-number">4.6</span>  Keep Learning</a></li>
   </ul>
 </nav>
     </div>
@@ -242,16 +258,15 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="causalinference" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Causal Inference</span></span></h1>
+<h1 class="title"><span id="causalinference" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal Inference</span></span></h1>
 </div>
-
-
 
 
 
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -291,8 +306,8 @@ Haber, N. et al. (2018). Causal language and strength of inference in academic a
 <div class="no-row-height column-margin column-container"><div id="ref-hernan2018" class="csl-entry" role="doc-biblioentry">
 Hernán, M. A. (2018). The c-word: Scientific euphemisms do not improve causal inference from observational data. <em>American Journal of Public Health</em>, <em>108</em>(5), 616–619.
 </div></div><p>It’s almost always the latter.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> And to answer this question, we need causal inference.</p>
-<section id="what-is-causal-inference" class="level2 page-columns page-full" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="what-is-causal-inference"><span class="header-section-number">3.1</span> What is Causal Inference?</h2>
+<section id="what-is-causal-inference" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-causal-inference"><span class="header-section-number">4.1</span> What is Causal Inference?</h2>
 <div class="page-columns page-full">
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -303,7 +318,7 @@ Hernán, M. A. (2018). The c-word: Scientific euphemisms do not improve causal i
 <div id="fig-causeeffect" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/causeeffect.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: Causes, effects, and outcomes</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: Causes, effects, and outcomes</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -376,7 +391,7 @@ Hernán, M. A. (2018). The c-word: Scientific euphemisms do not improve causal i
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/frost.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">“The Road Not Taken”, by Robert Frost, <em>The Atlantic Monthly</em>, 1915.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">“The Road Not Taken”, by Robert Frost, <em>The Atlantic Monthly</em>, 1915.</figcaption><p></p>
 </figure>
 </div>
 </div></div><blockquote class="blockquote">
@@ -419,23 +434,23 @@ Holland, P. W. (1986). Statistics and causal inference. <em>Journal of the Ameri
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The average treatment effect is also called the sample average treatment effect, or SATE.</p>
 </div></div><p>While we’re pretending, let’s imagine that the response variable Robert writes about in his poem is <em>happiness</em> later in life, and <em>happiness</em>, or 𝑌, is measured on a scale of 0 to 10 where 0 is not at all happy and 10 is very happy.</p>
-<p><a href="#fig-po">Figure&nbsp;<span>3.2</span></a> shows fictional happiness data for a sample of 12 people, including Robert, under both potential outcomes. Notice how each person in the left panel has two values: the happiness that would result if they <span style="color: #1f9ac9;">took the road <em>less</em> traveled (𝑋=1)</span> and the happiness that would result if they <span style="color: #e69138;">took the road <em>more</em> traveled (𝑋=0)</span>. Some people, like Traveler 1, would be happiest taking the <span style="color: #e69138;">road more traveled</span>, whereas other people, such as Robert (11), would find greater happiness on the <span style="color: #1f9ac9;">road less traveled</span>. (Remember, we’re pretending here. We never observe both potential outcomes.)</p>
+<p><a href="#fig-po">Figure&nbsp;<span>4.2</span></a> shows fictional happiness data for a sample of 12 people, including Robert, under both potential outcomes. Notice how each person in the left panel has two values: the happiness that would result if they <span style="color: #1f9ac9;">took the road <em>less</em> traveled (𝑋=1)</span> and the happiness that would result if they <span style="color: #e69138;">took the road <em>more</em> traveled (𝑋=0)</span>. Some people, like Traveler 1, would be happiest taking the <span style="color: #e69138;">road more traveled</span>, whereas other people, such as Robert (11), would find greater happiness on the <span style="color: #1f9ac9;">road less traveled</span>. (Remember, we’re pretending here. We never observe both potential outcomes.)</p>
 <div class="column-body-outset">
 <div id="fig-po" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/figures/po.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: Potential outcomes, part 1.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Potential outcomes, part 1.</figcaption><p></p>
 </figure>
 </div>
 </div>
-<p>As shown in the right panel of <a href="#fig-po">Figure&nbsp;<span>3.2</span></a>, the ATE is calculated as the difference between group averages (𝐸[𝑌<sub>𝑖</sub><sup>𝑋=1</sup>]-𝐸[𝑌<sub>𝑖</sub><sup>𝑋=0</sup>]), which is equivalent to the average of traveler’s individual causal effects. In this example where we are all knowing, the ATE is 1.5; taking the <span style="color: #1f9ac9;">road more traveled</span> increases happiness on average by 1.5 points on a scale of 0 to 10.</p>
+<p>As shown in the right panel of <a href="#fig-po">Figure&nbsp;<span>4.2</span></a>, the ATE is calculated as the difference between group averages (𝐸[𝑌<sub>𝑖</sub><sup>𝑋=1</sup>]-𝐸[𝑌<sub>𝑖</sub><sup>𝑋=0</sup>]), which is equivalent to the average of traveler’s individual causal effects. In this example where we are all knowing, the ATE is 1.5; taking the <span style="color: #1f9ac9;">road more traveled</span> increases happiness on average by 1.5 points on a scale of 0 to 10.</p>
 <p>We’re not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the <span style="color: #1f9ac9;">road less traveled</span> to people who take the <span style="color: #e69138;">road more traveled</span>. But how do people come to take one road versus the other?</p>
-<p><a href="#fig-po2">Figure&nbsp;<span>3.3</span></a> shows two scenarios (of an infinite number). On the left (A), travelers are randomly assigned to a road. Imagine that they come to the fork in the road and pull directions out of a hat. Half are assigned to the <span style="color: #1f9ac9;">road less traveled</span>, and half to the <span style="color: #e69138;">road more traveled</span>. On the right (B), however, travelers choose a road themselves. Imagine that they go with their gut and all happen to pick the road that maximizes their individual happiness. In both panels, the grey dots represent the unobserved counterfactuals.</p>
+<p><a href="#fig-po2">Figure&nbsp;<span>4.3</span></a> shows two scenarios (of an infinite number). On the left (A), travelers are randomly assigned to a road. Imagine that they come to the fork in the road and pull directions out of a hat. Half are assigned to the <span style="color: #1f9ac9;">road less traveled</span>, and half to the <span style="color: #e69138;">road more traveled</span>. On the right (B), however, travelers choose a road themselves. Imagine that they go with their gut and all happen to pick the road that maximizes their individual happiness. In both panels, the grey dots represent the unobserved counterfactuals.</p>
 <div class="column-body-outset">
 <div id="fig-po2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/figures/po2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: Potential outcomes, part 2.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.3: Potential outcomes, part 2.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -479,8 +494,8 @@ Holland, P. W. (1986). Statistics and causal inference. <em>Journal of the Ameri
 </div>
 </section>
 </section>
-<section id="causal-diagrams-and-confounder-control" class="level2 page-columns page-full" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="causal-diagrams-and-confounder-control"><span class="header-section-number">3.2</span> Causal Diagrams and Confounder-Control</h2>
+<section id="causal-diagrams-and-confounder-control" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="causal-diagrams-and-confounder-control"><span class="header-section-number">4.2</span> Causal Diagrams and Confounder-Control</h2>
 <p><strong>Confounding</strong> is a type of bias where variables 𝑋 and 𝑌 share a common cause 𝑍 that explains some or all of of the 𝑋𝑌 relationship. You’re likely familiar with examples of confounding like ice cream sales and violent crime. If you look just in the data, it looks like increases in ice cream sales could be causing increases in violent crime (or maybe vice versa), but this is what we call a spurious correlation. Ice cream sales and violent crime are both more common when the weather is warm. Once you statistically control for weather, let’s say by looking just at sales on hot days, there is no relationship between ice cream sales and crime.</p>
 <p>Causal relationships observed in non-experimental contexts are at high risk of confounding, and the goal of confounder-control studies is to find and statistically adjust for a sufficient set of variables to eliminate confounding. But this is not just an exercise in statistics because data are profoundly dumb <span class="citation" data-cites="pearl:2018">(<a href="references.html#ref-pearl:2018" role="doc-biblioref">Pearl et al., 2018</a>)</span>. A dataset cannot tell you which variables to adjust for, or what is a cause and what is an effect. For that you need information that lives outside of statistical models. You need causal models that are informed by domain expertise <span class="citation" data-cites="mcelreath:2020">(<a href="references.html#ref-mcelreath:2020" role="doc-biblioref">McElreath, 2020</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-pearl:2018" class="csl-entry" role="doc-biblioentry">
@@ -492,14 +507,14 @@ Pearl, J. et al. (2018). <em>The book of why: The new science of cause and effec
 </iframe>
 <p>Watch Dr.&nbsp;Nick Huntington-Klein introduce causal diagrams.</p>
 </div></div></div>
-<p>For this reason, a graphical approach based on <strong>causal diagrams</strong> has emerged as a popular tool for causal inference in confounder-control studies <span class="citation" data-cites="pearl:1995">(<a href="references.html#ref-pearl:1995" role="doc-biblioref">Pearl, 1995</a>)</span>.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> The most common type of graphical model you’ll encounter is the causal <strong>directed acyclic graph, or DAG</strong>. <a href="#fig-dag">Figure&nbsp;<span>3.4</span></a> shows an example DAG of the effect of taking the road less traveled on happiness.</p>
+<p>For this reason, a graphical approach based on <strong>causal diagrams</strong> has emerged as a popular tool for causal inference in confounder-control studies <span class="citation" data-cites="pearl:1995">(<a href="references.html#ref-pearl:1995" role="doc-biblioref">Pearl, 1995</a>)</span>.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> The most common type of graphical model you’ll encounter is the causal <strong>directed acyclic graph, or DAG</strong>. <a href="#fig-dag">Figure&nbsp;<span>4.4</span></a> shows an example DAG of the effect of taking the road less traveled on happiness.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-pearl:1995" class="csl-entry" role="doc-biblioentry">
 Pearl, J. (1995). Causal diagrams for empirical research. <em>Biometrika</em>, <em>82</em>(4), 669–688.
 </div></div><div class="column-body">
 <div id="fig-dag" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/dag%20example.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.4: Causal directed acyclic graph (DAG) of the effect of taking the road less traveled on happiness.</figcaption><p></p>
+<p><img src="images/dag example.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.4: Causal directed acyclic graph (DAG) of the effect of taking the road less traveled on happiness.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -537,8 +552,8 @@ Cunningham, S. (2020). <em><a href="https://amzn.to/3YAf3mv">Causal inference: T
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-dag2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/dag%20example.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.5: The same DAG again, reprinted for your convenience.</figcaption><p></p>
+<p><img src="images/dag example.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.5: The same DAG again, reprinted for your convenience.</figcaption><p></p>
 </figure>
 </div>
 </div></div><p>Nodes are connected by <strong>edges</strong>, directed arrows that make causal statements about how two variables are related. For instance, by drawing an arrow from <code>road traveled</code> to <code>happiness</code>, I’m asserting that the road one travels causes happiness. Arrows do not indicate whether this relationship is positive or negative, just that <code>road traveled</code> influences <code>happiness</code>. Equivalently, the absence of an arrow between nodes implies that there is no causal relationship.</p>
@@ -568,7 +583,7 @@ Cunningham, S. (2020). <em><a href="https://amzn.to/3YAf3mv">Causal inference: T
 </section>
 <section id="decide-which-nodes-to-include-in-a-dag" class="level3 unnumbered page-columns page-full">
 <h3 class="unnumbered anchored" data-anchor-id="decide-which-nodes-to-include-in-a-dag">DECIDE WHICH NODES TO INCLUDE IN A DAG</h3>
-<p>In order to use a DAG to identify a causal effect, you must include all of the relevant nodes and paths <span class="citation" data-cites="rohrer:2018">(<a href="references.html#ref-rohrer:2018" role="doc-biblioref">Rohrer, 2018</a>)</span>. As you can probably imagine, this can get out of hand quickly. Just look at the slide in <a href="#fig-pentagon">Figure&nbsp;<span>3.6</span></a> that diagrams the American military’s perceived challenge in its war in Afghanistan.</p>
+<p>In order to use a DAG to identify a causal effect, you must include all of the relevant nodes and paths <span class="citation" data-cites="rohrer:2018">(<a href="references.html#ref-rohrer:2018" role="doc-biblioref">Rohrer, 2018</a>)</span>. As you can probably imagine, this can get out of hand quickly. Just look at the slide in <a href="#fig-pentagon">Figure&nbsp;<span>4.6</span></a> that diagrams the American military’s perceived challenge in its war in Afghanistan.</p>
 <div class="no-row-height column-margin column-container"><div class="">
 <p>This includes variables that you can measure and the ones you can’t (or didn’t) observe.</p>
 </div></div>
@@ -576,7 +591,7 @@ Cunningham, S. (2020). <em><a href="https://amzn.to/3YAf3mv">Causal inference: T
 <div id="fig-pentagon" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/pentagon.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.6: War is hard. Source: U.S. Joint Chiefs of Staff. (Not a DAG, per se, but you get the point.)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.6: War is hard. Source: U.S. Joint Chiefs of Staff. (Not a DAG, per se, but you get the point.)</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -657,12 +672,12 @@ $open
 <div class="no-row-height column-margin column-container"><div class="">
 <p>An exception would be if we are only interested in the direct effect of <code>road traveled</code> on <code>happiness</code>, we would label the mediation pathway through <code>social relationships</code> as a bad path and work to close it.</p>
 </div></div>
-<p><a href="#fig-roadpaths">Figure&nbsp;<span>3.7</span></a> visualizes the five paths in our example DAG and labels them good or bad. Notice that paths 1 and 2—the good paths—start with <code>road traveled</code> and flow forward to <code>happiness</code>. The rest are <strong>backdoor paths</strong> that we need to close.</p>
+<p><a href="#fig-roadpaths">Figure&nbsp;<span>4.7</span></a> visualizes the five paths in our example DAG and labels them good or bad. Notice that paths 1 and 2—the good paths—start with <code>road traveled</code> and flow forward to <code>happiness</code>. The rest are <strong>backdoor paths</strong> that we need to close.</p>
 <div class="column-page">
 <div id="fig-roadpaths" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/road%20dag%20paths.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.7: Good and bad paths in our example DAG.</figcaption><p></p>
+<p><img src="images/road dag paths.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.7: Good and bad paths in our example DAG.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -671,7 +686,7 @@ $open
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Dr.&nbsp;Andrew Heiss has a <a href="http://ghr.link/and">great tutorial</a> on ways to close backdoors through regression, inverse probability weighting, and matching.</p>
 </div></div></div>
-<p>Open backdoor paths bias the causal effect we want to estimate, so we need to close them. We can do this by conditioning on variables that confound the causal effect of interest through techniques like regression. The neat thing is that we do not necessarily need to control for every possible confounder, just a minimum set sufficient to close all backdoor paths.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> For instance, in <a href="#fig-roadpaths">Figure&nbsp;<span>3.7</span></a>, you can see that adjusting for <code>cognition</code> in paths 3 and 4 is sufficient to close the open backdoor paths.</p>
+<p>Open backdoor paths bias the causal effect we want to estimate, so we need to close them. We can do this by conditioning on variables that confound the causal effect of interest through techniques like regression. The neat thing is that we do not necessarily need to control for every possible confounder, just a minimum set sufficient to close all backdoor paths.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> For instance, in <a href="#fig-roadpaths">Figure&nbsp;<span>4.7</span></a>, you can see that adjusting for <code>cognition</code> in paths 3 and 4 is sufficient to close the open backdoor paths.</p>
 <p>Path 5 is also a backdoor path, but it’s closed by default because <code>active</code> is a collider (see the two incoming arrows). If we condition on <code>active</code>, let’s say by including it as a covariate in our regression, we will inadvertently open this path and introduce bias. There is such a thing as a bad covariate, and sometimes less is more when it comes to statistical models <span class="citation" data-cites="westreich:2013 mcelreath:2020">(<a href="references.html#ref-mcelreath:2020" role="doc-biblioref">McElreath, 2020</a>; <a href="references.html#ref-westreich:2013" role="doc-biblioref">Westreich et al., 2013</a>)</span>.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="ref-westreich:2013" class="csl-entry" role="doc-biblioentry">
 Westreich, D. et al. (2013). The table 2 fallacy: Presenting and interpreting confounder and modifier coefficients. <em>American Journal of Epidemiology</em>, <em>177</em>(4), 292–298.
@@ -721,11 +736,11 @@ Heiss, A. (2020b). <em><a href="https://ghr.link/doc">Ways to close backdoors in
 <div id="fig-roadconfounding" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/road_confounding.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.8: <code>cognition</code> confounds the 𝑋𝑌 relationship.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.8: <code>cognition</code> confounds the 𝑋𝑌 relationship.</figcaption><p></p>
 </figure>
 </div>
-</div></div><p><a href="#fig-roadconfounding">Figure&nbsp;<span>3.8</span></a> should remind you that our core problem in this DAG is that the exposure (<code>road_traveled</code>) and the outcome (<code>happiness</code>) share a common cause: <code>cognition</code>. This is to say that <code>cognition</code> confounds the relationship between 𝑋 and 𝑌.</p>
-<p>You can see this visually in <a href="#fig-confounding">Figure&nbsp;<span>3.9</span></a>. In the left panel, people who scored high on optimism are represented in red (vs low in black). Notice that red appears more frequently among the road less traveled group AND red looks to be associated with higher happiness scores. If we just compare happiness scores by road traveled, we get the wrong answer (difference of 2.07). This is because <code>cognition</code> biases the 𝑋𝑌 relationship.</p>
+</div></div><p><a href="#fig-roadconfounding">Figure&nbsp;<span>4.8</span></a> should remind you that our core problem in this DAG is that the exposure (<code>road_traveled</code>) and the outcome (<code>happiness</code>) share a common cause: <code>cognition</code>. This is to say that <code>cognition</code> confounds the relationship between 𝑋 and 𝑌.</p>
+<p>You can see this visually in <a href="#fig-confounding">Figure&nbsp;<span>4.9</span></a>. In the left panel, people who scored high on optimism are represented in red (vs low in black). Notice that red appears more frequently among the road less traveled group AND red looks to be associated with higher happiness scores. If we just compare happiness scores by road traveled, we get the wrong answer (difference of 2.07). This is because <code>cognition</code> biases the 𝑋𝑌 relationship.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Remember, we know the correct answer is 1.5 because that’s how I simulated the data generating process.</p>
@@ -735,7 +750,7 @@ Heiss, A. (2020b). <em><a href="https://ghr.link/doc">Ways to close backdoors in
 <div id="fig-confounding" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="causalinference_files/figure-html/fig-confounding-1.png" class="img-fluid figure-img" width="1200"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.9: Confounding</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.9: Confounding</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -743,8 +758,8 @@ Heiss, A. (2020b). <em><a href="https://ghr.link/doc">Ways to close backdoors in
 </section>
 <section id="a-solution-multiple-regression" class="level4 unnumbered page-columns page-full">
 <h4 class="unnumbered anchored" data-anchor-id="a-solution-multiple-regression">A Solution: Multiple Regression</h4>
-<p>In practice we might estimate the effect via a technique like multiple regression, which I’ll show you here.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> You’ll see that I modified the variable names to make <a href="#fig-roada">Figure&nbsp;<span>3.10</span></a> easier to read. Most notably, the exposure road traveled is represented as <code>x</code> and the outcome happiness is represented as <code>y</code>. Cognition and active are simply <code>c</code> and <code>a</code>, respectively.</p>
-<p><a href="#fig-roada">Figure&nbsp;<span>3.10</span></a> presents the results of three models:</p>
+<p>In practice we might estimate the effect via a technique like multiple regression, which I’ll show you here.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> You’ll see that I modified the variable names to make <a href="#fig-roada">Figure&nbsp;<span>4.10</span></a> easier to read. Most notably, the exposure road traveled is represented as <code>x</code> and the outcome happiness is represented as <code>y</code>. Cognition and active are simply <code>c</code> and <code>a</code>, respectively.</p>
+<p><a href="#fig-roada">Figure&nbsp;<span>4.10</span></a> presents the results of three models:</p>
 <ol type="1">
 <li><code>y ~ x</code>: naive regression of <code>happiness</code> (<code>y</code>) on <code>road_traveled</code> (<code>x</code>)</li>
 <li><code>y ~ x + c</code>: same as (1) but also controlling for <code>cognition</code> (<code>c</code>)</li>
@@ -755,7 +770,7 @@ Heiss, A. (2020b). <em><a href="https://ghr.link/doc">Ways to close backdoors in
 <div id="fig-roada" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="causalinference_files/figure-html/fig-roada-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.10: Multiple regression models</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.10: Multiple regression models</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -790,19 +805,19 @@ McElreath, R. (2020). <em><a href="https://amzn.to/3FdX2mk">Statistical <span>Re
 </div></div><p>But let’s be clear: there is no approach to causal inference that sidesteps the need for unverifiable assumptions <span class="citation" data-cites="mcelreath:2020">(<a href="references.html#ref-mcelreath:2020" role="doc-biblioref">McElreath, 2020</a>)</span>. DAGs require you to make and defend your assumptions, but so does every other approach (you just might not know it).</p>
 </section>
 </section>
-<section id="instrument-based-approaches-and-quasi-experimental-designs" class="level2 page-columns page-full" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="instrument-based-approaches-and-quasi-experimental-designs"><span class="header-section-number">3.3</span> Instrument-Based Approaches and Quasi-Experimental Designs</h2>
+<section id="instrument-based-approaches-and-quasi-experimental-designs" class="level2 page-columns page-full" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="instrument-based-approaches-and-quasi-experimental-designs"><span class="header-section-number">4.3</span> Instrument-Based Approaches and Quasi-Experimental Designs</h2>
 <p>If confounder-control is about closing backdoors through statistical adjustment, instrument-based approaches are about isolating front doors <span class="citation" data-cites="huntington:2021">(<a href="references.html#ref-huntington:2021" role="doc-biblioref">Huntington-Klein, 2021</a>)</span>. These approaches are sometimes called quasi-experimental designs because they attempt to mimic the beauty and logic of a perfectly conducted randomized controlled trial (RCT).</p>
 <div class="no-row-height column-margin column-container"><div id="ref-huntington:2021" class="csl-entry" role="doc-biblioentry">
 Huntington-Klein, N. (2021). <em><a href="https://amzn.to/3XcLYfD">The effect: An introduction to research design and causality</a></em>. Chapman; Hall/CRC.
 </div></div><section id="experiments-destroy-confounding" class="level3 unnumbered page-columns page-full">
 <h3 class="unnumbered anchored" data-anchor-id="experiments-destroy-confounding">EXPERIMENTS DESTROY CONFOUNDING</h3>
-<p>As shown in <a href="#fig-obsexpdag">Figure&nbsp;<span>3.11</span></a>, RCTs (experiments), are effective because they close all backdoors that run from the proposed cause to the outcome. For instance, if we were somehow able to randomly assign people to the road <em>less</em> traveled or the road <em>more</em> traveled—and if people complied with these assignments—then the only arrow into <code>road_traveled</code> would be randomization. Randomization would be the only cause of <code>road_traveled</code>.</p>
+<p>As shown in <a href="#fig-obsexpdag">Figure&nbsp;<span>4.11</span></a>, RCTs (experiments), are effective because they close all backdoors that run from the proposed cause to the outcome. For instance, if we were somehow able to randomly assign people to the road <em>less</em> traveled or the road <em>more</em> traveled—and if people complied with these assignments—then the only arrow into <code>road_traveled</code> would be randomization. Randomization would be the only cause of <code>road_traveled</code>.</p>
 <div class="column-body-outset">
 <div id="fig-obsexpdag" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/obsexpdag.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.11: Observational DAG vs experimental DAG.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.11: Observational DAG vs experimental DAG.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -811,22 +826,22 @@ Huntington-Klein, N. (2021). <em><a href="https://amzn.to/3XcLYfD">The effect: A
 <section id="exogenous-variation-without-randomization" class="level3 unnumbered page-columns page-full">
 <h3 class="unnumbered anchored" data-anchor-id="exogenous-variation-without-randomization">EXOGENOUS VARIATION WITHOUT RANDOMIZATION</h3>
 <p>When randomization is not possible, confounding is likely. You can try to account for this confounding statistically (confounder control), or you can search for partial causes of the exposure/treatment that are unrelated to the outcome. Sometimes you can get lucky and find an exogenous source of variation in the exposure/treatment and use it to identify the causal effect.</p>
-<p>For instance, imagine that we couldn’t randomize who travels which road, but we could restrict access to the road less traveled to people born on or after January 1, 1980. By this arbitrary rule, someone born on January 1, 1980 would be allowed to pass, but someone born on December 31, 1979 would have to take the road more traveled. This is the basic setup for a <strong>regression discontinuity</strong> design that fits in the instrument-based or quasi-experimental bucket (<a href="#fig-rddag">Figure&nbsp;<span>3.12</span></a>).</p>
+<p>For instance, imagine that we couldn’t randomize who travels which road, but we could restrict access to the road less traveled to people born on or after January 1, 1980. By this arbitrary rule, someone born on January 1, 1980 would be allowed to pass, but someone born on December 31, 1979 would have to take the road more traveled. This is the basic setup for a <strong>regression discontinuity</strong> design that fits in the instrument-based or quasi-experimental bucket (<a href="#fig-rddag">Figure&nbsp;<span>4.12</span></a>).</p>
 <div class="column-body-outset">
 <div id="fig-rddag" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/regression%20discontinuity%20road.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.12: Regression discontinuity DAG.</figcaption><p></p>
+<p><img src="images/regression discontinuity road.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.12: Regression discontinuity DAG.</figcaption><p></p>
 </figure>
 </div>
 </div>
-<p>In this design, <code>birthdate ≥ 1980-01-01</code> is an <strong>instrument</strong> that causes exogenous variation in who is exposed to the road less traveled (see the left panel of <a href="#fig-roadrd">Figure&nbsp;<span>3.13</span></a>). This variation is almost as good as randomization because the cutoff is arbitrary. Furthermore, when we limit our investigation to people born right around this arbitrary cutoff, any potential link between birthdate and the outcome is broken. We’d argue that people born just before and just after the cutoff are similar in many observable and unobservable ways. The only difference is that people born before the cutoff weren’t allowed to take the road less traveled. This isolates the front door from <code>road_traveled</code> to <code>happiness</code>.</p>
+<p>In this design, <code>birthdate ≥ 1980-01-01</code> is an <strong>instrument</strong> that causes exogenous variation in who is exposed to the road less traveled (see the left panel of <a href="#fig-roadrd">Figure&nbsp;<span>4.13</span></a>). This variation is almost as good as randomization because the cutoff is arbitrary. Furthermore, when we limit our investigation to people born right around this arbitrary cutoff, any potential link between birthdate and the outcome is broken. We’d argue that people born just before and just after the cutoff are similar in many observable and unobservable ways. The only difference is that people born before the cutoff weren’t allowed to take the road less traveled. This isolates the front door from <code>road_traveled</code> to <code>happiness</code>.</p>
 <div class="cell page-columns page-full">
 <div class="cell-output-display column-page">
 <div id="fig-roadrd" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="causalinference_files/figure-html/fig-roadrd-1.png" class="img-fluid figure-img" width="1632"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.13: A regression discontinuity example.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.13: A regression discontinuity example.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -834,8 +849,8 @@ Huntington-Klein, N. (2021). <em><a href="https://amzn.to/3XcLYfD">The effect: A
 <p>The key to this design, and others in this category, is that the instrument changes the probability of exposure (treatment) WITHOUT having any other mechanism of impacting the outcome <span class="citation" data-cites="matthay:2020b">(<a href="references.html#ref-matthay:2020b" role="doc-biblioref">Matthay, Hagan, et al., 2020</a>)</span>. In a later chapter we’ll see examples of regression discontinuity in practice, along with other quasi-experimental designs like instrumental variables, difference-in-differences, and interrupted time series.</p>
 <div class="no-row-height column-margin column-container"></div></section>
 </section>
-<section id="key-assumptions-and-threats-to-internal-validity" class="level2 page-columns page-full" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="key-assumptions-and-threats-to-internal-validity"><span class="header-section-number">3.4</span> Key Assumptions and Threats to Internal Validity</h2>
+<section id="key-assumptions-and-threats-to-internal-validity" class="level2 page-columns page-full" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="key-assumptions-and-threats-to-internal-validity"><span class="header-section-number">4.4</span> Key Assumptions and Threats to Internal Validity</h2>
 <p>I listed three requirements for causal relationships when I defined causes:</p>
 <ol type="1">
 <li>causes must come before effects;<br>
@@ -869,7 +884,7 @@ West, S. G. et al. (2010). Campbell’s and rubin’s perspectives on causal inf
 <p><em>Quantitude Podcast</em>, Episode 26, <a href="http://ghr.link/int">The Internal Validity Pre-Flight Checklist</a>.</p>
 </div></div></div>
 <p>In the Campbell tradition, researchers are taught to identify the possible threats to internal validity, practice “control by design”, and strive for “coherent pattern matching”. In short, this means to think about the alternative plausible explanations for causal effects (threats), add design elements such as additional comparison groups to remove or reduce these threats (control by design), and make more complex hypotheses to raise the inferential bar and strengthen one’s causal claim (coherent pattern matching).</p>
-<p>Plausible alternative explanations for the causal effect are threats to internal validity. <span class="citation" data-cites="scc">Shadish et al. (<a href="references.html#ref-scc" role="doc-biblioref">2002</a>)</span> enumerate eight specific threats and warn that threats can accumulate (see <a href="#tbl-threats">Table&nbsp;<span>3.1</span></a>). The core threat is confounding, which <span class="citation" data-cites="scc">Shadish et al. (<a href="references.html#ref-scc" role="doc-biblioref">2002</a>)</span> frame as a selection threat.</p>
+<p>Plausible alternative explanations for the causal effect are threats to internal validity. <span class="citation" data-cites="scc">Shadish et al. (<a href="references.html#ref-scc" role="doc-biblioref">2002</a>)</span> enumerate eight specific threats and warn that threats can accumulate (see <a href="#tbl-threats">Table&nbsp;<span>4.1</span></a>). The core threat is confounding, which <span class="citation" data-cites="scc">Shadish et al. (<a href="references.html#ref-scc" role="doc-biblioref">2002</a>)</span> frame as a selection threat.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-scc" class="csl-entry" role="doc-biblioentry">
 Shadish, W. R. et al. (2002). <em><a href="http://amzn.to/1E8UYIG">Experimental and quasi-experimental designs for generalized causal inference</a></em>. Cengage Learning.
 </div></div><div class="cell">
@@ -877,7 +892,7 @@ Shadish, W. R. et al. (2002). <em><a href="http://amzn.to/1E8UYIG">Experimental 
 <div id="tbl-threats" class="anchored">
 
 <table class="table" style="width: auto !important; ">
-<caption>Table 3.1:  Threats to internal validity from Shadish et al. (2002). </caption>
+<caption>Table&nbsp;4.1:  Threats to internal validity from Shadish et al. (2002). </caption>
  <thead>
   <tr>
    <th style="text-align:left;font-weight: bold;"> Threat </th>
@@ -929,24 +944,24 @@ Shadish, W. R. et al. (2002). <em><a href="http://amzn.to/1E8UYIG">Experimental 
 <p>Violations of assumptions like exchangability, positivity, and consistency threaten the internal validity of a claim, but the Campbell tradition does not use these terms.</p>
 </div></div></section>
 </section>
-<section id="coda-coffee-saves-lives" class="level2 page-columns page-full" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="coda-coffee-saves-lives"><span class="header-section-number">3.5</span> Coda: Coffee Saves Lives?</h2>
+<section id="coda-coffee-saves-lives" class="level2 page-columns page-full" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="coda-coffee-saves-lives"><span class="header-section-number">4.5</span> Coda: Coffee Saves Lives?</h2>
 <p>Before we wrap-up this chapter, let’s return to the opening question: Does drinking a cup of coffee daily lower the risk of dying? <span class="citation" data-cites="ding:2015">Ding et al. (<a href="references.html#ref-ding:2015" role="doc-biblioref">2015</a>)</span> suggested that the answer is yes. What do you think?</p>
 <div class="no-row-height column-margin column-container"><div id="ref-ding:2015" class="csl-entry" role="doc-biblioentry">
 Ding, M. et al. (2015). Association of coffee consumption with total and cause-specific mortality in 3 large prospective cohorts. <em>Circulation</em>, <em>132</em>(24), 2305–2315.
-</div></div><p>The authors took a confounder-control approach to the analysis, but they did not share a DAG. All of the variables in <a href="#fig-whatthedag">Figure&nbsp;<span>3.14</span></a> are covariates they mentioned adjusting for in their analysis. Is this the complete set of relevant variables? What are the backdoors that need closing? Are there any colliders?</p>
+</div></div><p>The authors took a confounder-control approach to the analysis, but they did not share a DAG. All of the variables in <a href="#fig-whatthedag">Figure&nbsp;<span>4.14</span></a> are covariates they mentioned adjusting for in their analysis. Is this the complete set of relevant variables? What are the backdoors that need closing? Are there any colliders?</p>
 <div class="column-body-outset">
 <div id="fig-whatthedag" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/whatthedag.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.14: What’s in the DAG?</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.14: What’s in the DAG?</figcaption><p></p>
 </figure>
 </div>
 </div>
 <p>Causal inference is hard, especially when dealing with observational data. We can’t rely on data or statistics alone to answer causal questions. In short, we need causal models.</p>
 </section>
-<section id="keep-learning" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="keep-learning"><span class="header-section-number">3.6</span> Keep Learning</h2>
+<section id="keep-learning" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="keep-learning"><span class="header-section-number">4.6</span> Keep Learning</h2>
 <ul>
 <li>Scott Cunningham’s “Causal Inference: The Mixtape”, <a href="https://ghr.link/cun">ghr.link/cun</a></li>
 <li>Nick Huntington-Klein’s “The Effect: An Introduction to Research Design and Causality”, <a href="https://ghr.link/eff">ghr.link/eff</a></li>
@@ -954,33 +969,52 @@ Ding, M. et al. (2015). Association of coffee consumption with total and cause-s
 <li>Morgan and Winship’s “Counterfactuals and Causal Inference: Methods and Principles for Social Research”, <a href="https://ghr.link/mor">ghr.link/mor</a></li>
 <li>Hernán and Robins’, “Causal Inference: What If”, <a href="https://ghr.link/wha">ghr.link/wha</a></li>
 <li>Daniel Westreich’s, “Epidemiology by Design”, <a href="https://ghr.link/wes">ghr.link/wes</a></li>
+<li>Scott Cunningham’s, “A Selected History of Quantitative Causal Inference”, <a href="https://ghr.link/sub">ghr.link/sub</a></li>
 </ul>
 
 
 
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>You might be interested in associations if you are developing a prediction model.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>It turns out that a such a gene was later discovered, but it does not explain the clear relationship between smoking and cancer (see <em>The Book of Why</em> for a fascinating history).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Folks in this camp might refer to themselves as clinical trialists.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Formally the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Causal diagrams are not just for confounder-control studies, but this is where you see them used most often.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>Often we care about the total causal effect that includes the direct effect (e.g., <code>road traveled</code> ⟶ <code>happiness</code>) AND all indirect, mediated effects (e.g., <code>road traveled</code> ⟶ <code>social relationships</code> ⟶ <code>happiness</code>). Sometimes, however, an aim of a study will to understand possible mechanisms of action that involve mediated pathways.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>Both <code>DAGitty.net</code> and the <code>dagitty::adjustmentSets()</code> function in R will tell us which variables make up minimally sufficient adjustment sets.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8" role="doc-endnote"><p>“What if I need to adjust for a variable that’s not in my dataset,” you ask. The short answer is that you might be out of luck. Whomp whomp. The longer answer is more optimistic, but probably involves creativity, some assumptions, and math.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9" role="doc-endnote"><p>I didn’t simulate <code>social_relationships</code> because we don’t need it to estimate the total effect of <code>road_traveled</code> on <code>happiness</code>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10" role="doc-endnote"><p>Simulations involve a bit of noise.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11" role="doc-endnote"><p>Actually you’d probably use something like matching or inverse probability weighting, but those methods make the example too complex. See Heiss (2020) for examples.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12" role="doc-endnote"><p>The real world is not a simulation (as far as I know).<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13" role="doc-endnote"><p>A lot can go wrong with experiments that can dull their shine (we’ll get to examples later), but it’s hard to deny their claim in theory to strong causal inference.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>You might be interested in associations if you are developing a prediction model.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>It turns out that a such a gene was later discovered, but it does not explain the clear relationship between smoking and cancer (see <em>The Book of Why</em> for a fascinating history).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Folks in this camp might refer to themselves as clinical trialists.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Formally the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Causal diagrams are not just for confounder-control studies, but this is where you see them used most often.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Often we care about the total causal effect that includes the direct effect (e.g., <code>road traveled</code> ⟶ <code>happiness</code>) AND all indirect, mediated effects (e.g., <code>road traveled</code> ⟶ <code>social relationships</code> ⟶ <code>happiness</code>). Sometimes, however, an aim of a study will to understand possible mechanisms of action that involve mediated pathways.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Both <code>DAGitty.net</code> and the <code>dagitty::adjustmentSets()</code> function in R will tell us which variables make up minimally sufficient adjustment sets.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>“What if I need to adjust for a variable that’s not in my dataset,” you ask. The short answer is that you might be out of luck. Whomp whomp. The longer answer is more optimistic, but probably involves creativity, some assumptions, and math.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>I didn’t simulate <code>social_relationships</code> because we don’t need it to estimate the total effect of <code>road_traveled</code> on <code>happiness</code>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Simulations involve a bit of noise.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Actually you’d probably use something like matching or inverse probability weighting, but those methods make the example too complex. See Heiss (2020) for examples.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>The real world is not a simulation (as far as I know).<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>A lot can go wrong with experiments that can dull their shine (we’ll get to examples later), but it’s hard to deny their claim in theory to strong causal inference.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1002,7 +1036,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1030,43 +1081,62 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./collaborations.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Build Collaborations</span></span>
+      <a href="./ideas.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Develop Research Ideas and Questions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./construct.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement and Construct Validation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
