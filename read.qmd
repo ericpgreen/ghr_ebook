@@ -1,5 +1,9 @@
 # Read the Literature {#read}
 
+Some intro about EMB, critical appraisal, how to read
+
+## Evidence-Based Medicine
+
 On December 13, 1799, retired general and former U.S. president George Washington fell ill at his Mt. Vernon estate with a cough, runny nose, and a sore throat [@markel:2014]. He developed a fever overnight and his condition deteriorated the next morning. In response, his attendants and physicians removed nearly 2.4 liters of blood—40 percent of his total blood volume—over a 12 hour period. They did this to reduce inflammation by drawing out 'deadly humors' from the blood. It did not work, and Washington died at 10:20pm on December 14.
 
 With very few exceptions, we know today that blood letting does not work and that blood loss often leads to worse outcomes. But we don't need to go back 200 years to find examples of widely used medical procedures that are no longer practiced (or are less common) because we have better data. Take routine episiotomy during childbirth. 

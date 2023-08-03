@@ -12,12 +12,13 @@ book:
 #    - introduction.qmd
     - ghr.qmd
     - collaborations.qmd
-#       - ideas.qmd
+    - ideas.qmd
 #       - search.qmd
 #       - read.qmd
 #       - reviews.qmd
 #       - statinference.qmd
     - causalinference.qmd
+    - construct.qmd
     - references.qmd
 
 bibliography: ghr.bib

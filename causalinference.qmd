@@ -1046,3 +1046,4 @@ Causal inference is hard, especially when dealing with observational data. We ca
 * Morgan and Winship's "Counterfactuals and Causal Inference: Methods and Principles for Social Research", [ghr.link/mor](https://ghr.link/mor)
 * Hernán and Robins', "Causal Inference: What If", [ghr.link/wha](https://ghr.link/wha)
 * Daniel Westreich's, "Epidemiology by Design", [ghr.link/wes](https://ghr.link/wes)
+* Scott Cunningham's, "A Selected History of Quantitative Causal Inference", [ghr.link/sub](https://ghr.link/sub)

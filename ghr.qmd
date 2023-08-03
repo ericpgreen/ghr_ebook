@@ -130,7 +130,7 @@ For one, the journalist might not follow a systematic method for deciding which 
 
 Another way that a study can advance scientific understanding is by developing and testing scientific methods and procedures. For instance, a research team might plan a small pilot test to collect initial data that will inform the design of a larger study. In most cases, we'd consider these pre-study activities to be research---even if the team does not intend to publish the results---because the pilot study is part of the knowledge generation process.
 
-But here again, intent matters. Let's say Facebook randomly assigns a small percentage of its users to receive email campaign A or campaign B and tracks which campaign generates the most clicks or sales. The company's objective in this case is to determine which campaign optimizes their marketing spend for conversions, not to say something more general about human perception and behavior. Therefore, it's not considered research.
+But here again, intent matters. Let's say Facebook (Meta) randomly assigns a small percentage of its users to receive email campaign A or campaign B and tracks which campaign generates the most clicks or sales. The company's objective in this case is to determine which campaign optimizes their marketing spend for conversions, not to say something more general about human perception and behavior. Therefore, it's not considered research.
 
 As we'll discuss in a later chapter, it's always a good idea to consult with an Institutional Review Board to determine if your proposed work is considered research (and if it is, whether it falls under policies requiring ethical review).
 

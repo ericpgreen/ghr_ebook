@@ -1,0 +1,14 @@
+# Data Collection {#datacollection}
+
+You also only need to know two things from a Malaria Indicator Survey to calculate the indicator ["proportion of households with at least one insecticide treated net"](http://www.rollbackmalaria.org/files/files/resources/tool_HouseholdSurveyIndicatorsForMalariaControl.pdf):
+
+1. the number of households surveyed with at least one ITN; and
+2. the total number of households surveyed.
+
+But getting a good answer to (1) takes some work. To qualify as an ITN, the net must have been factory-treated or soaked with insecticide within the past 12 months. To determine whether a household owns an ITN, survey administrators ask the following sequence of [questions](http://malariasurveys.org/toolkit.cfm).
+
+```{r itnflow, fig.cap="Survey flow to determine whether a household has at least one insecticide treated net.", echo=F, fig.margin=FALSE, fig.fullwidth = TRUE}
+knitr::include_graphics("images/itnflow.png", dpi = NA)
+```
+
+The end result is a binary indicator (yes/no) of whether the household has a bednet that has been dipped in the past 12 months or is factory-treated. Sure, it's possible to ask this in one question—"Does your household have any factory-treated mosquito nets or nets that have been dipped in a liquid to kill or repel mosquitoes in the past 12 months?” But this is a long and complicated question, and it's more effective to break it up into smaller parts.

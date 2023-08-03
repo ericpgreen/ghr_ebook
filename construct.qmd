@@ -1,3 +1,1421 @@
-# Measurement and Construct Validity {#construct}
+# Measurement and Construct Validation {#construct}
 
-On
+```{r}
+#| echo: false
+
+  library(tidyverse)
+  library(showtext)
+  library(sysfonts)
+  font_add_google("Source Sans Pro")
+  font_add_google("Libre Franklin", regular.wt = 200)
+  showtext_auto()
+  library(knitr)
+  library(kableExtra)
+  library(viridis)
+  library(gtsummary)
+  library(gt)
+```
+
+Measurement is one of the hardest parts of science and, when done poorly, has implications for the validity of our inferences [@gelman:2015; @flake:2020]. The more you learn about a discipline or an applied problem, the deeper you'll travel down the measurement rabbit hole. Debates about definitions and data are unavoidable. Even something as seemingly black and white as death is hard to measure completely, consistently, and correctly. Let's take the COVID-19 pandemic as an example.
+
+There are several challenges to counting the number of COVID-19 deaths globally since the start of the pandemic (@fig-coviddeaths). First, some countries do not have robust civil registration and vital statistics systems that register all births, deaths, and causes of deaths [@whocrv:2021; @whittaker:2021]. Many people die without any record of having lived. Second, an unknown number of deaths that *should* be attributed to COVID-19 are not, which means we can only count "confirmed deaths" [@owidcoviddeaths:2023]. In part this is due to limited testing capacity in many settings. It might also stem from deliberate misreporting for political or economic reasons.
+
+:::{.column-body}
+![Cumulative confirmed COVID-19 deaths.](images/coviddeaths.svg){#fig-coviddeaths}
+:::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch a CDC explainer about how to certify deaths due to COVID-19 at \href{http://ghr.link/cer}{\footnotesize\texttt{ghr.link/cer}}.
+\newline
+\newline
+![](images/QR_cer.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe width='300' height='169' src='https://www.youtube.com/embed/oL3VMwieAms' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+Watch this CDC explainer about how to certify deaths due to COVID-19.
+:::
+::::
+
+There is also the challenge of defining what counts as a COVID-19 death. Did someone die "with" COVID-19 or "from" COVID-19. All cause of death determinations are judgment calls, and COVID-19 deaths are no different [@cdcreporting:2020]. When someone dies in the U.S., for instance, a physician, medical examiner, or coroner completes a death certificate and reports the death to a national registry.[^truein] States are encouraged to use the *Standardized Certificate of Death* form which asks the certifier to list an immediate cause of death and any underlying causes that contributed to a person's death.[^icd] COVID-19 is often an underlying cause of death (e.g., COVID-19 ➝ pneumonia), and it's up to the certifier to make this determination. This is not easy in many cases because COVID-19 can lead to a cascade of health problems in the short and long term [@boyle:2021].
+
+:::{.column-margin}
+The list of challenges is long. Two more examples from the pandemic that you might observe in your own work: (1) Definitions change over time, making time-series data complicated; (2) Reporting is typically delayed, leading to changing totals that can fuel mistrust.
+:::
+ 
+[^truein]: This is true in many other nations as well.
+
+[^icd]: The coding is designed to match the International Classification of Diseases (ICD-10) coding system.
+
+Given the challenges in counting all COVID-19 deaths, some scholars and policymakers prefer the metric of excess mortality, which represents the number of deaths from *any* cause that are above and beyond historical mortality trends for the period. Excess mortality counts confirmed COVID-19 deaths, 'missing' COVID-19 deaths, and deaths from any other causes that might be higher because of the pandemic. But the quantification of excess mortality has its own challenges [@owidexcess:2023]. Among them is that excess mortality is estimated with statistical models, so differences in input data and modeling approaches can lead to different estimates [@hay:2023]. @fig-excessmortality shows separate analyses by the World Health Organization and *The Economist* that both conclude excess mortality is far above the number of confirmed COVID-19 deaths globally, but differ by about 1 million in the central estimates.[^notbad]
+
+[^notbad]: This is not bad considering these are global estimates!
+
+:::{.column-body-outset}
+![Estimated cumulative excess deaths, from The Economist and the WHO, World](images/excess-deaths-cumulative-economist-who.svg){#fig-excessmortality}
+:::
+
+My goal here is not to depress you or make you question if we can ever truly measure anything. There is a time and place for a good existential crisis about science, but this chapter is not it (see Chapter X instead). Rather, my goal is to convince you of the importance of thinking hard about measurement, and to give you some frameworks for doing so.
+
+## Using Conceptual Models to Plan Study Measurement
+
+:::{.column-margin}
+It's frustrating to get to the analysis phase and realize you are missing key variables. Ask me how I know. The best protection against this outcome is to plan your analysis upfront, including data simulation and mocking up tables and figures. It's more effort in the study design phase, but not more effort overall.  
+:::
+
+The first step in planning study measurement is to decide *what* to measure. Consider starting this process by creating a conceptual model, such as a DAG or a theory of change. Conceptual models can help you identify what data you must collect or obtain to answer your research question. 
+
+### DAG EXAMPLE {.unnumbered}
+
+For instance, @barnard:2022 created the DAG shown in @fig-hpvdag to plan a causal analysis of the effect of the human papillomavirus (HPV) vaccine on abnormal cervical cytology among girls with perinatal HIV infection. The process of creating the DAG helped the authors to (i) identify a sufficient adjustment set that closes all backdoor paths, and (ii) understand the limitations of the available dataset. With this DAG in hand, they realized that they lacked good data on sexual history, structural racism, and maternal history, leaving their proposed analysis susceptible to confounding. It was back to the drawing board.  
+
+:::{.column-body}
+![A proposed causal DAG by Barnard-Mayers et al. (2022), at [ghr.link/hpv](https://ghr.link/hpv).](images/hpvdag.svg){#fig-hpvdag}
+:::
+
+### LOGIC MODEL EXAMPLE {.unnumbered}
+
+For intervention studies, a theory of change or logic model can aid in measurement planning. To see this in practice, let's return to the paper by @patel:2017, introduced in Chapter X, that reports on the results of a randomized controlled trial in India to test the efficacy of a lay counsellor-delivered, brief psychological treatment for severe depression called the *Healthy Activity Program*, or HAP. I encourage you to pause here, read the article, and create your own logic model for the HAP intervention. @fig-haplogic displays my understanding of the HAP logic model.
+
+:::{.column-margin}
+For a refresher on conceptual models, see Chapter X.
+:::
+
+:::{.column-body-outset}
+![HAP logic model.](images/hap logic model.svg){#fig-haplogic}
+:::
+
+#### Inputs {.unnumbered}
+
+**Inputs** are the resources needed to implement a program. HAP inputs included money and the intervention curriculum [@hap:2013]. A key part of any cost-effectiveness analysis is an accounting of expenditures (see Chapter X). On average, HAP cost $66 per person to deliver.
+
+#### Activities {.unnumbered}
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch Dr. Vikram Patel talk about task sharing, at \href{http://ghr.link/pat}{\footnotesize\texttt{ghr.link/pat}}.
+\newline
+\newline
+![](images/QR_pat.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe width='300' src='https://www.youtube.com/embed/yzm4gpAKrBk' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+Watch Dr. Vikram Patel talk about task sharing to scale up the delivery of mental health services in low-income settings.
+:::
+::::
+
+The main HAP **activities** were psychotherapy for patients and supervision of lay counselors. HAP was designed to be delivered in an individual, face-to-face format (telephone when necessary) over 6 to 8 weekly sessions each lasting 30 to 40 minutes [@chowdhary:2016]. Supervision consisted of weekly peer-led group supervision and twice monthly individual supervision.
+
+In intervention studies like this, it's important to determine if the intervention was delivered as intended. This is called **treatment fidelity**, and it's a measure of how closely the actual implementation of a treatment or program reflects the intended design. The study authors measured fidelity in several ways, including external ratings of a randomly selected 10% of all intervention sessions. An expert not involved in the program listened to recorded sessions and compared session content against the HAP manual. They also had counselors document the duration of each session. 
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **Implementation failure vs theory failure**
+
+Low treatment fidelity usually results in an attenuation (i.e., shrinking) of treatment effects, which is a threat to internal validity. If the study shows no effect but treatment fidelity is low, the null result may not be valid. *Implementation failure* rather than *theory or program failure* could be to blame. Low fidelity is also a threat to external validity because it is not possible to truly replicate the study.
+:::
+::::
+
+#### Outputs {.unnumbered}
+
+**Outputs** are counts of activities. Patel et al. counted the number of sessions delivered to patients in the treatment arm, as well as the number of these patients who completed the program (69% had a planned discharge). Presumably they also tracked the number of counselors trained and supervision sessions conducted.[^notreported] 
+
+[^notreported]: The authors don't indicate this in their manuscript.
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **Non-Compliance with study assignment**
+
+Outputs are key reporting metrics for staff working on the "Monitoring" side of M&E units (see Chapter 1), but intervention researchers also need access to monitoring data to understand and describe how the program was delivered. This is related to treatment fidelity, but also to treatment compliance. **Treatment compliance** is a measure of the extent to which people were treated or not treated according to their study assignment. Sometimes people assigned to the treatment group do not take-up the treatment, or they complete only part of the planned intervention. 
+
+Noncompliance to randomization on the treatment side is called **one-sided noncompliance**. When members of the control group[^controlgrp] are also noncompliant with randomization, meaning they are treated despite being assigned to the no treatment condition, this is called **two-sided noncompliance**. Analysis strategies for one- and two-sided noncompliance are discussed in a later chapter.
+
+*Treatment compliance* is one of those terms like "research subjects" that can make you cringe a bit. Research is voluntary, and participants have the right to decline a treatment offer or stop treatment at any point. We call this behavior "non-compliance", which sounds to some like participants are misbehaving. Non-compliance can make your analysis and interpretation more complicated, but participants are not to blame. Look instead to the root causes in the research design, study procedures, or the intervention itself to find ways to limit non-compliance.
+:::
+::::
+ 
+[^controlgrp]: Non-compliance is not limited to designs with a treatment group and a control group. It also applies to studies comparing two active treatments.
+
+#### Outcomes and impacts {.unnumbered}
+
+The hypothesized **outcome** in the HAP study was a reduction in depression:
+
+> The two primary outcomes were depression severity assessed by the modified Beck Depression Inventory version II (BDI-II) and remission from depression as defined by a PHQ-9 score of less than 10, both assessed 3 months after enrollment.
+
+The authors assumed that the long-term **impact** of reducing depression at scale would be improvements in quality of life for patients and their families, increased workforce productivity, and a reduction in costs to society.
+
+### FROM CONCEPTUAL MODEL TO STUDY MEASUREMENT {.unnumbered}
+
+Both of these examples provide a solid foundation for measurement planning. If you or I were designing the HAP study, for instance, the example logic model would tell us that we need to collect or obtain data about the following:
+
+* Expenditures
+* Measures  of treatment fidelity
+* Counts of therapy sessions completed, supervision sessions held
+* Measures of depression and several secondary outcomes
+
+Generating this list is the first step. The next step involves a deep dive on the specifics of measurement. For instance, what is depression, and how can it be quantified?
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **Long-term impacts often not measured**
+
+Missing from this list are proposed impacts: measures of quality of life, productivity, and societal costs. This is because long-term impacts are often assumed but not measured. In most cases, study timelines are too short to detect long-term (or distal) effects. Often, the best we can do is measure proximal effects in the near term. For instance, if the proposed mechanism of change is `intervention ➝ more days in school ➝ greater earnings as adults`, a study would need to collect data after a few decades! There are examples of long running cohort studies that follow people over big spans of time, but these studies are exceptions. 
+:::
+::::
+
+## Measurement Terminology
+
+@tbl-measurement lists four measurement terms to know.
+
+\vspace{2em}
+```{r}
+#| label: tbl-measurement
+#| tbl-cap: "Common measurement terms, adapted from Glennerster and Takavarasha (2013)."
+
+terms <- tribble(
+    ~Term, ~Definition, ~Example,
+    "Construct", "A characteristic, behavior, or phenomenon to be assessed and studied. Often cannot be measured directly (latent).", "Depression",
+	  "Outcome (or Endpoint)",  "The hypothesized result of an intervention, policy, program, or exposure.", "Decreased depression severity",   
+	  "Indicator", "Observable measures of outcomes or other study constructs.", "Depression severity score",
+	  "Instrument", "The tools used to measure indicators.", "A depression scale (questionnaire) made up of questions (items) about symptoms of depression that is used to calculate a severity score"	  
+	  )
+	  
+  format <- ifelse(knitr::is_html_output(), "html", "latex")
+
+kable(terms, format = format, booktabs = T,
+      caption="Common measurement terms, adapted from Glennerster and Takavarasha (2013)"
+      #table.envir = 'table*'
+      ) %>%
+  row_spec(0, bold=TRUE) %>%
+  column_spec(1, bold=TRUE, width="5cm") %>%
+  column_spec(2, width="10cm") %>%
+  column_spec(3, width="7cm") %>%
+	kable_styling(full_width = F, position = "left")
+```
+\vspace{2em}
+
+### CONSTRUCTS {.unnumbered}
+
+At the top of the list are study constructs. **Constructs** are the high-level characteristics, behaviors, or phenomena you investigate in a study. Constructs are the answer to the question, "What is your study about?".  
+
+In the @patel:2017 example, the key construct of interest was depression. Constructs like depression have no direct measure;  there is not (yet) a blood test that indicates whether someone is depressed or "has depression". Therefore, depression is an example of a *latent* construct. Many constructs in the social and behavioral sciences are latent constructs—such as empowerment, corruption, democracy.
+
+### OUTCOMES AND ENDPOINTS {.unnumbered}
+
+Outcomes (or endpoints) are the specific aspects of a construct that you are investigating. In intervention research, program evaluation, and causal inference more generally, **outcomes** are often framed as the hypothesized result of an intervention, policy, program, or exposure. In a theory of change or logic model, outcomes take on the language of change: increases and decreases. 
+
+In the clinical trial literature, study targets are also called **endpoints**. Death. Survival. Time to disease onset. Blood pressure. Tumor shrinkage. These are all endpoints you might seek to measure after offering some treatment (e.g., an experimental drug).
+
+:::{.column-margin}
+You'll also see outcomes and endpoints referred to as dependent variables, response variables, 𝑌, or left-hand side variables (referring to an equation).
+:::
+
+Most studies are designed to generate evidence about one or two primary outcomes linked directly to the main study objective. In the HAP study, @patel:2017 hypothesized two primary outcomes: a reduction in severe depression and a reduction in the prevalence of depression.
+
+Secondary outcomes may be registered, investigated, and reported as well, but these analyses will often be framed as exploratory in nature if the study design is not ideal for measuring these additional outcomes. @patel:2017 specified several secondary outcomes, including increases in behavioural activation and reductions in disability, total days unable to work, suicidal thoughts or attempts, intimate partner violence, and resource use and costs of illness [@patel:2014].
+
+### INDICATORS AND INSTRUMENTS {.unnumbered}
+
+**Indicators** are observable metrics of outcomes, endpoints, or other study constructs. 
+
+:::{.column-margin}
+The language of qualitative studies is a bit different. These studies emphasize study constructs, but not indicators or measures. Quantification is not typically the goal. 
+:::
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **Indicator categories**
+
+In intervention and evaluation research—which is only a subset of quantitative research, remember—there are three main categories of indicators:
+
+1. **Input indicators**: Measures of what is needed to implement the program.
+2. **Process indicators**: Measures of program implementation (e.g., fidelity).
+3. **Outcome indicators**: Measures of the program or study endpoints (hypothesized outcomes or impacts).
+:::
+::::
+ 
+Indicators and instruments go together. **Instruments** are the tools used to measure indicators. Instruments can take many forms, including surveys, questionnaires, environmental sensors, anthropometric measures, blood tests, imaging, satellite imagery, and the list goes on.
+
+Returning to the HAP study, @patel:2017 hypothesized that the intervention would reduce severe depression and the prevalence of depression (the primary outcomes). @tbl-measurement2 summarizes how each was operationalized and measured.
+
+\vspace{2em}
+```{r}
+#| label: tbl-measurement2
+#| tbl-cap: "HAP outcomes, indicators, and instruments."
+
+HAPterms <- tribble(
+    ~Outcome, ~Indicator, ~Instrument,
+    "Depression severity", "a continuous measure of severity where higher scores suggest someone is experiencing more severe symptoms of depression", "assessed with the Beck Depression Inventory, version II",
+    "Depression prevalence", "a binary indicator of the presence of depression based on a person’s depression score relative to a reference cutoff score; < 10 on the Patient Health Questionnaire-9)", "assessed with the Patient Health Questionnaire-9" 
+	  )
+	  
+  format <- ifelse(knitr::is_html_output(), "html", "latex")
+
+kable(HAPterms, format = format, booktabs = T,
+      caption="HAP outcomes, indicators, and instruments."
+      #table.envir = 'table*'
+      ) %>%
+  row_spec(0, bold=TRUE) %>%
+  column_spec(1, bold=TRUE, width="5cm") %>%
+  column_spec(2, width="10cm") %>%
+  column_spec(3, width="10cm") %>%
+	kable_styling(full_width = F, position = "left")
+```
+\vspace{2em}
+
+The HAP study instruments are reproduced in @fig-bdiphq. The authors measured depression with two instruments: (i) the 21-item Beck Depression Inventory version II [@beck:1996]; and (ii) the 9-item Patient Health Questionnaire-9 [@kroenke2002].
+
+Responses to each BDI-II item are scored on a scale of 0 to 3 and summed to create an overall depression severity score that can range from 0 to 63, where higher scores indicate more severe depression. PHQ-9 responses are also scored on a scale of 0 to 3 based on the frequency of symptoms and summed to create a total score with a possible range of 0 to 27. Based on prior clinical research, the HAP authors defined the cutoff for depression as a score of at least 10 on the PHQ-9.
+
+:::{.column-page}
+![Instruments used in Patel et al. (2017). Source: [ghr.link/ins](https://ghr.link/ins).](images/bdiphq.png){#fig-bdiphq}
+:::
+
+## What Makes a Good Indicator?
+
+When you select and define indicators of outcomes and other key variables, this is called **operationalizing** your constructs. Operationalization a critical part of measurement planning. When you finish the study and present your findings, one of the first things colleagues will ask is, “How did you define and measure your outcome?” Hopefully you can say that your indicators are DREAMY™.
+
+:::{.column-margin}
+SMART is another acronym worth knowing. SMART indicators are Specific, Measurable, Achievable, Relevant, and Time-Bound. 
+:::
+
+----------------  --------------------------
+**D**efined       clearly specified
+**R**elevant      related to the construct
+**E**xpedient     feasible to obtain
+**A**ccurate      valid measure of construct
+**M**easurable    able to be quantified
+customar**Y**     recognized standard
+----------------  --------------------------
+
+### **D**EFINED {.unnumbered}
+
+It's important to clearly specify and define all study variables, especially the indicators of primary outcomes. This is a basic requirement that enables a reader to critically appraise the work, and it serves as a building block for future replication attempts. 
+
+@patel:2017 defined two indicators of depression:
+
+1. Depression severity: BDI-II total score measured at 3 months after the treatment arm completed the intervention 
+2. Depression prevalence: the proportion of participants scoring 10 or higher on the PHQ-9 total score measured at 3 months post intervention
+
+### **R**ELEVANT {.unnumbered}
+
+Indicators should be relevant to the construct of interest. For instance, scores on the BDI-II and PHQ-9 are clearly measures of depression. An example of an irrelevant indicator would be a total score on the Beck Anxiety Inventory, a separate measure of anxiety. While anxiety and depression are often comorbid, anxiety is a distinct construct. 
+
+### **E**XPEDIENT {.unnumbered}
+
+It should be feasible to collect data on the indicator given a specific set of resource constraints. Asking participants to complete a 21-item questionnaire and a 9-item questionnaire, as in the HAP study, does not represent a large burden on study staff or participants. However, collecting and analyzing biological samples (e.g., hair, saliva, or blood) might be too difficult in some settings.
+
+### **A**CCURATE {.unnumbered}
+
+Accurate is another word for "valid". Indicators must be valid measures of study constructs (a topic discussed extensively later in this chapter). When deciding on indicators and instruments, the HAP authors had to ask themselves whether scores on the BDI-II and PHQ-9 distinguish between depressed and non-depressed people in their target population. The authors cited their own previous work to support the decision to use these instruments [@patel2008detecting].
+
+### **M**EASUREABLE {.unnumbered}
+
+Indicators must be quantifiable. Psychological constructs like depression are often measured using questionnaires like the BDI-II and the PHQ-9. Other constructs require more creativity. For instance, how would you measure government corruption? Asking officials to tell on themselves isn't likely to yield a helpful answer. @olken:2005 took a different approach in Indonesia—they dug core samples of newly built roads to estimate the true construction costs. The authors then compared cost estimates based on these samples to the government's reported construction expenditures to construct a measure of corruption (reported expenditures > estimated costs).
+
+### CUSTOMAR**Y** {.unnumbered}
+
+In general, it's good advice to use standard indicators, follow existing approaches, and adopt instruments that have already been established in a research field. There are several ways to do this.
+
+:::{.column-margin}
+Sometimes the status quo stinks and you'll want to conduct a study to overcome the limitations of the standard methods.
+:::
+
+One way is to read the literature and find articles that measure your target constructs. For example, if you're planning an impact evaluation of a microfinance program on poverty reduction and wish to publish the results in an economics journal, start by reading highly cited work by other economists to understand current best practices. How do these scholars define and measure outcomes like income, consumption, and wealth? 
+
+Systematic reviews and methods papers are also good resources for learning about measurement. For instance, @karyotaki:2022 critically appraised several task sharing mental health interventions, including HAP. Their review is a resource for for understanding how depression is operationalized and measured across studies. @larsen:2021 evaluated nine commonly used depression screening tools in sub-Saharan Africa on the basis of their diagnostic performance, cultural adaptation, and ease of implementation. If you wanted to measure depression in a target population in sub-Saharan Africa, their paper should be high on your reading list.
+
+A third approach is to search for nationally or internationally recognized standards. If studying population health, for instance, a good source of customary indicators is the World Health Organization's *Global Reference List* of the 100 core health indicators [@whocore:2018]. Another good source of customary indicators for population health is the United Nations *Sustainable Development Goals* (SDG) metadata repository, which includes 231 unique indicators to measure 169 targets for 17 goals [@sdg].
+
+## Constructing Indicators
+
+Some indicators are based on a single measurement and require only a definition. For instance, a hemoglobin level of less than 7.0 g/dl is an indicator of severe anemia. If you were evaluating the impact of a new diet on severe anemia, you would need only to record the result of a blood test (instrument). Lucky you. Most indicators are more complex and must be constructed.
+
+### NUMERATORS AND DENOMINATORS {.unnumbered}
+
+Population-level global health indicators often involve numerators and denominators. For instance, the WHO defines the maternal mortality *ratio* as [@whommr]:
+
+:::{.column-margin}
+The denominator for the maternal mortality *rate* is the number of women of reproductive age.
+:::
+
+> the number of maternal deaths during a given time period per 100,000 live births during the same time period
+
+Constructing this indicator requires data on the counts of maternal deaths and live births. Each has a precise definition.
+
+----------------  --------------------------
+Maternal deaths   The annual number of female deaths from any cause related to or aggravated by pregnancy or its management (excluding accidental or incidental causes) during pregnancy and childbirth or within 42 days of termination of pregnancy, irrespective of the duration and site of the pregnancy.
+Live births        The complete expulsion or extraction from its mother of a product of conception, irrespective of the duration of the pregnancy, which, after such separation, breathes or shows any other evidence of life such as beating of the heart, pulsation of the umbilical cord, or definite movement of voluntary muscles, whether or not the umbilical cord has been cut or the placenta is attached
+----------------  --------------------------
+
+### COMPOSITE INDICATORS {.unnumbered}
+
+**Latent** (unobservable) constructs like empowerment, quality of life, and depression, and some **manifest** (observable) constructs like wealth, are often measured with multiple items on surveys or questionnaires and then combined into indexes or scales. 
+
+The terms index and scale are often used interchangeably, but they are not quite synonyms. While they share in common the fact that multiple items or observations go into their construction, making them **composite measures** or **composite indicators**, the method for and purpose of combining these items or observations are distinct (see @fig-scaleindex).
+
+In an **index**, indicators give rise to the construct that is being measured. For example, a household's wealth is determined by the assets it owns (e.g., livestock, floor quality). Conversely, in a **scale**, the indicators exist because of the construct. Depression manifests in symptoms such as a loss of appetite.
+
+:::{.column-body}
+![Scale vs index.](images/scale vs index.svg){#fig-scaleindex}
+:::
+
+#### Indexes {.unnumbered}
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch an introduction to the Equity Tool, a wealth index alternative, at  \href{http://ghr.link/eqt}{\footnotesize\texttt{ghr.link/eqt}}.
+\newline
+\newline
+![](images/QR_eqt.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe width='300' height='169' src='https://www.youtube.com/embed/U0FxxY1cUvU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+Watch this introduction to the Equity Tool, a wealth index alternative.
+:::
+::::
+
+Indexes combine items into an overall composite, often without concern for how the individual items relate to each other. For instance, the Dow Jones Industrial Average is a stock-market index that represents a scaled average of stock prices of 30 major U.S. companies such as Disney and McDonald's. Companies with larger share prices have more influence on the index. The Dow Jones is a popular indicator of market strength and is constantly monitored during trading hours. 
+
+An index popular in the global health field is the wealth index. The wealth index uses household survey data on assets as a measure of household economic status [@dhswealth:2004]. The data come from national surveys conducted by the Demographic and Health Surveys (DHS) Program [@dhs]. Asset variables include individual and household assets (e.g., phone, television, car), land ownership, and dwelling characteristics, such as water and sanitation facilities, housing materials (i.e., wall, floor, roof), persons sleeping per room, and cooking facilities. A household gets an overall score that is the sum of the weights for having (or not having) each asset.
+
+:::{.column-margin}
+A common way to present wealth index scores is to divide the sample distribution into quintiles. Each household in the sample falls into 1 of 5 wealth quintiles reflecting their economic status *relative to the sample*, from poorest (1st quintile) to richest (5th quintile).
+:::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{youtube} Scan the QR code to watch Dr. Selim Jahan, former lead author of the Human Development Report, discuss the history of the Human Development Index, at \href{http://ghr.link/hum}{\footnotesize\texttt{ghr.link/hum}}.
+\newline
+\newline
+![](images/QR_hum.png){width="75px"}
+:::
+::::
+
+::::{.content-hidden unless-format="html"}
+:::{.column-margin}
+<iframe width='300' height='169' src='https://www.youtube.com/embed/z5WlqmFG0k4' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+Watch Dr. Selim Jahan, former lead author of the Human Development Report, discuss the history of the Human Development Index.
+:::
+::::
+
+Another widely known index among global health practitioners is the Human Development Index, or HDI [@hdi]. It combines country-level data on three dimensions: (i) life expectancy at birth; (ii) expected years of schooling for kids entering school and mean years of schooling completed by adults; and (iii) Gross National Income per capita. The HDI is produced by the United Nations Development Program.
+
+:::{.column-body}
+![Human Development Index. Source: UNDP.](images/hdi.png){#fig-hdi}
+:::
+
+#### Scales {-}
+
+Scales also combine items into an overall composite, but unlike the components of most indexes, scale items should be intercorrelated because they stem from a common, latent cause.  For instance, the BDI-II used in the HAP trial was designed to measure the construct of depression with 21 related items that ask people to report on their experience of common problems. @fig-hapcor shows how these items were correlated in the @patel:2017 data.[^patelbeck]
+
+[^patelbeck]: Patel et al. (2017) excluded one item about sex for cultural reasons, so they used a modified BDI-II with 20 of the 21 questions.
+
+:::{.column-body}
+![BDI-II correlations in the HAP trial.](images/figures/hapcor.png){#fig-hapcor}
+:::
+
+This heatmap visualizes data from participants in the control arm, collected three months after the treatment arm completed the HAP program. These correlations can range from -1 to 1, and most item pairs show moderately sized, positive correlations in the 0.2 to 0.3 range. An exception on the low side is `bdi02` (tiredness) and `bdi04` (changes in appetite). With a correlation coefficient of 0, it seems like there is no association between tiredness and changes in appetite. `bdi04` (changes in appetite) also has a few other small correlations with other items, which could suggest that, in this population, changes in appetite often do not manifest alongside other symptoms of depression.
+ 
+:::{.column-margin}
+Does this mean that `bdi04` (changes in appetite) should have been excluded from the outcome measure? Possibly. I'll return to this question later in this chapter.
+:::
+
+#### Index and Scale Construction {-}
+
+A key decision in creating composite indicators like the wealth index and the BDI-II scale score is how to weight the individual components. In the case of the wealth index, should owning a car be given the same weight as owning a phone in the construction of wealth? When it comes to measuring depression severity, should feeling sad be given the same weight as feeling suicidal? 
+
+The answer is 'no' for the wealth index. The wealth index is constructed using relative weights derived from a data reduction technique called principal component analysis, or PCA, in which indicators are standardized (i.e., transformed into *z*-scores) so that they each have a mean of 0 and a standard deviation of 1. A principal component is a linear combination of the original indicators; thus, every indicator (e.g., yes/no response to owning a phone) has a loading factor that represents the correlation between the individual indicator and the principal component. The first principal component always explains the most variance, so the factor loadings on the first principal component are assigned as the weights for each asset in the index. A household gets an overall score that is the sum of the weights for having (or not having) each asset. 
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+Visit the DHS Program's [website](http://ghr.link/wea) for country files and detailed instructions to construct the wealth index.
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Scan the QR code to visit the DHS Program's website (\href{http://ghr.link/wea}{\footnotesize\texttt{ghr.link/wea}}) where you can obtain country files and detailed instructions to construct the wealth index.
+\newline
+\newline
+![](images/QR_wea.png){width="75px"}
+:::
+::::
+
+Let's look at an example. @fig-wealth shows how one item—a household's water source—contributes to the construction of the overall index. On the left is the wording of the survey item asked to each household in the India 2015-15 DHS Survey. On the right are the PCA results provided by the DHS Program. If a survey respondent said their household has water piped into its dwelling, the household's wealth index score would be—in part, this is only one item—the sum of the values for having and not having each type of water source. Scan the values and you'll see that safer sources of water such as piped water into the dwelling get higher scores (0.102) compared to possibly contaminated sources such as surface water from a lake or stream (-0.055). These relative weights are summed to make the overall wealth index score for each household.
+
+:::{.column-page}
+![Wealth index construction example.](images/wealth.png){#fig-wealth}
+:::
+
+In contrast, the BDI-II—and many scales like it—use equal weighting (or unit weighting). Responses to each BDI-II item are scored on a scale of 0 to 3 and summed to create an overall depression severity score that can range from 0 to 63. @fig-bdiex shows data from four people in the HAP study. Each item contributes equally to the sum score (`bdi_total`). 
+
+:::{.column-margin}
+The possible range is 0 to 60 in the case of Patel et al. (2017) because they purposively omitted one item.
+::: 
+
+:::{.column-page}
+![BDI-II data example.](images/bdiex.png){#fig-bdiex}
+:::
+
+An alternative construction method for scales like the BDI-II is optimal weighting with a congeneric model [@mcneish:2020]. In this method, items more closely related to the construct are weighted more heavily in the construction of the scale score. We can do this in R using a package for confirmatory factor analysis such as the {`lavaan`} package [@lavaan].
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: "hap-bdi-cfa"
+
+# specify the model
+	model <- '
+    total_factor =~ bdi01 + bdi02 + bdi03 + bdi04 + bdi05 + 
+                    bdi06 + bdi07 + bdi08 + bdi09 + bdi10 +
+                    bdi11 + bdi12 + bdi13 + bdi14 + bdi15 + 
+                    bdi16 + bdi17 + bdi18 + bdi19 + bdi20
+  '
+  
+# fit the model
+	fit <- lavaan::cfa(
+		model, data = df, ordered = TRUE, std.lv = TRUE
+		)
+
+# plot a path diagram with model coefficients
+	lavaanPlot::lavaanPlot(
+		model = fit, 
+	  node_options = list(shape = "box"), 
+    edge_options = list(color = "grey"), 
+    labels = list(total_factor = "Depression Severity"),
+    coefs = TRUE
+    )
+```
+
+@fig-bdipath shows a path diagram of a congeneric factor model for the BDI-II data from the HAP trial control arm at the 3-month endline. The loadings from the latent depression severity score are uniquely estimated for each item. The items `bdi14` (feeling like a failure) and `bdi17` (indecisiveness) have the highest loading of 0.76, meaning these items are most closely related to the construct of depression severity. Thus, these items contribute the most to the overall factor score. `bdi04` (changes in appetite) has the weakest relationship to the construct and contributes the least to the factor score. (Remember, in the commonly used equal weighting approach, these items would contribute equally.)
+
+:::{.column-page}
+![Path diagram of a congeneric factor model for the BDI-II fit to data from the HAP trial control arm at the 3-month endline.](images/figures/hap_bdi_path.png){#fig-bdipath}
+:::
+
+Does it matter which construction method you choose, equal weighting sum scores or optimal weighting factor scores? @mcneish:2020 argue that it can. @fig-hap_bdi_scale demonstrates that two people with the same sum score can have substantially different factor scores.
+
+:::{.column-margin}
+Higher sum scores and higher factor scores represent more severe depression. The factor score is on a standardized Z-scale, so negative numbers indicate below average severity.
+::: 
+
+:::{.column-body}
+![Sum scores vs factor scores. This plot highlights two individuals with equal sum scores (11) but different factor scores (-0.63 vs -1.35).](images/figures/hap_bdi_scale.png){#fig-hap_bdi_scale}
+:::
+
+Two people with identical sum scores but different factor scores are highlighted in orange in @fig-hap_bdi_scale. In @fig-bdi-ab I reproduce their responses to each BDI item. Person A endorsed several items with the highest loadings, which helps to explain their more severe factor score. Person B endorsed fewer items overall, but endorsed them strongly.
+
+:::{.column-body}
+![Different pattern of item endorsement from two people with identical BDI-II sum scores. 0=no endorsement. 3=highest endorsement.](images/bdi-ab.png){#fig-bdi-ab}
+:::
+
+So do you think Person A and B have the same level of depression severity, as suggested by equivalent sum scores of 11? Or are they experiencing differing levels of severity as suggested by the factor scores? If you said different, you might prefer to construct optimally weighted factor scores, especially if you are using the score as an outcome indicator in a trial.
+
+:::{.column-margin}
+In a clinical setting the ease of calculating sum scores might outweigh other considerations.  
+::: 
+
+@mcneish:2020 make some helpful suggestions that you can revisit when you are faced a decision about how to construct scale scores. For now, I think a good takeaway is that measurement is complicated and we should think hard about what numbers mean and how scores are constructed. The next two sections will help you do just that.  
+
+## Construct Validation
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+This Open Science Framework project [website](http://ghr.link/fri) hosts a comprehensive reading list on study measurement.
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Scan the QR code to access a comprehensive reading list on study measurement, at (\href{http://ghr.link/fri}{\footnotesize\texttt{ghr.link/fri}}).
+\newline
+\newline
+![](images/QR_fri.png){width="75px"}
+:::
+::::
+
+**Construct validation** is the process of establishing that the numbers we generate with a method of measurement actually represent the idea—the construct—that we wish to measure [@cronbach:1955]. Using the BDI-II example, where sum scale scores can range from 0 to 63, validating this construct means establishing that higher numbers correspond with greater depression severity, or that scores above a certain threshold, such as 29 (out of 63), correctly classify someone as having "severe depression". If our numbers don't mean what we think they mean, our analyses don't either.
+
+You might be thinking that construct validation is not a top concern in your work because you, a principled scientist, are using "validated" scales. If so, you'd be wrong. Validity is not a property of an instrument. @flake:2022 make this point clearly:
+
+>  Thus, validity is not a binary property of an instrument, but instead a judgment made about the score interpretation based on a body of accumulating evidence that should continue to amass whenever the instrument is in use. Accordingly, ongoing validation is necessary because the same instrument can be used in different contexts or for different purposes and evidence that the interpretation of scores generalizes to those new contexts is needed.
+
+I won't argue that you must always start from scratch to validate the instruments you select, but it's important to think critically about why you believe an instrument will produce valid results in your context. For instance, if you are using an instrument originally validated with a sample of 200 white women in one small city in America, what gives you confidence that the numbers produced carry the same meaning in rural India?
+
+### PHASES OF CONSTRUCT VALIDATION {.unnumbered}
+
+@loevinger:1957 outlined three phases of construct validation: substantive, structural, and external. The goal of the substantive phase is to ensure that the content of the instrument is comprehensive and presented in a manner that makes sense to people. Once this phase is satisfied, you move onto the structural phase where you gather data and analyze the psychometric properties of the instrument and its items. If acceptable, you proceed to the external phase where scores generated by the instrument are compared to other instruments or criteria. @tbl-construct-validation provides examples of validity evidence for each phase (inspired by @flake:2017).
+
+```{r}
+#| echo: false
+#| label: "tbl-construct-validation"
+#| tbl-cap: "Stages of construct validation"
+
+  tbl <- tibble::tribble(
+          ~Phase, ~`Validity Evidence`, ~Question, ~Examples,
+          "Substantive", "Content validity", "What topics should be included in the instrument based on theory and prior work?", "Complete a literature review, talk with experts, conduct focus groups to explore local idioms",
+          "", "Item development", "How should the construct be assessed?", "Conduct cognitive interviewing to ensure local understanding of item wording and response options",
+          "Structural", "Item analysis", "Are the instrument items working as intended?", "Analyze patterns of responding, select items that discriminate between cases and non-cases",
+          "", "Factor analysis", "How can the observed variables be summarized or represented by a smaller number of unobserved variables (factors)?", "Conduct exploratory and/or confirmatory factor analysis",
+          "", "Reliability", "Are responses to a set of supposedly related items consistent within people and over time?", "Examine internal consistency and test-retest correlations for evidence of stability",
+          "", "Measurement invariance", "Does the instrument function equivalently across different groups or conditions?", "Conduct multiple group factor analysis, item response theory analysis",
+          "External", "Criterion validity", "How well does the instrument predict or correlate with an external criterion or outcome of interest?", "Establish concurrent validity, predictive/diagnostic validity",
+          "", "Construct validity", "How well does the instrument measure the intended construct?", "Establish convergent/discriminant/known groups validity"
+  ) %>%
+  gt::gt() %>%
+  # change cell body font
+  tab_style(
+    style = cell_text(
+    font = google_font("Inconsolata"), size = px(14)),
+    locations = cells_body(columns = everything())
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+      ),
+    locations = cells_body(
+      columns = Phase
+    )
+  ) %>%
+  cols_width(
+    Phase ~ px(100), 
+    `Validity Evidence` ~ px(175), 
+    Question ~ px(200), 
+    Examples ~ px(200),
+  )
+
+  tbl
+```
+
+#### Construct Validation Phase 1: Substantive {.unnumbered}
+
+:::{.column-margin}
+If adopting or adapting an existing instrument, you can still evaluate whether the instrument has evidence of content validity for your study setting and target population.  
+::: 
+
+The first phase of developing a new instrument is to identify all of the relevant domains (the content) needed to fully assess the construct of interest. The process often starts with a review of the literature, conversations with experts, and potentially focus groups with members of the target population. 
+
+For instance, my colleagues and I conducted a study in rural Kenya where we examined how people understood depression in the context of pregnancy and childbirth [@green2018]. We started by reviewing the scholarly literature on how depression was assessed in Kenya and elsewhere. Then we convened groups of women in our target population and asked them to describe what observable features characterize depression (sadness, or *huzuni*, in Swahili) during the perinatal period. Working with each group, we co-examined the overlap (and lack thereof) of their ideas and existing depression screening tools (see @fig-cards). A group of Kenyan mental health professionals then gave feedback on the results based on their local clinical expertise.
+
+:::{.column-body-outset}
+![Illustrative sorting of depression cover terms by focus groups, from Green et al. (2018).](images/cards.png){#fig-cards}
+:::
+
+Once you know the domains to include, you can proceed to create items that assess these domains. Your instrument will have evidence of **content validity** if you can demonstrate that it assesses all of the conceptually or theoretically relevant domains and excludes unrelated content. 
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+Check out this helpful ["how to" guide](http://ghr.link/cog) for cognitive interviewing.
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} Scan the QR code to check out a helpful "how to" guide for cognitive interviewing, at (\href{http://ghr.link/cog}{\footnotesize\texttt{ghr.link/cog}}).
+\newline
+\newline
+![](images/QR_cog.png){width="75px"}
+:::
+::::
+
+As part of this process, it's important to ensure that members of your target population understand the meaning of each item and the response scale. In the Kenya study, we used a technique called **cognitive interviewing** whereby we asked members of the target population to describe the meaning of each item and suggest improvements.      
+
+#### Construct Validation Phase 2: Structural {.unnumbered}
+
+The structural phase comes after you collect pilot data from a sample drawn from your target population. In this phase, you'll quantitatively evaluate how people respond to the items, identify items that appear to best represent the latent construct(s), and examine whether the items are measured consistently and equivalently across groups. 
+
+##### Item Analysis {.unnumbered}
+
+A common initial exploratory data analysis practice is to plot the response distributions of each item. If you ask people to rate their agreement with a statement like, "I feel sad", and if 100% of people in your sample respond "strongly agree", the item has zero variance. When all or nearly all of your sample responds the same way to an item, that item tells you nothing useful. The appropriate next step is to drop the item or conduct additional cognitive interviewing to modify the item in a way that will elicit variation in responses.
+
+:::{.column-margin}
+You might decide to keep an item with low variability if it's a critical item for clinical detection like suicidal ideation.
+::: 
+
+If you have data that enable you to plot response distributions by group, you can also examine the extent to which items distinguish between groups. @fig-item_example shows a hypothetical example where 100 people responded to three items, each measured on a 4-point scale from "Never" to "Often". 
+
+:::{.column-body}
+![Visual example of item analysis.](images/figures/item_example.png){#fig-item_example}
+:::
+
+`item_1` has very little variability. Almost everyone responded "Never". This item does not tell us much, and I might decide to drop or improve it. `item_2` has more variability, but it does not distinguish between cases and non-cases. In combination with other variables it might be useful, so I might decide to keep it unless I need to trim the overall length of the questionnaire. `item_3` looks the most promising. It elicits variability in responses, and a larger proportion of the `Cases` group endorsed the item.  
+
+##### Factor Analysis {.unnumbered}
+
+Factor analysis is a statistical method that helps us understand hidden patterns and relationships within a large set of data. It looks for commonalities among different variables and groups them into smaller, meaningful categories called factors. By doing this, factor analysis simplifies complex data and allows us to uncover the underlying dimensions or concepts that are influencing the observed patterns. 
+
+There are two main types of factor analysis: exploratory factor analysis, or EFA, and confirmatory factor analysis, or CFA. EFA is used when we have little prior knowledge about the underlying structure of the variables. It helps in identifying the number of factors and the pattern of relationships among variables. 
+
+On the other hand, CFA is conducted when we have a pre-specified hypothesis or theory about the factor structure and seeks to confirm whether the observed data align with the proposed model. CFA tests the fit of the predetermined model and assesses the validity of the measurement instrument. 
+
+@flora:2017 discuss when you might use EFA vs CFA: 
+
+> Researchers developing an entirely new scale should use EFA to examine the dimensionality of the items...CFA should be used when researchers have strong a priori hypotheses about the factor pattern underlying a set of observed variables.
+
+**EFA Example**
+
+To get a glimpse of what this means, let's imagine that, as members of the HAP study team, we created the BDI-II items from scratch and wanted to examine the dimensionality of the items. One way to do this is to use an R package like `{lavaan}` to fit EFA models with 1, 2, or 3 factors.
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: "hap-bdi-efa-example"
+
+	lavaan::efa(data = df, 
+              nfactors = 1:3, 
+              rotation = "oblimin",
+              estimator = "WLSMV",
+              ordered = TRUE)
+```
+
+@tbl-hap-bdi-efa-example displays the factor loadings for the 2-factor model. Factor loadings represent the strength and direction of the relationship between observed variables (i.e., the BDI-II items) and the underlying factors. Think of factor loadings as indicators of how closely each variable is associated with a particular factor. Higher positive factor loadings suggest a strong positive relationship, indicating that the variable is more representative of that factor, while lower or negative factor loadings indicate a weaker or opposite association. These loadings help us understand which variables are most important in measuring a specific factor and contribute to our overall understanding of the underlying structure of the data.
+
+```{r}
+#| echo: false
+#| label: "tbl-hap-bdi-efa-example"
+#| tbl-cap: "Factor loadings for BDI-II items in a 2-factor exploratory factor analysis model. Data from the HAP trial control arm at the 3-month endline"
+
+	load(here::here("images", "tables", "book_tables_output", "efa-example.RData"))
+	
+	efa_f2_loadings %>% 
+	  gt::gt() %>%
+		  tab_header(
+		    title = "Factor loadings"
+	    ) %>%
+		  tab_style(
+		    style = cell_text(
+		    font = google_font("Inconsolata"), size = px(14)),
+		    locations = cells_body(columns = everything())
+	  ) %>%
+		  cols_width(
+		    item ~ px(100),
+		    label ~ px(200),
+		    f1 ~ px(100),
+		    f2 ~ px(100)
+	  ) %>%
+	   tab_source_note(source_note = "Loadings less than 0.40 (absolute value) are not presented.")
+```
+
+What we see is a cluster of items that load strongly on factor 1, a cluster of items that load strongly on factor 2, and a few items such as `bdi04` (appetite) that are not strongly associated with either factor. The software does not know how to label these factors qualitatively, so it just names them `f1` and `f2`. It's up to us to examine the pattern of loadings and determine whether the factors have a clear meaning. My sense is that `f1` captures the affective dimension of depression (e.g., sadness, crying), whereas `f2` is about negative cognition (e.g., guilty feelings, self-dislike).
+
+But is a 2-factor model the best way to represent the data? There are many ways we could try to answer this question, but unfortunately there is no consensus about what approach is best. In the code below that produces @fig-hap-bdi-efa-factors, I use the Method Agreement procedure as implemented in the `{parameters}` package which (currently) looks across 19 different approaches and tallies the votes for the number of factors to extract. The winner is a 1-factor model.
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: "fig-hap-bdi-efa-parameters"
+
+	efa_n_factors <- parameters::n_factors(df)
+	library(see)
+	plot(efa_n_factors)
+```
+
+:::{.column-body}
+![Assessing the number of factors to retain for the EFA model.](images/figures/hap-bdi-efa-factors.png){#fig-hap-bdi-efa-factors}
+:::
+
+**CFA Example**
+
+Remember that for this EFA example, we fancied ourselves as HAP team members who created the BDI-II items from scratch. In reality, of course, the BDI-II has been around for a long time, and CFA is probably a better choice for our situation. While many research groups have proposed multi-factor solutions for the BDI-II [@beck:1988], we know the instrument is scored as a 1-factor model (consistent with our EFA results, yay!). To demonstrate a strength of CFA, however, let's compare two different 1-factor models: a parallel model where items are weighted equally (feeling sad contributes the same as feeling suicidal) and a congeneric model where items are optimally weighted.
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: "hap-bdi-cfa-example"
+
+# congeneric model (optimally weighted)
+# https://osf.io/8fzj4
+  model_1f_congeneric <- '
+  # all loadings are uniquely estimated
+  # first loading is set to 1 by default and must be freed
+    total_factor =~ NA*bdi01 + bdi02 + bdi03 + bdi04 + bdi05 + 
+                    bdi06 + bdi07 + bdi08 + bdi09 + bdi10 +
+                    bdi11 + bdi12 + bdi13 + bdi14 + bdi15 + 
+                    bdi16 + bdi17 + bdi18 + bdi19 + bdi20
+                    
+  # constrain factor variance to 1#
+    total_factor~~1*total_factor
+  '
+
+  fit_1f_congeneric <- lavaan::sem(
+    model_1f_congeneric, data = df, ordered = TRUE
+  )
+  
+# parallel model (equally weighted)
+# https://osf.io/2gzty
+  model_1f_parallel <- '
+  # fix all factor loadings to 1
+    total_factor =~ 1*bdi01 + 1*bdi02 + 1*bdi03 + 1*bdi04 + 1*bdi05 + 
+                    1*bdi06 + 1*bdi07 + 1*bdi08 + 1*bdi09 + 1*bdi10 +
+                    1*bdi11 + 1*bdi12 + 1*bdi13 + 1*bdi14 + 1*bdi15 + 
+                    1*bdi16 + 1*bdi17 + 1*bdi18 + 1*bdi19 + 1*bdi20
+    
+  # constrain all residual variances to same value
+    bdi01~~theta*bdi01
+    bdi02~~theta*bdi02
+    bdi03~~theta*bdi03
+    bdi04~~theta*bdi04
+    bdi05~~theta*bdi05
+    bdi06~~theta*bdi06
+    bdi07~~theta*bdi07
+    bdi08~~theta*bdi08
+    bdi09~~theta*bdi09
+    bdi10~~theta*bdi10
+    bdi11~~theta*bdi11
+    bdi12~~theta*bdi12
+    bdi13~~theta*bdi13
+    bdi14~~theta*bdi14
+    bdi15~~theta*bdi15
+    bdi16~~theta*bdi16
+    bdi17~~theta*bdi17
+    bdi18~~theta*bdi18
+    bdi19~~theta*bdi19
+    bdi20~~theta*bdi20
+  '
+  
+  fit_1f_parallel <- lavaan::sem(
+    model_1f_parallel, data = df, ordered = TRUE
+  )
+```
+
+@tbl-hap-bdi-cfa-example-fit-indices shows different metrics for evaluating the fit of the models to the data. Evaluating model fit is an advanced topic, so I'll simply note that the parallel (equally weighted) model fit shows mixed results. The Comparative Fit Index (CFI) value is greater than 0.90 as recommended, but the root mean square error of approximation value (RMSEA), which should be low, is above the commonly used cutoff of 0.08. The congeneric (optimally weighted) model looks better based on the same fit indices. The likelihood ratio test (not shown) confirms this.
+
+```{r}
+#| echo: false
+#| label: "tbl-hap-bdi-cfa-example-fit-indices"
+#| tbl-cap: "Comparing fit indices between the parallel and congeneric models."
+
+	load(here::here("images", "tables", "book_tables_output", "cfa-example-fit-indices.RData"))
+	
+	fit_indices %>% 
+	  gt::gt() %>%
+		  tab_header(
+		    title = "Fit indices"
+	    ) %>%
+		  tab_style(
+		    style = cell_text(
+		    font = google_font("Inconsolata"), size = px(14)),
+		    locations = cells_body(columns = everything())
+	  )
+```
+
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **Measurement invariance**
+
+Measurement invariance is another aspect of measurement that we can investigate in a CFA framework. **Measurement invariance** means that an instrument consistently measures the same underlying construct across different groups or conditions. Let's say we wanted to compare BDI-II scores by gender. Ideally, the BDI-II items will be equally valid and reliable for all genders, so that any differences observed in the scores truly reflect actual gender differences in depression, rather than differences caused by the instrument itself. 
+:::
+::::
+
+##### Reliability {.unnumbered}
+
+**Classical test theory** is a framework for evaluating and understanding the characteristics of tests and assessments, such as the BDI-II questionnaire. According to classical test theory, every observed score consists of two parts: the true score and measurement error. The **true score** represents person's actual ability or trait being measured (e.g., depression severity), while **measurement error** includes various factors that can introduce variability into the observed scores.
+
+Measurement error can be random or systematic. **Random error** is noise—unpredictable and inconsistent variations that occur in measurements. Even the most precise physics instruments have some random error, whether from human error or equipment limitations. When random error is high—that is, when the noise is greater than the signal—measurements are unreliable because they are inconsistent. **Reliability** refers to the consistency of measurements.
+
+**Systematic error**, on the other hand, is bias, and **bias** in measurement takes us away from the true score in a particular direction. Systematic error results in artificially inflated or deflated scores. Measurement bias contributes to unreliability, but it's main victim is validity. 
+
+A common teaching example is that a bathroom scale is *valid* if it correctly measures your weight, and is *reliable* if it gives you the same reading if you step off and back on. Validity and reliability work together to ensure sound measurement, but as you can see, they are independent concepts. A scale that consistently tells you, someone who weighs 65kg, that you weigh 80kg (±0.10kg) demonstrates reliable measurement, but not valid measurement. Consistency is reliability, regardless of being right or wrong. 
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+For an in-depth look at reliability, see [this chapter](http://ghr.link/rel) by William Revelle.
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{book-reader} For an in-depth look at reliability, scan the QR code to access William Revelle's book on psychometric theory, at {\footnotesize\texttt{ghr.link/rel}}).
+\newline
+\newline
+![](images/QR_rel.png){width="75px"}
+:::
+::::
+
+There is no one test of an instrument's reliability because variation in measurement can come from many different sources: items, time, raters, form, etc. Therefore, we can assess different aspects of reliability of measurement, including test-retest reliability, internal consistency reliability, and inter-rater reliability, to name a few.
+
+###### Reliability: Test-retest {.unnumbered}
+
+An instrument is said to exhibit good **test-retest reliability** if it maintains roughly the same ordering between people when the instrument is repeatedly administered to the same individuals under the same conditions. Often this is benchmarked as a correlation of at least 0.70.
+
+When I first learned about test-retest reliability, I thought it meant that an instrument would return the same answer from one assessment to the next in the absence of change—that perfect reliability meant *identical* scores at time 1 and time 2. That's not quite right though. Two sets of scores obtained from a group of people can be perfectly reliable, meaning they preserve the group order perfectly and have a correlation coefficient of 1.0, but also have zero agreement. I created @fig-reliability-agreement to make this clear.
+
+:::{.column-body}
+![Test-retest reliability and agreement are not the same.](images/figures/reliability-agreement.png){#fig-reliability-agreement}
+:::
+
+Each panel plots mock BDI-II sum scores for 10 people measured four days apart. An individual's point falls on the diagonal line if they have identical scores at time 1 and time 2. 
+
+Panel 1 illustrates perfect reliability *and* perfect agreement. The correlation coefficient is 1.0, and the ordering of people is perfectly preserved. Now look at Panel 2. This is also a scenario with perfect reliability; the ordering is preserved, but no one has identical scores at time 1 and time 2. There is zero agreement because there is a time effect!
+
+Panel 3 is more typical of what researchers present in papers claiming an instrument is reliable. In this example, there is very little agreement in scores from time 1 to time 2, but for the most part the ordering of depression severity is unchanged among the sample. 
+
+Finally, in Panel 4 I simulated random values for time 1 and time 2, so any agreement is by chance. Reliability is low (0.43), and the ordering is not preserved. If your instrument shows evidence of low test-retest reliability like this over a short period where you expect stable scores, you have to wonder what the instrument is measuring.
+
+::::{.content-hidden unless-format="html"}
+::: {.callout-note icon=false}
+## **Test-retest period**
+
+A key decision in assessing test-retest reliability is how long to wait in between administrations. If your instrument assesses depression symptoms in the past 2 weeks, you can't wait more than 2 weeks because your respondent's frame of reference will change too much and symptoms of depression can come and go. On the other hand, you shouldn't re-administer the instrument the same day or even the next day because your respondent will likely recall what they said in an effort to appear consistent.
+:::
+::::
+
+###### Reliability: Internal consistency {.unnumbered}
+
+Repeating administrations of an instrument with the same people to assess test-retest reliability is not always feasible, so in 1951 the educational psychologist Lee Cronbach came up with a way to measure what he called **internal consistency reliability** in a single administration. Rather than measuring the correlation in *scale scores* at multiple time points, internal consistency reliability evaluates how closely the *scale items* ascertained in a single administration are related to each other. If the items are not highly correlated with each other, it's unlikely that they are measuring the same latent construct. In other words, the items are not internally consistent when it comes to measuring the construct.
+
+The most commonly used index of internal consistency reliability is Cronbach's alpha, but it has many detractors [@mcneish:2018]. It's still widely used because it's easy to calculate with any statistics software. The basic approach is to divide the mean covariance between items by the mean item variance:
+
+$$\alpha = (N*\bar{c}) / (\bar{v}+(N−1)*\bar{c})$$
+
+where 𝑁 equals the number of items, $\bar{c}$ is the mean covariance between items, and $\bar{v}$ is the mean item variance. This means that Cronbach's alpha quantifies how much of the overall variability is due to the relationships between the items. It can range from 0 to 1 where 1 indicates perfect reliability.
+
+:::{.column-margin}
+Use the Kuder-Richardson 20 formula (KR20) if you have binary variables.
+:::
+
+```{r}
+#| echo: false
+#| label: "hap-df"
+
+df <- 
+structure(list(bdi01 = c(2, 2, 3, 1, 1, 2, 2, 3, 2, 3, 3, 2, 
+1, 3, 3, 1, 0, 3, 2, 2, 2, 3, 2, 0, 3, 2, 0, 2, 0, 2, 2, 2, 2, 
+3, 1, 0, 2, 3, 0, 3, 2, 3, 2, 2, 2, 0, 3, 2, 3, 2, 0, 1, 2, 0, 
+2, 2, 2, 0, 3, 2, 2, 3, 0, 1, 2, 0, 1, 1, 3, 3, 2, 3, 0, 1, 2, 
+2, 2, 1, 2, 1, 2, 2, 3, 3, 1, 0, 3, 1, 1, 2, 0, 2, 2, 3, 1, 2, 
+0, 3, 2, 3, 0, 2, 2, 2, 1, 1, 2, 0, 1, 2, 3, 1, 2, 2, 2, 2, 3, 
+2, 0, 0, 3, 1, 3, 1, 1, 2, 1, 0, 0, 3, 3, 1, 2, 2, 3, 2, 2, 0, 
+3, 2, 1, 3, 2, 1, 0, 1, 2, 1, 0, 0, 2, 3, 0, 1, 1, 1, 2, 2, 0, 
+3, 0, 1, 0, 2, 3, 1, 0, 1, 3, 2, 0, 0, 0, 0, 3, 2, 0, 0, 2, 2, 
+3, 0, 3, 0, 0, 2, 2, 0, 2, 3, 3, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 
+0, 3, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 1, 0, 0, 1, 0, 0, 1, 2, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), bdi02 = c(1, 2, 3, 
+2, 3, 3, 2, 3, 3, 2, 3, 2, 2, 3, 2, 2, 2, 2, 2, 2, 3, 2, 2, 3, 
+2, 2, 3, 3, 0, 0, 3, 3, 3, 3, 3, 2, 3, 3, 3, 2, 3, 3, 2, 1, 3, 
+2, 2, 1, 3, 3, 0, 2, 3, 3, 3, 3, 1, 3, 1, 1, 2, 1, 2, 0, 2, 2, 
+3, 3, 2, 1, 1, 3, 3, 0, 1, 2, 2, 1, 3, 3, 3, 2, 3, 3, 3, 3, 0, 
+2, 3, 3, 2, 1, 3, 0, 1, 3, 2, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 0, 
+2, 3, 3, 0, 2, 0, 2, 3, 1, 1, 1, 0, 3, 0, 2, 0, 2, 2, 2, 2, 1, 
+1, 3, 2, 2, 3, 1, 0, 2, 3, 0, 2, 1, 0, 3, 2, 1, 1, 3, 3, 3, 1, 
+3, 3, 3, 3, 1, 2, 3, 2, 2, 3, 0, 3, 0, 0, 1, 3, 2, 3, 3, 2, 3, 
+3, 0, 3, 3, 3, 0, 1, 1, 3, 3, 2, 0, 3, 3, 0, 3, 3, 3, 0, 1, 3, 
+0, 0, 2, 3, 1, 0, 1, 3, 0, 1, 3, 3, 2, 0, 0, 3, 3, 3, 0, 1, 0, 
+0, 0, 1, 0, 0, 1, 2, 3, 0, 2, 3, 0, 0, 0, 0, 3, 0, 0, 2, 2, 0, 
+0, 3), bdi03 = c(2, 1, 3, 2, 3, 2, 3, 3, 3, 1, 3, 2, 1, 1, 2, 
+3, 2, 1, 2, 3, 3, 1, 1, 3, 3, 2, 3, 1, 2, 3, 3, 0, 3, 3, 1, 1, 
+2, 1, 3, 2, 3, 1, 3, 1, 3, 3, 0, 2, 3, 3, 1, 3, 1, 2, 1, 3, 1, 
+0, 1, 0, 2, 1, 1, 2, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 1, 3, 1, 1, 
+0, 1, 2, 3, 3, 1, 1, 3, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 2, 1, 1, 
+2, 1, 2, 3, 3, 2, 2, 2, 0, 3, 1, 0, 3, 2, 0, 1, 2, 3, 1, 3, 1, 
+3, 0, 0, 0, 1, 1, 2, 2, 1, 3, 2, 2, 0, 1, 1, 0, 1, 3, 1, 1, 1, 
+0, 3, 1, 2, 1, 3, 3, 1, 1, 0, 1, 3, 1, 1, 1, 1, 0, 1, 1, 0, 0, 
+0, 1, 0, 1, 0, 1, 1, 0, 2, 1, 3, 1, 2, 1, 1, 1, 1, 3, 1, 0, 3, 
+2, 1, 1, 3, 1, 3, 0, 0, 2, 1, 1, 1, 1, 0, 0, 1, 3, 0, 2, 0, 1, 
+3, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 1, 2, 0, 
+0, 0, 3, 3, 0, 0, 2, 3, 0, 0, 0), bdi04 = c(1, 0, 3, 0, 1, 1, 
+2, 2, 3, 2, 3, 0, 3, 2, 3, 2, 1, 2, 2, 0, 3, 1, 1, 1, 1, 2, 0, 
+0, 1, 3, 2, 0, 2, 0, 1, 2, 2, 2, 2, 1, 0, 0, 1, 3, 1, 0, 0, 0, 
+3, 0, 2, 1, 1, 2, 1, 2, 1, 3, 3, 2, 2, 3, 3, 3, 0, 0, 3, 1, 0, 
+2, 1, 1, 0, 1, 0, 2, 1, 3, 1, 2, 0, 3, 0, 2, 1, 0, 0, 0, 2, 2, 
+1, 3, 2, 3, 1, 2, 0, 1, 2, 0, 0, 0, 2, 0, 2, 1, 1, 0, 2, 3, 1, 
+3, 2, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 2, 0, 0, 0, 0, 1, 2, 0, 
+1, 1, 2, 3, 2, 0, 2, 1, 1, 1, 2, 1, 3, 2, 2, 1, 0, 0, 1, 3, 1, 
+2, 1, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1, 0, 3, 1, 2, 0, 0, 1, 0, 0, 
+1, 0, 3, 0, 0, 3, 0, 1, 1, 0, 1, 3, 0, 2, 0, 3, 0, 0, 1, 0, 0, 
+0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 2, 2, 2, 0, 0, 3, 1, 0, 0, 0, 0, 
+0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2), 
+    bdi05 = c(1, 1, 3, 1, 3, 1, 3, 2, 3, 3, 3, 0, 0, 1, 3, 0, 
+    3, 1, 1, 2, 3, 1, 1, 3, 3, 3, 2, 1, 3, 3, 3, 1, 3, 1, 2, 
+    1, 1, 1, 2, 3, 3, 0, 1, 0, 3, 1, 0, 1, 3, 0, 3, 3, 2, 0, 
+    1, 2, 0, 1, 3, 1, 1, 2, 3, 3, 1, 1, 3, 0, 0, 1, 3, 3, 0, 
+    3, 1, 3, 0, 3, 1, 0, 3, 2, 3, 3, 2, 1, 0, 0, 3, 3, 0, 1, 
+    3, 3, 3, 3, 0, 0, 3, 0, 1, 3, 3, 2, 0, 2, 3, 2, 3, 0, 3, 
+    2, 0, 1, 3, 3, 3, 1, 3, 0, 2, 0, 3, 0, 0, 0, 0, 0, 1, 3, 
+    3, 1, 0, 1, 3, 3, 1, 0, 0, 3, 1, 1, 2, 0, 3, 0, 0, 0, 3, 
+    1, 2, 1, 1, 0, 0, 3, 0, 0, 0, 2, 2, 0, 0, 0, 3, 1, 0, 0, 
+    0, 1, 3, 1, 2, 3, 3, 3, 0, 0, 0, 3, 3, 0, 0, 0, 1, 1, 0, 
+    0, 3, 0, 3, 3, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0, 0, 2, 0, 0, 
+    0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 2, 3, 0, 0, 3, 0, 0, 1, 0, 
+    0, 3, 3, 3, 0, 3, 2, 0, 0, 0, 0), bdi06 = c(3, 3, 3, 3, 3, 
+    1, 3, 3, 2, 3, 3, 3, 2, 3, 1, 2, 3, 3, 3, 3, 3, 3, 1, 3, 
+    0, 3, 2, 1, 3, 3, 1, 2, 3, 0, 3, 3, 3, 3, 2, 3, 3, 1, 3, 
+    1, 3, 3, 1, 3, 3, 3, 3, 3, 3, 1, 3, 3, 1, 3, 3, 3, 3, 2, 
+    3, 3, 1, 3, 3, 2, 3, 3, 3, 1, 3, 1, 3, 3, 3, 1, 3, 1, 3, 
+    2, 3, 2, 3, 3, 3, 3, 1, 1, 0, 1, 2, 3, 1, 3, 1, 3, 3, 3, 
+    2, 3, 3, 3, 3, 1, 3, 3, 3, 3, 1, 2, 2, 3, 1, 3, 3, 0, 3, 
+    0, 3, 1, 1, 3, 3, 3, 0, 0, 1, 2, 1, 1, 3, 1, 1, 3, 3, 3, 
+    0, 1, 1, 0, 1, 1, 3, 1, 2, 3, 1, 1, 3, 3, 2, 1, 3, 2, 3, 
+    3, 0, 1, 0, 0, 1, 2, 2, 0, 2, 1, 3, 1, 0, 3, 3, 3, 3, 1, 
+    1, 1, 1, 3, 3, 2, 1, 1, 3, 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 
+    3, 3, 0, 1, 3, 0, 2, 0, 3, 0, 0, 0, 1, 0, 3, 0, 3, 0, 0, 
+    2, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 3, 0, 0, 1, 3, 
+    0, 0, 0), bdi07 = c(3, 3, 3, 3, 3, 3, 3, 0, 3, 3, 0, 3, 2, 
+    3, 3, 2, 3, 3, 3, 3, 2, 3, 3, 2, 3, 3, 2, 0, 1, 0, 3, 3, 
+    3, 0, 3, 2, 2, 3, 0, 3, 3, 0, 0, 0, 3, 3, 2, 3, 0, 3, 2, 
+    3, 0, 3, 3, 3, 0, 3, 3, 3, 0, 3, 0, 3, 3, 2, 3, 3, 1, 3, 
+    3, 3, 0, 3, 2, 3, 0, 0, 3, 3, 3, 2, 3, 3, 0, 3, 3, 3, 0, 
+    3, 0, 0, 2, 3, 0, 3, 0, 1, 3, 3, 3, 3, 3, 3, 0, 0, 3, 2, 
+    0, 3, 2, 3, 0, 3, 2, 3, 1, 0, 3, 0, 1, 3, 3, 0, 3, 0, 0, 
+    3, 0, 3, 0, 0, 3, 0, 0, 3, 0, 3, 0, 0, 1, 0, 3, 0, 3, 0, 
+    2, 3, 3, 2, 3, 3, 3, 0, 0, 0, 3, 3, 0, 0, 3, 0, 1, 1, 0, 
+    0, 3, 0, 0, 0, 0, 3, 1, 3, 3, 3, 3, 3, 3, 3, 0, 3, 3, 1, 
+    3, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 3, 3, 0, 0, 
+    0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0), bdi08 = c(3, 3, 
+    2, 3, 3, 2, 3, 2, 3, 3, 3, 1, 3, 3, 3, 2, 3, 1, 2, 3, 3, 
+    3, 3, 3, 2, 1, 3, 0, 2, 0, 2, 2, 3, 2, 2, 0, 2, 2, 1, 2, 
+    3, 1, 0, 1, 2, 3, 0, 1, 3, 0, 3, 3, 1, 2, 2, 3, 2, 3, 1, 
+    2, 3, 2, 1, 3, 2, 3, 1, 2, 1, 1, 3, 1, 3, 1, 2, 3, 0, 2, 
+    0, 0, 3, 3, 3, 3, 2, 1, 3, 0, 2, 2, 0, 0, 2, 3, 1, 3, 3, 
+    2, 0, 3, 3, 2, 1, 2, 0, 0, 3, 3, 3, 3, 3, 1, 1, 3, 1, 3, 
+    2, 0, 1, 3, 3, 2, 3, 0, 2, 2, 0, 2, 3, 3, 0, 1, 2, 0, 2, 
+    3, 2, 0, 0, 1, 0, 0, 2, 1, 3, 0, 2, 2, 2, 1, 0, 2, 2, 0, 
+    2, 0, 0, 0, 0, 1, 3, 0, 1, 3, 0, 2, 0, 1, 0, 0, 0, 0, 0, 
+    3, 0, 0, 0, 0, 1, 2, 0, 3, 0, 1, 3, 2, 0, 0, 3, 0, 0, 1, 
+    2, 0, 1, 0, 2, 0, 1, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 
+    0, 0, 1, 0, 0, 2, 3, 2, 0, 1, 1, 0, 0, 0, 0, 0, 0, 3, 0, 
+    0, 3, 2, 0, 0, 0), bdi09 = c(0, 0, 3, 3, 3, 1, 3, 3, 3, 3, 
+    0, 0, 0, 1, 0, 3, 0, 0, 1, 3, 0, 3, 3, 0, 0, 1, 0, 0, 0, 
+    1, 0, 1, 1, 3, 1, 3, 3, 1, 3, 0, 3, 3, 1, 0, 1, 3, 0, 1, 
+    1, 3, 0, 0, 0, 0, 3, 3, 1, 0, 3, 1, 0, 1, 0, 3, 1, 3, 0, 
+    0, 0, 1, 3, 3, 0, 1, 1, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 1, 
+    0, 0, 0, 1, 3, 0, 0, 3, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 3, 
+    0, 3, 1, 1, 0, 0, 3, 1, 2, 0, 0, 1, 1, 3, 0, 1, 0, 0, 0, 
+    3, 1, 0, 0, 1, 3, 0, 2, 0, 1, 0, 3, 3, 0, 0, 0, 1, 1, 0, 
+    0, 2, 0, 1, 1, 1, 1, 1, 3, 1, 0, 1, 3, 1, 3, 0, 1, 0, 0, 
+    1, 3, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 3, 0, 0, 3, 0, 
+    3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 3, 0, 0, 0, 0, 1, 0, 3, 1, 0, 0, 0, 0, 3, 0, 2, 0, 0, 
+    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0), bdi10 = c(3, 
+    2, 3, 3, 3, 2, 3, 2, 3, 3, 2, 3, 3, 2, 2, 2, 3, 3, 3, 2, 
+    1, 3, 2, 1, 2, 2, 0, 3, 2, 3, 0, 2, 3, 3, 3, 3, 3, 2, 3, 
+    3, 3, 2, 0, 0, 2, 3, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 
+    0, 3, 1, 3, 3, 2, 2, 3, 0, 2, 2, 0, 3, 2, 0, 3, 1, 3, 3, 
+    3, 3, 2, 1, 2, 3, 3, 3, 1, 3, 3, 1, 3, 3, 3, 1, 3, 1, 3, 
+    2, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3, 1, 2, 3, 3, 1, 1, 3, 2, 
+    0, 2, 0, 3, 0, 1, 0, 1, 3, 3, 3, 0, 2, 3, 2, 3, 1, 1, 1, 
+    0, 2, 3, 3, 0, 0, 1, 0, 1, 3, 2, 0, 1, 3, 0, 1, 3, 3, 3, 
+    0, 3, 0, 3, 1, 0, 3, 3, 3, 0, 2, 0, 0, 3, 0, 0, 1, 3, 3, 
+    1, 3, 3, 3, 0, 3, 0, 3, 0, 2, 0, 2, 3, 0, 3, 3, 0, 2, 0, 
+    0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 
+    0, 0, 0, 0, 3, 2, 0, 2, 2, 0, 0, 0, 0, 3, 0, 0, 0, 3, 3, 
+    0, 0, 0, 3, 0, 0, 0), bdi11 = c(2, 3, 3, 3, 3, 3, 3, 3, 3, 
+    3, 3, 0, 3, 3, 3, 3, 0, 2, 2, 3, 0, 3, 3, 3, 1, 2, 3, 2, 
+    3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 0, 3, 3, 0, 0, 3, 3, 0, 
+    1, 3, 3, 3, 0, 3, 3, 3, 2, 3, 3, 3, 3, 2, 3, 2, 3, 0, 3, 
+    3, 3, 0, 3, 3, 3, 0, 3, 0, 3, 0, 3, 2, 3, 3, 3, 1, 3, 0, 
+    0, 0, 3, 0, 1, 0, 0, 3, 3, 3, 0, 2, 3, 1, 3, 3, 3, 3, 0, 
+    3, 3, 3, 3, 3, 3, 3, 0, 2, 2, 3, 0, 3, 0, 3, 0, 3, 3, 3, 
+    3, 3, 0, 3, 2, 3, 3, 3, 0, 3, 0, 3, 3, 3, 0, 3, 0, 0, 0, 
+    2, 0, 0, 0, 3, 3, 0, 1, 3, 3, 3, 0, 3, 0, 0, 3, 0, 3, 3, 
+    0, 1, 3, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 
+    0, 3, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 2, 
+    0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 3, 3, 3, 3, 0, 3, 0, 3, 3, 
+    3, 3, 0, 0, 0, 3, 0, 0, 0, 3, 3, 0, 0, 0, 3, 0, 0, 0), bdi12 = c(2, 
+    1, 2, 1, 2, 2, 3, 1, 1, 3, 3, 3, 1, 3, 3, 3, 1, 2, 2, 2, 
+    1, 3, 3, 1, 2, 2, 2, 3, 3, 0, 3, 0, 3, 2, 2, 1, 1, 0, 0, 
+    0, 3, 2, 3, 0, 1, 3, 0, 1, 3, 3, 2, 3, 2, 2, 2, 1, 1, 1, 
+    2, 2, 1, 3, 1, 2, 0, 2, 3, 2, 2, 3, 3, 2, 0, 0, 2, 0, 0, 
+    2, 2, 1, 3, 2, 0, 0, 0, 2, 2, 3, 0, 2, 0, 2, 2, 2, 2, 0, 
+    1, 2, 3, 1, 2, 1, 2, 2, 2, 2, 1, 2, 0, 0, 0, 0, 3, 2, 3, 
+    0, 3, 0, 2, 0, 0, 2, 2, 3, 0, 0, 0, 1, 2, 2, 0, 1, 0, 2, 
+    2, 2, 0, 0, 0, 0, 0, 0, 1, 2, 2, 0, 2, 1, 0, 0, 3, 3, 3, 
+    0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 3, 3, 0, 2, 3, 0, 3, 3, 3, 
+    2, 3, 3, 0, 0, 0, 0, 0, 2, 1, 0, 0, 3, 0, 0, 0, 0, 2, 3, 
+    0, 0, 3, 0, 0, 0, 0, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 
+    0, 0, 0, 0, 2, 1, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 
+    0, 0, 0, 0, 0, 0, 0), bdi13 = c(2, 2, 2, 0, 2, 2, 3, 3, 3, 
+    3, 3, 0, 3, 3, 3, 3, 0, 2, 0, 3, 0, 3, 3, 3, 3, 2, 1, 3, 
+    1, 0, 1, 2, 1, 3, 2, 0, 3, 2, 0, 0, 3, 2, 2, 0, 1, 0, 3, 
+    1, 3, 3, 1, 0, 0, 3, 3, 3, 2, 3, 0, 2, 2, 3, 1, 2, 0, 1, 
+    3, 3, 1, 0, 3, 0, 3, 2, 0, 0, 0, 2, 2, 1, 3, 0, 3, 3, 0, 
+    0, 2, 0, 1, 3, 0, 1, 0, 3, 0, 0, 2, 2, 0, 1, 3, 2, 0, 3, 
+    2, 0, 1, 2, 0, 0, 0, 0, 0, 1, 2, 0, 2, 0, 2, 0, 2, 2, 1, 
+    3, 0, 0, 0, 1, 2, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 
+    1, 3, 0, 0, 1, 3, 0, 2, 2, 3, 1, 0, 1, 0, 3, 3, 0, 1, 0, 
+    2, 2, 2, 3, 0, 0, 2, 0, 0, 1, 2, 0, 3, 2, 2, 2, 2, 0, 0, 
+    0, 3, 0, 1, 3, 0, 1, 0, 0, 0, 2, 2, 0, 3, 0, 0, 0, 0, 2, 
+    0, 2, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 
+    2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), bdi14 = c(2, 
+    1, 3, 1, 3, 2, 3, 3, 2, 3, 1, 0, 3, 3, 3, 3, 1, 3, 0, 3, 
+    3, 3, 1, 3, 2, 2, 2, 3, 3, 0, 1, 2, 1, 3, 1, 3, 3, 1, 0, 
+    0, 3, 3, 3, 0, 1, 3, 3, 1, 3, 3, 2, 0, 3, 2, 1, 1, 1, 3, 
+    0, 3, 1, 3, 1, 2, 0, 3, 0, 3, 2, 1, 3, 1, 2, 2, 3, 0, 1, 
+    0, 2, 3, 1, 0, 3, 0, 1, 3, 0, 3, 0, 2, 3, 3, 0, 3, 0, 0, 
+    2, 3, 0, 3, 3, 1, 0, 0, 0, 1, 3, 3, 0, 0, 1, 1, 2, 3, 0, 
+    0, 3, 0, 3, 0, 3, 3, 2, 1, 3, 0, 1, 1, 0, 2, 2, 0, 2, 3, 
+    0, 3, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 1, 3, 2, 3, 
+    0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 3, 3, 0, 3, 2, 0, 0, 0, 0, 
+    0, 3, 0, 2, 0, 2, 1, 0, 0, 3, 0, 0, 0, 0, 1, 0, 3, 0, 2, 
+    0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 2, 1, 2, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0), bdi15 = c(1, 0, 3, 0, 1, 2, 3, 3, 2, 
+    3, 3, 3, 3, 2, 1, 2, 3, 3, 2, 3, 3, 3, 3, 3, 0, 2, 2, 3, 
+    1, 3, 0, 0, 3, 3, 0, 0, 3, 0, 0, 3, 3, 0, 3, 0, 1, 3, 3, 
+    1, 3, 3, 2, 0, 3, 2, 0, 3, 3, 3, 1, 2, 2, 1, 2, 2, 0, 3, 
+    0, 3, 0, 1, 3, 0, 3, 2, 3, 0, 0, 2, 3, 2, 2, 2, 3, 0, 0, 
+    2, 0, 3, 0, 2, 1, 2, 0, 1, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 
+    1, 0, 1, 0, 0, 3, 1, 3, 1, 2, 3, 0, 3, 0, 3, 0, 0, 0, 1, 
+    0, 3, 0, 3, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+    3, 0, 0, 0, 1, 3, 0, 1, 1, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 
+    0, 1, 0, 2, 0, 0, 0, 0, 1, 1, 2, 0, 3, 0, 0, 0, 0, 2, 1, 
+    0, 2, 1, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 
+    0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0), bdi16 = c(3, 
+    2, 3, 1, 3, 3, 3, 3, 2, 3, 2, 3, 1, 1, 3, 3, 3, 3, 3, 3, 
+    3, 3, 3, 3, 2, 1, 3, 3, 2, 3, 2, 1, 3, 3, 1, 3, 3, 2, 3, 
+    3, 3, 3, 3, 1, 1, 3, 3, 1, 3, 0, 1, 3, 3, 3, 3, 3, 2, 2, 
+    2, 1, 2, 2, 2, 2, 3, 2, 2, 1, 1, 3, 3, 0, 3, 2, 3, 3, 3, 
+    2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 3, 2, 2, 2, 2, 2, 3, 1, 3, 
+    2, 2, 3, 2, 2, 2, 0, 3, 3, 3, 3, 3, 3, 3, 0, 1, 3, 3, 1, 
+    2, 3, 0, 3, 0, 0, 2, 2, 3, 3, 2, 0, 3, 3, 2, 3, 2, 3, 3, 
+    2, 3, 3, 3, 1, 3, 1, 2, 3, 0, 3, 0, 2, 3, 1, 2, 3, 0, 3, 
+    0, 2, 3, 2, 2, 2, 2, 0, 2, 0, 0, 3, 0, 2, 3, 3, 2, 2, 2, 
+    0, 2, 2, 3, 0, 1, 1, 3, 3, 2, 0, 1, 3, 0, 0, 0, 3, 3, 0, 
+    2, 1, 2, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 0, 0, 0, 2, 
+    3, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0), bdi17 = c(3, 3, 3, 1, 1, 3, 3, 3, 3, 
+    3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 3, 1, 3, 3, 1, 1, 3, 3, 
+    3, 0, 1, 0, 3, 3, 1, 3, 3, 3, 1, 3, 3, 3, 3, 0, 1, 3, 3, 
+    1, 3, 0, 3, 3, 2, 3, 2, 1, 3, 3, 2, 1, 3, 1, 3, 3, 2, 3, 
+    3, 3, 3, 3, 3, 3, 3, 1, 0, 3, 3, 1, 3, 3, 3, 3, 3, 3, 1, 
+    2, 2, 3, 2, 3, 3, 3, 0, 2, 1, 2, 2, 1, 1, 3, 3, 3, 0, 3, 
+    3, 2, 2, 3, 2, 2, 3, 3, 3, 2, 1, 3, 1, 0, 3, 0, 2, 0, 0, 
+    1, 3, 0, 0, 0, 3, 3, 0, 1, 1, 0, 2, 3, 3, 3, 2, 0, 0, 2, 
+    1, 1, 0, 0, 1, 3, 0, 1, 3, 3, 3, 0, 3, 3, 2, 3, 0, 0, 0, 
+    0, 1, 0, 3, 0, 0, 0, 0, 1, 1, 3, 0, 3, 3, 0, 0, 2, 3, 0, 
+    0, 3, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1, 0, 0, 0, 1, 0, 0, 0, 
+    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 0, 3, 
+    0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0), bdi18 = c(3, 
+    3, 2, 3, 3, 0, 3, 3, 3, 3, 3, 0, 3, 3, 3, 0, 0, 3, 0, 3, 
+    3, 3, 3, 3, 1, 2, 0, 0, 0, 0, 3, 3, 3, 0, 0, 3, 0, 1, 3, 
+    0, 0, 2, 0, 0, 0, 3, 3, 2, 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 
+    0, 3, 0, 3, 2, 0, 0, 0, 3, 0, 3, 3, 3, 0, 3, 3, 0, 0, 3, 
+    0, 0, 3, 3, 3, 3, 3, 0, 3, 0, 3, 1, 3, 0, 1, 1, 0, 3, 0, 
+    1, 0, 1, 0, 1, 3, 0, 3, 0, 0, 3, 3, 0, 3, 3, 3, 3, 3, 2, 
+    3, 3, 0, 3, 0, 3, 0, 3, 0, 0, 0, 3, 1, 0, 3, 0, 3, 3, 0, 
+    3, 3, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 3, 3, 0, 3, 3, 3, 0, 
+    0, 0, 0, 2, 0, 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 1, 
+    3, 2, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 3, 0, 3, 0, 2, 0, 0, 3, 0, 0, 0, 0, 3, 0, 
+    0, 0, 0, 0, 0, 3, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0), bdi19 = c(3, 3, 3, 2, 3, 1, 3, 1, 2, 
+    3, 3, 3, 0, 3, 3, 3, 3, 2, 0, 3, 3, 2, 3, 3, 2, 2, 2, 3, 
+    1, 0, 3, 2, 3, 3, 1, 2, 3, 0, 1, 0, 3, 3, 3, 0, 2, 3, 0, 
+    3, 3, 3, 1, 3, 3, 3, 0, 1, 3, 3, 0, 3, 1, 3, 2, 3, 0, 1, 
+    0, 0, 1, 0, 0, 0, 2, 2, 3, 0, 2, 0, 2, 2, 3, 0, 3, 0, 0, 
+    3, 0, 1, 2, 3, 0, 2, 1, 3, 2, 3, 1, 0, 3, 3, 2, 0, 0, 3, 
+    1, 0, 0, 3, 0, 3, 0, 0, 2, 1, 1, 3, 1, 0, 3, 0, 1, 3, 3, 
+    0, 0, 0, 3, 0, 1, 1, 0, 2, 0, 2, 0, 3, 2, 3, 1, 0, 0, 0, 
+    3, 0, 0, 0, 1, 3, 0, 1, 3, 0, 1, 0, 0, 0, 0, 2, 0, 2, 0, 
+    0, 0, 2, 3, 0, 0, 3, 2, 1, 0, 2, 1, 0, 1, 0, 0, 3, 1, 0, 
+    3, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1, 0, 1, 0, 2, 
+    1, 3, 2, 0, 3, 0, 0, 0, 0, 0, 1, 3, 0, 0, 3, 0, 0, 0, 3, 
+    1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2), bdi20 = c(1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 3, 0, 1, 1, 1, 1, 1, 1, 
+    1, 3, 2, 1, 0, 1, 3, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 
+    0, 1, 0, 0, 0, 0, 1, 1, 0, 3, 3, 0, 0, 0, 0, 0, 0, 1, 1, 
+    0, 1, 1, 1, 1, 2, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 
+    1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 
+    2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 
+    0, 1, 0, 1, 0, 0, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 
+    1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 
+    0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+    0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0)), row.names = c(NA, -236L), class = c("tbl_df", 
+"tbl", "data.frame"))
+```
+
+Before we calculate Cronbach's alpha, let's glimpse the HAP data. As a reminder, this data comes from participants in the control arm, collected three months after the treatment arm completed the HAP program. 
+
+:::{.column-margin}
+Refer to @fig-hapcor to see a visualization of the item correlation matrix. 
+:::
+
+```{r}
+#| echo: false
+#| label: "hap-ic-data"
+
+df
+```
+
+```{r}
+#| echo: false
+#| label: "hap-ic-alpha-object"
+
+ca <- psych::alpha(df)
+```
+
+Now we can use the {`psych`} package to calculate Cronbach's alpha [@psych]. We get a lot of output, so focus first on the top line with the raw alpha value of `r round(ca$total$raw_alpha, 2)`. Most reviewers are trained to question your approach if you report an alpha value lower than 0.70, so some researchers will look to see if alpha can be improved by dropping any items. That doesn't appear to be the case in the HAP data.
+
+```{r}
+#| echo: true
+#| label: "hap-ic-alpha"
+
+psych::alpha(df)
+```
+
+Now that I've shown you Cronbach's alpha, I'll let you know that many measurement researchers will tell you that we should move on from it, or at least use it more critically [@mcneish:2018]. A good alternative is omega. Omega isn't as commonly included in software programs as Cronbach's alpha is, but several R packages will estimate one or more variants of omega. See @mcneish:2018 and @omega for in-depth tutorials.
+
+:::{.column-margin}
+Cronbach's alpha is also known as an index of tau-equivalent reliability because one assumption is that each item contributes equally to the total score.  
+:::
+
+```{r}
+#| echo: false
+#| label: "hap-ic-omega-value"
+
+om <- MBESS::ci.reliability(df)
+```
+
+```{r}
+#| echo: true
+#| label: "hap-ic-omega"
+
+MBESS::ci.reliability(df)
+```
+
+Cronbach's alpha will often underestimate reliability, but in the HAP data we see that the omega estimate, `r round(om$est, 2)`, is pretty close to the alpha value, `r round(ca$total$raw_alpha, 2)`. Regardless of the method, it looks like the BDI-II items consistently measured the same construct in the trial sample.
+
+:::{.column-margin}
+I get a slightly different alpha value that what Patel et al. (2017) report because I'm only using data from the control arm for these examples.  
+:::
+
+###### Reliability: Inter-rater {.unnumbered}
+
+Another form of reliability is **inter-rater reliability**, a measure of the extent to which two (or more) observers (raters) agree on what they observe. Imagine that you and I watch a new movie and a friend asks us for our reviews. I say it was 'just OK', but you say the movie was 'great'. Our ratings are not reliable (not consistent). 
+
+Now you might say that a problem with this example is that movie reviews are subjective, and you'd be right. But this is true of many phenomena we might want to assess with an observational instrument. 
+
+For instance, in the HAP trial researchers wanted to document whether the therapy sessions were implemented with fidelity—did lay counselors deliver the program as the intervention designers intended? If not, then the trial results would be hard to interpret, especially if the trial found that HAP is not efficacious. But how do we know if a counselor delivered the therapy with fidelity to the design? That is to say, how do we rate therapy quality? 
+
+A common approach, employed in the HAP trial, is to train staff to observe a random sample of sessions (live or recorded) and rate the counselors using a standard observational rating system (instrument). In the HAP trial, sessions were rated by fellow lay counselors (peers), supervisors (experts), and an independent observer. Observers rated audio recordings of selected sessions using a 25-item instrument called the Quality of the Healthy Activity Programme (Q-HAP) scale [@singla:2014]. The Q-HAP consists of 15 treatment-specific items and 10 general skills items, each rated by observers on a 5 point scale from 'not done' (0) to 'excellent' (4). See @fig-qhap for an example.
+
+:::{.column-page}
+![Quality of the Healthy Activity Programme instrument.](images/qhap.png){#fig-qhap}
+:::
+
+The key reliability issue is to establish that the observers are consistent raters. For instance, when listening to the same session, do different observers see and record the same things? If yes, they are reliable observers and can be trusted to rate sessions independently, increasing the number of sessions a team can rate.
+
+:::{.column-margin}
+Remember, reliability is not the same thing as validity. Whether the Q-HAP is a valid measure of therapy quality is a different question. The Q-HAP developers do not really engage with this question, writing, "Regarding validity, however, because scales were derived from instruments which are used by other psychological treatment researchers worldwide, we have assumed that they possess a degree of validity by extension."
+:::
+
+@singla:2014 quantified inter-rater reliability with the intra-class correlation coefficient, or ICC. The ICC is an index of how much of the variability in the measurements is due to true differences between subjects/items and how much is due to disagreement among raters. There are 10 different forms of ICC [@mcgraw:1996], and it's important to pick the right one for your purpose. 
+
+@singla:2014 calculated ICC(2,3). ICC(2,3) is used to assess the reliability and consistency of measurements made by multiple observers on multiple subjects/items. It is often employed when the raters are selected randomly from a larger pool, and each subject or item is assessed by different combinations of these raters. ICC values can range from 0 to 1, where values closer to 1 indicate high agreement.
+
+@singla:2014 reported that the peer observers had moderate agreement on the Q-HAP treatment specific subscale (ICC(2,3) = .616, N = 97) and the general skills sub scale (ICC(2,3) = .622, N = 189). The results for expert observers were similar.
+
+#### Construct Validation Phase 3: External {.unnumbered}
+
+The final phase of developing a new instrument is to evaluate how it performs against external criteria or in relation to existing tools. Two main buckets of validity in this phase are construct validity and criterion validity.
+
+##### Construct validity {.unnumbered}
+
+**Construct validity** is a framework for evaluating whether an instrument measures the intended theoretical construct. Let's review several types of construct validity, including convergent, discriminant, and known groups. 
+
+###### Construct: Convergent and discriminant validity {.unnumbered}
+
+Psychologists in particular like to think about nomological validity and talk in terms of convergent and discriminant validity. Establishing evidence for nomological validity means showing that your new instrument is positively correlated with theoretically related constructs (**convergent validity**) and uncorrelated (or only weakly correlated) with theoretically unrelated constricts (**discriminant validity**). 
+
+:::{.column-margin}
+'Nomological' from the Greek 'nomos' meaning 'law'. The nomological network is the theoretical map of how different constructs are related. For instance, in a nomological network about mental health, depression and anxiety are distinct disorders but have theoretical overlap and are often comorbid.
+:::
+
+For instance, a measure of depression should not be strongly associated with a measure of narcissism because we don't consider depression and narcissism to be theoretically linked. But we would expect a measure of depression to be associated to some degree with a measure of anxiety because they are often co-morbid, meaning that people with depression symptoms also commonly report symptoms of anxiety. 
+
+In practice, when developing or adapting an instrument, you should design a validation study that includes measures of conceptually related and unrelated constructs so you can evaluate if the correlations are as predicted. If not, you have more work ahead.
+
+###### Construct: Known groups validity {.unnumbered}
+
+Another method for establishing evidence of construct validity is via known groups validity. With **known groups validity** you examine whether your instrument distinguishes between groups of people who are already known to differ on the construct of interest. For example, if you were developing a new measure of family conflict, you could recruit families who have been referred for services and a comparison group of families who have not been referred, administer your new questionnaire to both groups, and compare the group-level results. Known groups validity would predict that referred families would score higher on average on your measure of family distress compared to families not referred for support. See @puffer:2021 for this approach to recruitment (but not analysis). 
+
+:::{.column-margin}
+Known groups validity is similar to diagnostic accuracy, discussed below as a type of criterion validity. A key difference is that diagnostic accuracy involves analyzing classification predictions for individuals whereas known groups methods look at differences in group averages.
+:::
+
+##### Criterion validity {.unnumbered}
+
+**Criterion validity** assesses how well an instrument relates to an external criterion or a gold standard. There are three main types of criterion validity: concurrent validity,  predictive validity, and diagnostic accuracy.
+
+###### Criterion: Concurrent validity {.unnumbered}
+
+**Concurrent validity** examines the relationship between the new instrument and some criterion that is assessed *at the same time*. For example, @beck:1988 reviewed 35 studies that compared BDI scores to four existing measures of depression and  reported strong, positive correlations.
+
+:::{.column-margin}
+Concurrent and convergent validity are similar. They both involve comparing the new instrument to other instruments measured at the same time. Concurrent compares to an existing gold standard measure of the same construct, while convergent compares to measures of related constructs. We're splitting hairs in my view.
+:::
+
+###### Criterion: Predictive validity {.unnumbered}
+
+ **Predictive validity** assesses how well an instrument predicts *future* outcomes or behaviors. A common application is evaluating the utility of a new hiring test to identify job candidates most likely to succeed in a particular role. A test has good predictive ability if the results correlate with job performance measured at a later time.
+ 
+###### Criterion: Diagnostic accuracy {.unnumbered}
+
+**Diagnostic accuracy** refers to the ability of an instrument to correctly identify individuals with or without a particular condition or disease. The new instrument under investigation is referred to as the index test, and the existing gold standard test is known as the criterion. For instance, if you are developing a new rapid diagnostic test for a bacterial infection that returns results in minutes, your rapid test would be the index test and the bacteria culture test would be the criterion or the gold standard.
+
+Returning to an earlier example, @green2018 developed a new perinatal depression screening questionnaire in Kenya—the Perinatal Depression Screening (PDEPS)—and evaluated its diagnostic accuracy by comparing PDEPS scores (the index test) to the results of separate clinical interviews conducted by Kenyan counselors (gold standard) who were blind to women's questionnaire data. In this study, 193 pregnant and postpartum women completed the new screening questionnaire and separately participated in a clinical interview within three days. Clinical interviewers identified 10/193 women who met diagnostic criteria for Major Depressive Episode. 
+
+:::{.column-page}
+![Example confusion matrix.](images/confusion_pdeps.png){#fig-confusion_pdeps}
+:::
+
+@fig-confusion_pdeps displays a **confusion matrix** for the study. The analysis found that a score of 13 or greater on the PDEPS correctly identified 90% of true cases. It only missed 1 out of 10 cases. This is known as **sensitivity** or the true positive rate. This cutoff on the PDEPS also correctly identified 90% of non-cases. This is known as **specificity** or the true negative rate. A score of 13 is the optimal cutoff that maximizes sensitivity and specificity.
+
+:::{.column-margin}
+For some applications or in certain settings you might choose to prioritize sensitivity over specificity, or vice versa. For instance, if false negatives are very costly for individuals and society, you might choose a cutoff that favors high sensitivity.
+:::
+
+### CROSS-CULTURAL VALIDITY {.unnumbered}
+
+If you are not yet ready to agree with my opening statement that "measurement is one of the hardest parts of science", please allow me to tell you what else you need to consider if you wish to develop or adapt instruments for use in cross-cultural contexts.
+
+@kohrt:2011 is a fantastic guide for our discussion. This paper is motivated by the fact that there are few culturally adapted and validated instruments for assessing child mental health in low-income settings. This lack of instruments is a barrier to designing, delivering, and assessing services for children and families. To remedy this situation, the authors propose six criteria for evaluating the cross-cultural validity of instruments that are applicable to any topic. 
+
+1. What is the purpose of the instrument?
+2. What is the construct to be measured?
+3. What are the contents of the construct?
+4. What are the idioms used to identify psychological symptoms and behaviors? 
+5. How should questions and responses be structured?
+6. What does a score on the instrument mean?
+
+#### What is the purpose of the instrument? {.unnumbered}
+
+The authors start by reminding us that validity is not an inherent property of an instrument, adding that validity can vary by setting, population, *and purpose*. The last point is often overlooked. It's important to design instruments to be fit for purpose. If your objective is to measure the efficacy of an intervention, let's say, adapting an instrument validated for measuring the prevalence of disease may not be ideal. Start by defining your purpose.
+
+#### What is the construct to be measured? {.unnumbered}
+
+We covered this question about construct validity extensively in the previous section, but it's worth noting the authors' distinction between three different types of constructs: (i) local constructs, (ii) Western psychiatric constructs; and (iii) cross-cultural constructs. 
+
+In their formulation, local constructs are the unique ways that the target population conceptualizes an issue. For instance, in the perinatal depression study mentioned earlier [@green2018], a local construct that emerged in focus group discussions was that women experiencing depression often feel like they just want to go back to their maternal home.[^maternalhome] This is not a characteristic of depression that you will find in any commonly used screening instruments, but it has relevance to this population.
+
+:::{.column-margin}
+Local constructs are also known as idioms of distress or culture-bound syndromes.
+:::
+
+[^maternalhome]: It's customary for women in this culture to marry and live with her husband's family.
+
+Western psychiatric constructs—which for our purposes we'll recast more broadly as standard global health indicators—have their origin outside of the target population and may or may not be relevant. @kohrt:2011 give the example of posttraumatic stress disorder as a Western construct with no perfectly synonymous concepts in Nepal. In contrast, cross-cultural constructs are universally recognized phenomena with some degree of shared meaning across settings and cultural groups. 
+
+#### What are the contents of the construct? {.unnumbered}
+
+Answering this question about content validity requires a close inspection of the instrument's elements for relevancy. For instance, @kohrt:2011 found that a common item on ADHD screening instruments in high-income countries, “stands quietly when in line”, is not applicable in Nepal because this behavior is not a universal expectation of children. Thus it's not a sign of hyperactivity in this context and should not be included in a screening instrument.
+
+:::{.column-margin}
+Whether you are creating a new instrument or adapting an existing measure, a few rounds of qualitative research will help you to explore which elements like this should be included or dropped. See the previous example linked to @fig-cards.
+:::
+
+#### What are the idioms used to identify psychological symptoms and behaviors? {.unnumbered}
+
+Once you know what domains an instrument should assess, it's important to get the language right. Translation is never sufficient for establishing validity, but it's a critical piece of the process. 
+
+A standard recommendation is to conduct forward translation, blinded back translation, and reconciliation. In this approach, a translator fluent in both languages translates the items from the original language to the target language. Next, a new linguist translates the target language product back to the original language, but does so blinded, without seeing the original text. In the final step, the translators work together to compare the original text and the back-translated text, resolve disagreements, and improve the translations to ensure semantic equivalence.
+
+#### How should questions and responses be structured? {.unnumbered}
+
+Another important consideration is technical equivalence, or ensuring that the possible response sets are understood in the same way across groups or settings. For instance, if adapting an instrument that asks people to respond on a 4-point scale—never, rarely, sometimes, often—it's helpful to verify that this format is understood by the target population once translated. Cognitive interviewing is a good approach.  
+
+#### What does a score on the instrument mean? {.unnumbered}
+
+This final question comes up in the external phase of construct validation that we discussed previously. There is not much more to say here, but @kohrt:2011 make a point about the lack of criterion validation that bears repeating for anyone interested in conducting a prevalence study: 
+
+> Ultimately, for prevalence studies, diagnostic validation is crucial. The misapplication of instruments that have not undergone diagnostic validation to make prevalence claims is one of the most common errors in global mental health research.
+
+### THREATS TO CONSTRUCT VALIDITY {.unnumbered}
+
+@scc outlined 14 threats to construct validity that are presented in @tbl-threats-cv. See @matthay:2020 for a translation of these threats to DAGs. I find that I often return to this list when designing a new study to consider whether there are threats lurking in my measurement strategy.
+
+\vspace{2em}
+```{r}
+#| label: tbl-threats-cv
+#| tbl-cap: "Threats to construct validity, adapted from Shadish et al. (2002) and Matthay and Glymour (2020)."
+
+threats_cv <- tribble(
+    ~`Threat Name`, ~Definition,
+    "Inadequate explication of constructs", "Failure to adequately explicate a construct may lead to incorrect inferences about the causal relationship of interest.",
+    "Construct confounding", "Exposures or treatments usually involve more than one construct, and failure to describe all the constructs may result in incomplete construct inference.",
+    "Confounding constructs with levels of constructs", "Inferences made about the constructs in a study fail to respect the limited range of the construct that was actually studied, i.e., effect estimates are extrapolated beyond the range of the observed data.",
+    "Mono-operation bias", "Any one operationalization (measurement or intervention implementation) of a construct both underrepresents the construct of interest and measures irrelevant constructs, complicating the attribution of observed effects.", 
+    "Mono-method bias", "When all operationalizations (measurements or intervention implementations) use the same method (e.g., selfreport), that method is part of the construct actually studied.", 
+    "Treatment sensitive factorial structure", "The structure of a measure may change as result of treatment. This change may be hidden if the same scoring is always used.", 
+    "Reactive self-report changes", "Self-reports can be affected by participant motivation to be in a treatment condition. This motivation may change after assignment is made.", 
+    "Compensatory equalization", "When treatment provides desirable goods or services, administrators, staff, or constituents may provide compensatory goods or services to those not receiving treatment. This action must then be included as part of the treatment construct description.",
+    "Compensatory rivalry", "Participants not receiving treatment may be motivated to show they can do as well as those receiving treatment. This action must then be included as part of the treatment construct description.", 
+    "Resentful demoralization", "Participants not receiving a desirable treatment may be so resentful or demoralized that they may respond more negatively than otherwise. This response must then be included as part of the treatment construct description.",
+    "Reactivity to the experimental situation", "Participant responses reflect not just treatments and measures but also participants’ perceptions of the experimental situation. These perceptions are part of the treatment construct actually tested.",
+    "Experimenter expectancies", "The experimenter can influence participant responses by conveying expectations about desirable responses. These expectations are part of the treatment construct as actually tested.",
+    "Novelty and disruption effects", "Participants may respond unusually well to a novel innovation or unusually poorly to one that disrupts their routine. This response must then be included as part of the treatment construct description.",
+    "Treatment diffusion", "Participants may receive services from a condition to which they were not assigned, making construct descriptions of both conditions more difficult."	  
+	  )
+	  
+  format <- ifelse(knitr::is_html_output(), "html", "latex")
+
+kable(threats_cv, format = format, booktabs = T,
+      caption="Threats to construct validity, adapted from Shadish et al. (2002) and Matthay and Glymour (2020)"
+      #table.envir = 'table*'
+      ) %>%
+  row_spec(0, bold=TRUE) %>%
+  column_spec(1, bold=TRUE, width="7cm") %>%
+  column_spec(2, width="15cm") %>%
+	kable_styling(full_width = F, position = "left")
+```
+\vspace{2em}
+
+## Measurement, Schmeasurement
+
+:::::{.content-hidden unless-format="html"}
+::::{.column-margin}
+*Two Psychologists, Four Beers*, Episode 32, [Measurement Schmeasurement](http://ghr.link/sch).
+::::
+:::::
+
+::::{.content-hidden unless-format="pdf"}
+:::{.column-margin}
+\faIcon{podcast} \textit{Two Psychologists, Four Beers}, Episode 32, Measurement Schmeasurement, at \href{http://ghr.link/sch}{\footnotesize\texttt{ghr.link/sch}}.
+\newline
+\newline
+![](images/QR_sch.png){width="75px"}
+:::
+::::
+
+"Measurement, Schmeasurement" is the title of a great paper by @flake:2020. The subtitle is, "Questionable Measurement Practices and How to Avoid Them". The authors' thesis is that measurement is a critical part of science, but questionable measurement practices undermine the validity of many studies and ultimately slow the progress of science. They define **questionable measurement practices** as:
+
+> decisions researchers make that raise doubts about the validity of measure use in a study, and ultimately the study’s final conclusions.
+
+These decisions, they argue, stem from ignorance, negligence, and in some cases misrepresentation. According to @flake:2020, questionable measurement practices live on because many researchers have an attitude of, "measurement, schmeasurement". In other words, who cares. 
+
+:::{.column-margin}
+If you are not a native English speaker, *measurement, schmeasurement* might be a confusing phrase. It's an example of shm-reduplication used to indicate lack of interest or derision. Science, schmiance. See [ghr.link/shm](https://ghr.link/shm) for more examples.
+:::
+
+I'm persuaded by this argument, having been in the room when investigators have spent weeks thinking about research design only to uncritically "throw in" a bunch of measures at the end. The thinking is often, why not, we're going to the trouble of doing the study, let's measure everything. Sometimes a student or colleague needs a project, and they're invited to add something to the survey battery. In situations like this, the validity of measurement is never at the forefront. Doing it right is hard, and hey, *measurement, schmeasurement*, right?
+
+@flake:2020 believe that fixing this problem begins with greater transparency and better reporting about measurement decisions. They also offer six questions to consider in the design phase and to report in publications:
+
+1. What is your construct?
+2. Why and how did you select your measure?
+3. What measure did you use to operationalize the construct?
+4. How did you quantify your measure?
+5. Did you modify the scale? And if so, how and why?
+6. Did you create a measure on the fly? If so, justify your decision and report all measurement details for the new measure along with any validity evidence.
+
+If you ask and answer these questions for your next study, I'm convinced that you will improve your measurement strategy and thus strengthen the validity of your conclusions. 
