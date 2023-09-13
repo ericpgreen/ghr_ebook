@@ -331,6 +331,7 @@ QRP is known in medical circles as **"questionable research practices"**. It is 
 The conclusion for many skeptics of Bem's work was that this paper followed the conventions of the time, *but the conventions were flawed*. Bem's paper was just a symptom of the disease—QRP. 
 
 ```{r tidypvals1, cache=TRUE, warning=FALSE, message=FALSE, include=FALSE}
+  library(tidyverse)
   library(tidypvals)
   library(ggjoy)
   library(scales)
@@ -467,12 +468,5 @@ Statistical inference is hard. Here are a few resources to keep learning:
 * **Frequentist Approach**: [*Statistical Inference as Severe Testing: How to Get Beyond the Statistics Wars*](https://amzn.to/3evfGqF), by Deborah Mayo
 * **New Statistics**: [Understanding the New Statistics](https://amzn.to/2VGek3H), by Geoff Cumming
 * **Bayesian Approach**: [*Statistical Rethinking*](https://amzn.to/2XMHLDP) by Richard McElreath
-
-###### Share Your Feedback{-}
-
-This book is a work in progress, so I'd really appreciate your feedback on this chapter.
-
-<iframe height="600" width="690" src="https://duke.qualtrics.com/jfe/form/SV_43cfvpOISSY6guh" frameborder="0"></iframe>
-
 
 

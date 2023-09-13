@@ -17,6 +17,7 @@ book:
 #       - read.qmd
 #       - reviews.qmd
 #       - statinference.qmd
+    - statinference.qmd
     - causalinference.qmd
     - construct.qmd
     - references.qmd
